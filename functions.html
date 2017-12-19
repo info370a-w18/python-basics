@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python Basics for Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Python Basics for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Python Basics for Data Science" />
+  
+  <meta name="twitter:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2017-12-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="introduction-to-python.html">
+<link rel="next" href="logic-and-conditionals.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Python Basics for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introductory Python materials for the INFO 370: Introduction to Data Science Course.</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources"><i class="fa fa-check"></i><b>1.1</b> Resources</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>1.2</b> Programming with Python</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>1.2.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>1.3</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#command-line"><i class="fa fa-check"></i><b>1.3.1</b> Command-Line</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>1.3.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#python-basics"><i class="fa fa-check"></i><b>1.4</b> Python Basics</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>1.5</b> Comments</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>1.6</b> Variables</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>1.6.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>1.7</b> Getting Help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2</b> Functions</a><ul>
+<li class="chapter" data-level="2.1" data-path="functions.html"><a href="functions.html#resources-1"><i class="fa fa-check"></i><b>2.1</b> Resources</a></li>
+<li class="chapter" data-level="2.2" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>2.2</b> What are Functions?</a></li>
+<li class="chapter" data-level="2.3" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>2.3</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>2.3.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>2.4</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>2.4.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>2.5</b> Writing Functions</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>2.5.1</b> Doc Strings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html"><i class="fa fa-check"></i><b>3</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#resources-2"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
+<li class="chapter" data-level="3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#booleans"><i class="fa fa-check"></i><b>3.2</b> Booleans</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#boolean-operators"><i class="fa fa-check"></i><b>3.2.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#conditional-statements"><i class="fa fa-check"></i><b>3.3</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#designing-conditions"><i class="fa fa-check"></i><b>3.3.1</b> Designing Conditions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#modules-vs.scripts"><i class="fa fa-check"></i><b>3.3.2</b> Modules vs. Scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>4</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-3"><i class="fa fa-check"></i><b>4.1</b> Resources</a></li>
+<li class="chapter" data-level="4.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>4.2</b> While Loops</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>4.2.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="4.2.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#conditionals-and-sentinels"><i class="fa fa-check"></i><b>4.2.2</b> Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>4.3</b> For Loops</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>4.3.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#working-with-files"><i class="fa fa-check"></i><b>4.4</b> Working with Files</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>4.4.1</b> Try/Except</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>5</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="5.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-4"><i class="fa fa-check"></i><b>5.1</b> Resources</a></li>
+<li class="chapter" data-level="5.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists"><i class="fa fa-check"></i><b>5.2</b> Lists</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>5.2.1</b> List Indices</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>5.3</b> List Operations and Methods</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>5.3.1</b> Lists and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>5.4</b> Nested Lists</a></li>
+<li class="chapter" data-level="5.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>5.5</b> Tuples</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>6</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.1" data-path="dictionaries.html"><a href="dictionaries.html#resources-5"><i class="fa fa-check"></i><b>6.1</b> Resources</a></li>
+<li class="chapter" data-level="6.2" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-1"><i class="fa fa-check"></i><b>6.2</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>6.2.1</b> Accessing a Dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>6.3</b> Dictionary Methods</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>6.3.1</b> Dictionaries and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>6.4</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="6.5" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>6.5</b> Which data structure do I use?</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functional-iteration.html"><a href="functional-iteration.html"><i class="fa fa-check"></i><b>7</b> Functional Iteration</a><ul>
+<li class="chapter" data-level="7.1" data-path="functional-iteration.html"><a href="functional-iteration.html#resources-6"><i class="fa fa-check"></i><b>7.1</b> Resources</a></li>
+<li class="chapter" data-level="7.2" data-path="functional-iteration.html"><a href="functional-iteration.html#functions-are-variables"><i class="fa fa-check"></i><b>7.2</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="functional-iteration.html"><a href="functional-iteration.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>7.2.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="functional-iteration.html"><a href="functional-iteration.html#functional-looping"><i class="fa fa-check"></i><b>7.3</b> Functional Looping</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="functional-iteration.html"><a href="functional-iteration.html#map"><i class="fa fa-check"></i><b>7.3.1</b> Map</a></li>
+<li class="chapter" data-level="7.3.2" data-path="functional-iteration.html"><a href="functional-iteration.html#filter"><i class="fa fa-check"></i><b>7.3.2</b> Filter</a></li>
+<li class="chapter" data-level="7.3.3" data-path="functional-iteration.html"><a href="functional-iteration.html#reduce"><i class="fa fa-check"></i><b>7.3.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="functional-iteration.html"><a href="functional-iteration.html#list-comprehensions"><i class="fa fa-check"></i><b>7.4</b> List Comprehensions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>8</b> Pandas</a><ul>
+<li class="chapter" data-level="8.1" data-path="pandas.html"><a href="pandas.html#resources-7"><i class="fa fa-check"></i><b>8.1</b> Resources</a></li>
+<li class="chapter" data-level="8.2" data-path="pandas.html"><a href="pandas.html#setup"><i class="fa fa-check"></i><b>8.2</b> Setup</a></li>
+<li class="chapter" data-level="8.3" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>8.3</b> Series</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>8.3.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="8.3.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>8.3.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="pandas.html"><a href="pandas.html#data-frames"><i class="fa fa-check"></i><b>8.4</b> Data Frames</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>8.4.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="8.4.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>8.4.2</b> Accessing DataFrames</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Python Basics for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="functions" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Functions</h1>
+<p>In this module, we’ll explore how to use and create <strong>functions</strong> in Python. Functions are the primary form of <em>behavior abstraction</em> in computer programming, and used to structure and generalize code instructions. After considering a function in an abstract sense, we’ll look at how to use built-in Python functions, how to access additional functions by importing Python modules, and finally how to write our own functions.</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="introduction-to-python.html#resources">Resources</a></li>
+<li><a href="functions.html#what-are-functions">What are Functions?</a></li>
+<li><a href="functions.html#python-function-syntax">Python Function Syntax</a></li>
+<li><a href="functions.html#object-methods">Object Methods</a></li>
+<li><a href="functions.html#built-in-python-functions">Built-in Python Functions</a></li>
+<li><a href="functions.html#modules-and-libraries">Modules and Libraries</a></li>
+<li><a href="functions.html#writing-functions">Writing Functions</a></li>
+<li><a href="functions.html#doc-strings">Doc Strings</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<div id="resources-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> Resources</h2>
+<ul>
+<li><a href="https://automatetheboringstuff.com/chapter3/">Functions (Sweigart)</a></li>
+<li><a href="https://books.trinket.io/pfe/04-functions.html">Functions (Severance)</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/fruitful_functions.html">Fruitful Functions (Downey)</a> <!-- - [Python Built-in Functions](https://docs.python.org/3/library/functions.html) --></li>
+</ul>
+</div>
+<div id="what-are-functions" class="section level2">
+<h2><span class="header-section-number">2.2</span> What are Functions?</h2>
+<p>In a broad sense, a <strong>function</strong> is a named sequence of instructions (lines of code) that you may want to perform one or more times throughout a program. They provide a way of <em>encapsulating</em> multiple instructions into a single “unit” that can be used in a variety of different contexts. So rather than needing to repeatedly write down all the individual instructions for “make a sandwich” every time you’re hungry, you can define a <code>make_sandwich()</code> function once and then just <strong>call</strong> (execute) that function when you want to perform those steps.</p>
+<p>In addition to grouping instructions, functions in programming languages like Python also follow the mathematical definition of functions, which is a set of operations (instructions!) that are performed on some <strong>inputs</strong> and lead to some <strong>outputs</strong>. Functions inputs are called <strong>arguments</strong> or <strong>parameters</strong>, and we say that these arguments are <strong>passed</strong> to a function (like a football). We say that a function then <strong>returns</strong> an ouput for us to use.</p>
+</div>
+<div id="python-function-syntax" class="section level2">
+<h2><span class="header-section-number">2.3</span> Python Function Syntax</h2>
+<p>Python functions are referred to by name (technically they are values like any other variable). As in many programming languages, we <strong>call</strong> a function by writing the name of the function followed immediately (no space) by parentheses <code>()</code>. Inside the parentheses, we put the <strong>arguments</strong> (inputs) to the function separated by commas. Thus computer functions look just like mathematical functions, but with names longer than <code>f()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># call the print() function, pass it &quot;Hello world&quot; value as an argument</span>
+<span class="bu">print</span>(<span class="st">&quot;Hello world&quot;</span>)  <span class="co"># &quot;Hello world&quot;</span>
+
+<span class="co"># call the str() function, pass it 598 as an argument</span>
+<span class="bu">str</span>(<span class="dv">598</span>)  <span class="co"># &quot;598&quot;</span>
+
+<span class="co"># call the len() function, pass it &quot;python&quot; as an argument</span>
+<span class="bu">len</span>(<span class="st">&quot;python&quot;</span>)  <span class="co"># 6 (the word is 6 letters long)</span>
+
+<span class="co"># call the round() function, pass it 3.1415 as the first arg and 2 as the second</span>
+<span class="co"># this is an example of a function that takes multiple (ordered) args</span>
+<span class="bu">round</span>(<span class="fl">3.1415</span>, <span class="dv">2</span>)  <span class="co"># 3.14, (3.1415 rounded to 2 decimal places)</span>
+
+<span class="co"># call the min() function, pass it 1, 6/8, AND 4/3 as arguments</span>
+<span class="co"># this is another example of a function that takes multiple args</span>
+<span class="bu">min</span>(<span class="dv">1</span>, <span class="dv">6</span><span class="op">/</span><span class="dv">8</span>, <span class="dv">4</span><span class="op">/</span><span class="dv">3</span>)  <span class="co"># 0.75, (6/8 is the smallest value)</span></code></pre></div>
+<ul>
+<li><em>Note:</em> To keep functions and variables distinct, I try to always include empty parentheses <code>()</code> when referring to a function name. This does <em>not</em> mean that the function takes no arguments, it is just a useful shorthand for indicating that something is a function rather than a variable.</li>
+</ul>
+<p>Some functions (such as <code>min()</code> or <code>print()</code>) can be passed as many arguments as you wish: <code>min()</code> will find the minimum of <em>all</em> the arguments, and <code>print()</code> will print <em>all</em> the arguments (in order), separated by a space:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># print() with 3 arguments instead of 1</span>
+<span class="bu">print</span>(<span class="st">&quot;I&quot;</span>, <span class="st">&quot;love&quot;</span>, <span class="st">&quot;programming&quot;</span>)  <span class="co"># &quot;I love programming&quot;</span></code></pre></div>
+<p>Besides ordered <strong>positional arguments</strong>, functions may also take <strong>keyword arguments</strong>, which are arguments for specific function inputs. These are written like variable assignments, but within the function parameters:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Use the `sep` keyword argument to specify the separator is &#39;+++&#39;</span>
+<span class="bu">print</span>(<span class="st">&quot;Hello&quot;</span>, <span class="st">&quot;World&quot;</span>, sep<span class="op">=</span><span class="st">&#39;+++&#39;</span>)  <span class="co"># &quot;Hello+++World&quot;</span></code></pre></div>
+<p>Keyword arguments are always optional (they have “default” values, like how the separator for <code>print()</code> defaults to a single space <code>' '</code>). The default values are specified in the function documentation (e.g., for <a href="https://docs.python.org/3/library/functions.html#print"><code>print()</code></a>).</p>
+<p>If you call any of these functions interactively (e.g., in an interactvie shell or a Jupyter notebook), Python will display the <strong>returned value</strong>. However, the computer is not able to “read” what is written to the console or an output cell—that’s for humans to view! If we want the computer to be able to <em>use</em> a returned value, we will need to give that value a name so that the computer can refer to it. That is, we need to store the returned value in a variable:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># store min value in smallest_number variable</span>
+smallest_number <span class="op">=</span> <span class="bu">min</span>(<span class="dv">1</span>, <span class="dv">6</span><span class="op">/</span><span class="dv">8</span>, <span class="dv">4</span><span class="op">/</span><span class="dv">3</span>, <span class="dv">5</span><span class="op">+</span><span class="dv">9</span>)
+
+<span class="co"># we can then use the variable as normal, such as mathematical operations</span>
+twice_min <span class="op">=</span> smallest_number <span class="op">*</span> <span class="dv">2</span>  <span class="co"># 1.5</span>
+
+<span class="co"># we can use functions directly in expressions (the returned value is anonymous)</span>
+number <span class="op">=</span> .<span class="dv">5</span> <span class="op">*</span> <span class="bu">round</span>(<span class="fl">9.8</span>)  <span class="co"># 5.0</span>
+
+<span class="co"># we can even pass the result of a function as an argument to another!</span>
+<span class="co"># watch out for where the parentheses close!</span>
+<span class="bu">print</span>(<span class="bu">min</span>(<span class="fl">2.0</span>, <span class="bu">round</span>(<span class="fl">1.4</span>)))  <span class="co"># prints 1</span></code></pre></div>
+<div id="object-methods" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Object Methods</h3>
+<p>In Python, all data values are <strong>objects</strong>, which are groups of data (called <em>attributes</em>) and behaviors—that is, information about the value and the <em>functions</em> that can be applied to that data. For example, a Person object may have a name (e.g., <code>&quot;Ada&quot;</code>) and some behavior it can do to that data (e.g., <code>say_name()</code>). Functions that are applied to an object’s data are also known as <strong>methods</strong>. We say that a method is <em>called on</em> that object.</p>
+<p>While we’ll discuss objects in more much detail later, for now we need to understand that some functions are called <em>on</em> particular values. This is done using <strong>dot notation</strong>: you write the name of the variable you wish to call the method on (i.e., apply the function to), followed by a period (dot) <strong><code>.</code></strong>, followed by the method name and arguments:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">message <span class="op">=</span> <span class="st">&quot;Hello World&quot;</span>
+
+<span class="co"># call the lower() method on the message to make a lowercase version</span>
+<span class="co"># Note that the original string does not change (strings are immutable)</span>
+lower_message <span class="op">=</span> message.lower()  <span class="co"># &quot;hello world&quot;</span>
+
+<span class="co"># call the replace() method on the message</span>
+western_message <span class="op">=</span> message.replace(<span class="st">&quot;Hello&quot;</span>, <span class="st">&quot;Howdy&quot;</span>)  <span class="co"># &quot;Howdy World&quot;</span></code></pre></div>
+<p>This is a common way of utilizing built-in Python functions.</p>
+<ul>
+<li>Note that dot notation is also used to access the <strong>attributes</strong> or <strong>properties</strong> of an object. So if a <code>Person</code> object has a <code>name</code> attribute, you would refer to that as <code>person.name</code>. In this sense, you can think of the <em>dot operator</em> as being like the possessive <code>'s</code> in English: <code>person.name</code> refers so “<code>person</code>**‘s** <code>name</code>’“.</li>
+</ul>
+</div>
+</div>
+<div id="built-in-python-functions" class="section level2">
+<h2><span class="header-section-number">2.4</span> Built-in Python Functions</h2>
+<p>As you may have noticed, Python comes with a large number of functions that are built into the language. In the above examples, we used the <code>print()</code> function to print a value to the console, the <code>min()</code> function to find the smallest number among the arguments, and the <code>round()</code> function to round to whole numbers. Similarly, each data type in the language comes with their own set of methods: such as the <code>lower()</code> and <code>replace()</code> methods on strings.</p>
+<p>These functions are all described in the <a href="https://docs.python.org/3/index.html">official documentation</a>. For example, you can find a <a href="https://docs.python.org/3/library/functions.html">list of built-in functions</a> (though most of them will not be useful for us), as well as a <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">list of string methods</a>. To learn more about any individual function as well as what functions are available, look it up in the documentation. You can also use the <code>help()</code> function to look up the details of other functions: <code>help(print)</code> will look up information on the <code>print()</code> function.</p>
+<p><strong>Important</strong> “Knowing” how to program in a language is to some extent simply “knowing” what provided functions are available in that language. Thus you should look around and become familiar with these functions… but <em>do not</em> feel that you need to memorize them! It’s enough to simply be aware “oh yeah, there was a function that rounded numbers”, and then be able to look up the name and arguments for that function.</p>
+<div id="modules-and-libraries" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Modules and Libraries</h3>
+<p>While Python has lots of built-in functions, many of them are not immediately available for use. Instead, these functions are organized into <strong>modules</strong>, which are collections of related functions and variables. You must specifically load a module into your program in order to access it’s functions; this helps to reduce the amount of memory that the Python interpreter needs to use in order to keep track of all of the functions available.</p>
+<p>You load a module (make it available to your program) by using the <code>import</code> keyword, followed by the name of the module. This only needs to be done once per script execution, and so is normally done at the “top” of the script (in a Jupyter notebook, you can include an “importing” code cell, or import the module at the top of the cell in which you first need it):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># load the math module, which contains mathematical functions</span>
+<span class="im">import</span> math
+
+<span class="co"># call the math module&#39;s sqrt() function to calculate square root</span>
+math.sqrt(<span class="dv">25</span>)  <span class="co"># 5.0, (square root of 25)</span>
+
+<span class="co"># print out the math modules `pi` variable</span>
+<span class="bu">print</span>(math.pi)  <span class="co"># 3.141592653589793</span></code></pre></div>
+<p>Notice that we again use <strong>dot notation</strong> to call functions of a particular module. Again, think of the <code>.</code> as a possessive <code>'s</code> (“the <code>math</code> module<strong>’s</strong> <code>sqrt</code> function”).</p>
+<p>It is also possible to import only select functions or variables from a module by using <code>from MODULE import FUNCTION</code>. This will load the specific functions or variables into the <em>global scope</em>, allowing you to call them without specifying the module:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># import the sqrt() function from the math module</span>
+<span class="im">from</span> math <span class="im">import</span> sqrt
+
+<span class="co"># call the imported sqrt() function</span>
+sqrt(<span class="dv">25</span>)  <span class="co"># 5.0</span>
+
+<span class="co"># import multiple values by separating them with commas</span>
+<span class="im">from</span> math <span class="im">import</span> sin, cos pi
+
+sin(pi<span class="op">/</span><span class="dv">2</span>)  <span class="co"># 1.0</span>
+cos(pi<span class="op">/</span><span class="dv">2</span>)  <span class="co"># 6.123233995736766e-17; 0 but with precision errors</span>
+
+<span class="co"># import everything from math</span>
+<span class="co"># this is useful for module with long or confusing names</span>
+<span class="im">from</span> math <span class="im">import</span> <span class="op">*</span></code></pre></div>
+<p>The collection of built-in modules such as <code>math</code> make up what is called the <em>standard library</em> of Python functions. However, it’s also possible to download and import additional modules written and published by the Python community—what are known as <strong>libraries</strong> or <strong>packages</strong>. Because many Python users encounter the same challenges, programmers are able to benefit from the work of other and <em>reuse</em> solutions. This is the amazing thing about the open-source community: people solve problems and then make those solutions available to others.</p>
+<p>A large number of additional libraries are included with the <a href="https://www.continuum.io/">Anaconda</a> distribution you installed in module 1. Anaconda also comes with a command-line utility <a href="https://conda.io/docs/"><code>conda</code></a> that can be used to easily download and install new libraries. For example if you needed to install Jupyter, you could use the command <code>conda install jupyter</code> from the command-line.</p>
+<ul>
+<li>Python also comes with a command-line utility called <a href="https://pip.pypa.io/en/stable/"><code>pip</code></a> for (“pip installs packages”) that can similarly be used to easily download and install packages. Note that you may need to set up a <a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/">virtual environment</a> to effectively use <code>pip</code>; thus I recommend you rely on <code>conda</code> instead‐though the Anaconda package has everything you will need for this course.</li>
+</ul>
+</div>
+</div>
+<div id="writing-functions" class="section level2">
+<h2><span class="header-section-number">2.5</span> Writing Functions</h2>
+<p>Even more common than loading other peoples’ functions is writing your own. Functions are the primary way that we <em>abstract</em> program instructions, acting sort of like “mini progams” inside your larger script. As Downey says:</p>
+<blockquote>
+<p>Their primary purpose is to help us organize programs into chunks that match how we think about the problem.</p>
+</blockquote>
+<p>Any time you want to organize your thinking—or if you have a task that you want to repeat through the script—it’s good practice to write a function to perform that task. This will make your program easier to understand and uilt, as well as limit repetition and reduce the likelihood of error.</p>
+<p>The best way to understand the syntax for defining a function is to look at an example:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># A function named `MakeFullName` that takes two arguments</span>
+<span class="co"># and returns the &quot;full name&quot; made from them</span>
+<span class="kw">def</span> make_full_name(first_name, last_name):
+    <span class="co"># Function body: perform tasks in here</span>
+    full_name <span class="op">=</span> first_name <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> last_name
+
+    <span class="co"># Return: what you want the function to output</span>
+    <span class="cf">return</span> full_name
+
+<span class="co"># Call the make_ful_name function with the values &quot;Alice&quot; and &quot;Kim&quot;</span>
+my_name <span class="op">=</span> make_full_name(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Kim&quot;</span>)  <span class="co"># &quot;Alice Kim&quot;</span></code></pre></div>
+<p>Functions have a couple of pieces to them:</p>
+<ul>
+<li><strong><code>def</code></strong>: Functions are defined by using the <code>def</code> keyword, which indicates that you are defining a function rather than a regular variable. This is followed by the <strong>name</strong> of the function, then a set of parentheses containing the arguments (Note that the <code>function_name(arguments)</code> syntax mirrors how functions are called).</li>
+</ul>
+<p>The line ends with a colon <strong><code>:</code></strong> which starts the function body (see below).</p>
+<ul>
+<li><strong>Arguments</strong>: The values put betweeen the parentheses in the function definition line are variables that <em>will contain</em> the values passed in as <strong>arguments</strong>. For example, when we call <code>make_full_name(&quot;Alice&quot;,&quot;Kim&quot;)</code>, the value of the first argument (<code>&quot;Alice&quot;</code>) will be assigned to the first variable (<code>first_name</code>), and the value of the second argument (<code>&quot;Kim&quot;</code>) will be assigned to the second variable (<code>last_name</code>).</li>
+</ul>
+<p>Importantly, we could have made the argument names anything we wanted (<code>name_first</code>, <code>given_name</code>, etc.), just as long as we then use <em>that variable name</em> to refer to the argument while inside the function. Moreover, these argument variable names <em>only apply</em> while inside the function (they are <strong>scoped</strong> to the function). You can think of them like “nicknames” for the values. The variables <code>first_name</code>, <code>last_name</code>, and <code>full_name</code> only exist within this particular function.</p>
+<p>Note that a function may have no arguments, causing the parenthese to be empty:</p>
+<p><code>python   def say_hello():       print(&quot;Hello world!&quot;)</code></p>
+<p>You can give a function <em>keyword arguments</em> by assigning a default value to the argument in the function definition:</p>
+<p>```python # includes a single keyword argument def greet(greeting = “Hello”): print(greeting + &quot; world“)</p>
+<p># call by assigning to the arg greet(greeting = “Hi”) # “Hi world”</p>
+<p># call wihout assigning an argument, using the default value greet() # “Hello world” ```</p>
+<ul>
+<li><p><strong>Body</strong>: The body of the function is a <strong>block</strong> of code. The funcion definition ends with a colon <strong><code>:</code></strong> to indicate that it is followed by a <em>block</em>, which is a list of Python statements (lines of code). Which statements are part of the block are indicated by <em>indentation</em>: statements are indented by 4 spaces to make them part of that particular block. A block can contain as many lines of code as you want—you’ll usually want more than 1 to make a function workwhile, but if you have more than 20 you might want to break your code up into separate functions. You can use the argument variables in here, create new variables, call other functions… basically any code that you would write outside of a function can be written inside of one as well!</p></li>
+<li><p><strong>Return value</strong>: You can specify what output a function produces by using the <strong><code>return</code></strong> keyword, followed by the value that you wish <em>your function</em> to return (output). A <code>return</code> statement will end the current function and <em>return</em> the flow of code execution to whereever this function was called from. Note that even though we returned a variable called <code>full_name</code>, that variable was <em>local</em> to the function and so doesn’t exist outside of it; thus we have to take the returned value and assign it to a new variable (as with <code>my_name = make_full_name(&quot;Alice&quot;, &quot;Kim&quot;)</code>).</p></li>
+</ul>
+<p>Because the <code>return</code> statement exits the function, it is almost always the last line of code in the function; any statements after a <code>return</code> statement will not be run!</p>
+<ul>
+<li>A function does not need to return a value (as in the <code>say_helo()</code> example above). In this case, omit the <code>return</code> statement.</li>
+</ul>
+<p>We can call (execute) a function we defined the same way we called built-in functions. When we do so, Python will take the <strong>arguments</strong> we passed in (e.g., <code>&quot;Alice&quot;</code> and <code>&quot;Kim&quot;</code>) and assign them to the <em>argument variables</em>. Then the interpreter executes each line of code in the <strong>function body</strong> one at a time. When it gets to the <code>return</code> statement, it will end the function and return the given value, which can then be assigned to a different variable (outside of the function).</p>
+<div id="doc-strings" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Doc Strings</h3>
+<p>We create new functions as ways of <em>abstracting</em> behavior, in order to make programs easier to read and understand. Thus it is important to be clear about the purpose and use of any functions you create. This can partially done through effective function and argument names: <code>def calc_rectangle_area(width, height)</code> is pretty self-explanatory, whereas <code>def func(a,b,c)</code> isn’t).</p>
+<ul>
+<li><em>Style requirement:</em> Name functions as phrases starting with <em>verbs</em> (because function do things), and variables as nouns.</li>
+</ul>
+<p>Nevertheless, in order to make sure that functions are as clear as possible, you should include <strong>documentation</strong> in the form of a <em>comment</em> that describes in plain English what a function does: its inputs (arguments) once, output (return value), and overall behavior. In Python we document functions by providing a <strong>doc string</strong>. This is a string literal (written in multi-line triple quotes <code>&quot;&quot;&quot;</code>) placed immediately below the function declaration:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> to_celcius(degrees_farenheit):
+    <span class="co">&quot;&quot;&quot;Converts the given degrees (in Farenheit) to degrees in celcius, and</span>
+<span class="co">       returns the result.</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    celcius <span class="op">=</span> (degrees_farenheit <span class="op">-</span> <span class="dv">32</span>)<span class="op">*</span>(<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>)
+    <span class="cf">return</span> celcius</code></pre></div>
+<ul>
+<li><p>Note that this string isn’t assigned to a variable; it is treated as a valid statement because it is immediately below the function declaration.</p></li>
+<li><p>You can view the doc string by calling the <code>help()</code> function with your function’s name as the parameter! In fact, when you call <code>help()</code> on any built-in function, what you are viewing is that function’s doc string.</p></li>
+</ul>
+<p>Doc strings should include the following information:</p>
+<ol style="list-style-type: decimal">
+<li>What the function does <em>from the perspective of someone who would call the function</em>. This should be a short (1-2 sentence) summary; don’t describe the individual instructions that are executed, but an <em>abstraction</em> of the code’s purpose.</li>
+</ol>
+<ul>
+<li>If you mention variables, operations, functions, or control structures, your comment isn’t at a high enough level of abstraction!</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Descriptions of the expected arguments. Clarify any ambiguities in type (e.g., a number or a string) and units.</p></li>
+<li><p>Description of the returned value (if any). Explain the meaning, type (e.g., number or string), etc.</p></li>
+</ol>
+<p>It’s good to think of doc strings as defining a “contract”: you are specifying that “if you give the function this set of inputs, it will perform this behavior and give you this output.”.</p>
+<p>For simple methods you can build this information into a single sentence as in the above example. But for more complex functions, you may need to use a more complex format for your doc string. See the <a href="http://google.github.io/styleguide/pyguide.html?showone=Comments#Comments">Google Style Guide</a> for an example.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-python.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="logic-and-conditionals.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-functions.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

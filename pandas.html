@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python Basics for Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Python Basics for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Python Basics for Data Science" />
+  
+  <meta name="twitter:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2017-12-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="functional-iteration.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Python Basics for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introductory Python materials for the INFO 370: Introduction to Data Science Course.</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources"><i class="fa fa-check"></i><b>1.1</b> Resources</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>1.2</b> Programming with Python</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>1.2.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>1.3</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#command-line"><i class="fa fa-check"></i><b>1.3.1</b> Command-Line</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>1.3.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#python-basics"><i class="fa fa-check"></i><b>1.4</b> Python Basics</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>1.5</b> Comments</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>1.6</b> Variables</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>1.6.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>1.7</b> Getting Help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2</b> Functions</a><ul>
+<li class="chapter" data-level="2.1" data-path="functions.html"><a href="functions.html#resources-1"><i class="fa fa-check"></i><b>2.1</b> Resources</a></li>
+<li class="chapter" data-level="2.2" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>2.2</b> What are Functions?</a></li>
+<li class="chapter" data-level="2.3" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>2.3</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>2.3.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>2.4</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>2.4.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>2.5</b> Writing Functions</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>2.5.1</b> Doc Strings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html"><i class="fa fa-check"></i><b>3</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#resources-2"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
+<li class="chapter" data-level="3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#booleans"><i class="fa fa-check"></i><b>3.2</b> Booleans</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#boolean-operators"><i class="fa fa-check"></i><b>3.2.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#conditional-statements"><i class="fa fa-check"></i><b>3.3</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#designing-conditions"><i class="fa fa-check"></i><b>3.3.1</b> Designing Conditions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#modules-vs.scripts"><i class="fa fa-check"></i><b>3.3.2</b> Modules vs. Scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>4</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-3"><i class="fa fa-check"></i><b>4.1</b> Resources</a></li>
+<li class="chapter" data-level="4.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>4.2</b> While Loops</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>4.2.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="4.2.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#conditionals-and-sentinels"><i class="fa fa-check"></i><b>4.2.2</b> Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>4.3</b> For Loops</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>4.3.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#working-with-files"><i class="fa fa-check"></i><b>4.4</b> Working with Files</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>4.4.1</b> Try/Except</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>5</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="5.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-4"><i class="fa fa-check"></i><b>5.1</b> Resources</a></li>
+<li class="chapter" data-level="5.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists"><i class="fa fa-check"></i><b>5.2</b> Lists</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>5.2.1</b> List Indices</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>5.3</b> List Operations and Methods</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>5.3.1</b> Lists and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>5.4</b> Nested Lists</a></li>
+<li class="chapter" data-level="5.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>5.5</b> Tuples</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>6</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.1" data-path="dictionaries.html"><a href="dictionaries.html#resources-5"><i class="fa fa-check"></i><b>6.1</b> Resources</a></li>
+<li class="chapter" data-level="6.2" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-1"><i class="fa fa-check"></i><b>6.2</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>6.2.1</b> Accessing a Dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>6.3</b> Dictionary Methods</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>6.3.1</b> Dictionaries and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>6.4</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="6.5" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>6.5</b> Which data structure do I use?</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functional-iteration.html"><a href="functional-iteration.html"><i class="fa fa-check"></i><b>7</b> Functional Iteration</a><ul>
+<li class="chapter" data-level="7.1" data-path="functional-iteration.html"><a href="functional-iteration.html#resources-6"><i class="fa fa-check"></i><b>7.1</b> Resources</a></li>
+<li class="chapter" data-level="7.2" data-path="functional-iteration.html"><a href="functional-iteration.html#functions-are-variables"><i class="fa fa-check"></i><b>7.2</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="functional-iteration.html"><a href="functional-iteration.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>7.2.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="functional-iteration.html"><a href="functional-iteration.html#functional-looping"><i class="fa fa-check"></i><b>7.3</b> Functional Looping</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="functional-iteration.html"><a href="functional-iteration.html#map"><i class="fa fa-check"></i><b>7.3.1</b> Map</a></li>
+<li class="chapter" data-level="7.3.2" data-path="functional-iteration.html"><a href="functional-iteration.html#filter"><i class="fa fa-check"></i><b>7.3.2</b> Filter</a></li>
+<li class="chapter" data-level="7.3.3" data-path="functional-iteration.html"><a href="functional-iteration.html#reduce"><i class="fa fa-check"></i><b>7.3.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="functional-iteration.html"><a href="functional-iteration.html#list-comprehensions"><i class="fa fa-check"></i><b>7.4</b> List Comprehensions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>8</b> Pandas</a><ul>
+<li class="chapter" data-level="8.1" data-path="pandas.html"><a href="pandas.html#resources-7"><i class="fa fa-check"></i><b>8.1</b> Resources</a></li>
+<li class="chapter" data-level="8.2" data-path="pandas.html"><a href="pandas.html#setup"><i class="fa fa-check"></i><b>8.2</b> Setup</a></li>
+<li class="chapter" data-level="8.3" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>8.3</b> Series</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>8.3.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="8.3.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>8.3.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="pandas.html"><a href="pandas.html#data-frames"><i class="fa fa-check"></i><b>8.4</b> Data Frames</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>8.4.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="8.4.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>8.4.2</b> Accessing DataFrames</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Python Basics for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pandas" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Pandas</h1>
+<p>This module introduces the <em>Python Data Analysis</em> library <a href="http://pandas.pydata.org/"><strong><code>pandas</code></strong></a>—a set of modules, functions, and classes used to for easily and efficiently performing data analysis—<code>panda</code>’s speciality is its highly optimized performance when working with large data sets. <code>pandas</code> is the most common library used with Python for Data Science (and mirrors the <code>R</code> language in many ways, allowing programmers to easily move between the two). In this module, we will discuss the two main data structures used by <code>pandas</code> (<em>Series</em> and <em>DataFrames</em>) and how to use them to organize and work with data.</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="introduction-to-python.html#resources">Resources</a></li>
+<li><a href="pandas.html#setup">Setup</a></li>
+<li><a href="pandas.html#series">Series</a></li>
+<li><a href="pandas.html#series-operations-and-methods">Series Operations and Methods</a></li>
+<li><a href="pandas.html#accessing-series">Accessing Series</a></li>
+<li><a href="pandas.html#data-frames">Data Frames</a></li>
+<li><a href="pandas.html#dataframe-operations-and-methods">DataFrame Operations and Methods</a></li>
+<li><a href="pandas.html#accessing-dataframes">Accessing DataFrames</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<div id="resources-7" class="section level2">
+<h2><span class="header-section-number">8.1</span> Resources</h2>
+<ul>
+<li><a href="http://pandas.pydata.org/pandas-docs/stable/10min.html">10 minutes to pandas (pandas docs)</a> a basic set of examples</li>
+<li><a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html">Tutorials (pandas docs)</a> a list and guide to various tutorials (of mixed quality)</li>
+<li><a href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html">Intro to Data Structure (pandas docs)</a></li>
+<li><a href="http://pandas.pydata.org/pandas-docs/stable/basics.html">Essential Basic Functionality (pandas docs)</a> not really basic, but a complete set of examples</li>
+<li><a href="http://dataanalysispython.readthedocs.io/en/latest/pandas.html">Pandas. Data Processing (Data Analysis in Python)</a></li>
+<li><a href="https://www.datacamp.com/courses/pandas-foundations/">pandas Foundations (DataCamp)</a></li>
+</ul>
+</div>
+<div id="setup" class="section level2">
+<h2><span class="header-section-number">8.2</span> Setup</h2>
+<p><code>pandas</code> is a <strong>third-party</strong> library (not built into Python!), but is included by default with Anaconda and so can be imported directly. Additionally, Pandas is built on top of the <a href="http://www.numpy.org/"><code>numpy</code></a> scientific computing library which supports highly optimized mathematical operations. Thus many <code>pandas</code> operations involve working with <code>numpy</code> data structures, and the <code>pandas</code> library requires <code>numpy</code> (also included in Anaconda) to also be imported:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># import libraries</span>
+<span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># standard shortcut names</span>
+<span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<ul>
+<li><p>We usually <code>import</code> the module and reference types and methods using dot notation, rather than importing them into the global namespace.</p></li>
+<li><p>Note that this module will focus primarily on <code>pandas</code>, leaving <code>numpy</code>-specific data structures and functions for the reader to explore.</p></li>
+</ul>
+</div>
+<div id="series" class="section level2">
+<h2><span class="header-section-number">8.3</span> Series</h2>
+<p>The first basic <code>pandas</code> data structure is a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html"><strong>Series</strong></a>. A Series represents a <em>one-dimensional ordered collection of values</em>, making them somewhat similar to a regular Python <em>list</em>. However, elements can also be given <em>labels</em> (called the <strong>index</strong>), which can be non-numeric values, similar to a <em>key</em> in a Python <em>dictionary</em>. This makes a Series somewhat like an ordered dictionary—one that supports additional methods and efficient data-processing behaviors.</p>
+<p>Series can be created using the <code>Series()</code> function (a <em>constructor</em> for instances of the class):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># create a Series from a list</span>
+number_series <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>])
+<span class="bu">print</span>(number_series)</code></pre></div>
+<p>produces</p>
+<pre><code>0    1
+1    2
+2    2
+3    3
+4    5
+5    8
+dtype: int64</code></pre>
+<p>Printing a Series will display it like a <em>table</em>: the first value in each row is the <strong>index</strong> (label) of that element, and the second is the value of the element in the Series.</p>
+<ul>
+<li>Printing will also display the <em>type</em> of the elements in the Series. All elements in the Series will be treated as “same” type—if you create a Series from mixed elements (e.g., numbers and strings), the type will be the a generic <code>object</code>. In practice, we almost always create Series from a single type.</li>
+</ul>
+<p>If we create a Series from a list, each element will be given an <em>index</em> (label) that is that values’s index in the list. We can also create a Series from a <em>dictionary</em>, in which case the keys will be used as the index labels:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># create a Series from a dictionary</span>
+age_series <span class="op">=</span> pd.Series({<span class="st">&#39;sarah&#39;</span>:<span class="dv">42</span>, <span class="st">&#39;amit&#39;</span>:<span class="dv">35</span>, <span class="st">&#39;zhang&#39;</span>:<span class="dv">13</span>})
+<span class="bu">print</span>(age_series)</code></pre></div>
+<pre><code>amit     35
+sarah    42
+zhang    13
+dtype: int64</code></pre>
+<ul>
+<li>Note that the Series is automatically <strong>sorted</strong> by the keys of the dictionary! This means that the order of the elements in the Series will always be the same for a given dictionary (which cannot be said for the dictionary items themselves).</li>
+</ul>
+<div id="series-operations-and-methods" class="section level3">
+<h3><span class="header-section-number">8.3.1</span> Series Operations and Methods</h3>
+<p>The main benefit of Series (as opposed to normal lists or dictionaries) is that they provide a number of operations and methods that make it easy to consider and modify the entire Series, rather than needing to worth with each element individually. In a way, the functions include built-in <em>mapping</em>, <em>reducing</em>, and <em>filtering</em> style operations.</p>
+<p>In particular, basic operators (whether math operators such as <code>+</code> and <code>-</code>, or relational operators such as <code>&gt;</code> or <code>==</code>) function as <strong>vectorized operations</strong>, meaning that they are applied to the entire Series <strong>member-wise</strong>: the operation is applied to the first element in the Series, then the second, then the third, and so forth:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">sample <span class="op">=</span> pd.Series(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">6</span>))  <span class="co"># Series of numbers from 1 to 5 (6 is excluded)</span>
+result <span class="op">=</span> sample <span class="op">+</span> <span class="dv">4</span>  <span class="co"># add 4 to each element (produces new Series)</span>
+<span class="bu">print</span>(result)
+    <span class="co"># 0    5</span>
+    <span class="co"># 1    6</span>
+    <span class="co"># 2    7</span>
+    <span class="co"># 3    8</span>
+    <span class="co"># 4    9</span>
+    <span class="co"># dtype: int64</span>
+
+is_greater_than_3 <span class="op">=</span> sample <span class="op">&gt;</span> <span class="dv">3</span>  <span class="co"># compare each element</span>
+<span class="bu">print</span>(is_greater_than_3)
+    <span class="co"># 0    False</span>
+    <span class="co"># 1    False</span>
+    <span class="co"># 2    False</span>
+    <span class="co"># 3     True  # note index and value are not the same</span>
+    <span class="co"># 4     True</span>
+    <span class="co"># dtype: bool</span></code></pre></div>
+<ul>
+<li>Having a Series operation apply to a <em>scalar</em> (a single value) is referred to as <a href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html"><strong>broadcasting</strong></a>. The idea is that the smaller “set” of elements (e.g., a single value) is <em>broadcast</em> so that it has a comparible size, thereby allowing different “sized” data structures to interact. Technically, operating on a Series with a <em>scalar</em> is actually a specific case of operating on it with another Series!</li>
+</ul>
+<p>If the second operand is <em>another Series</em>, then mathematical and relational operations are still applied <strong>member-wise</strong>, with the elements of each operand being “matched” by their index label. This means that for most Series whose indices are</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s1 <span class="op">=</span> pd.Series([<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>])
+s2 <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])
+
+<span class="co"># examples of operations (list only includes values)</span>
+<span class="bu">list</span>(s1 <span class="op">+</span> s2)  <span class="co"># [3, 4, 5, 6, 7]</span>
+<span class="bu">list</span>(s1 <span class="op">/</span> s2)  <span class="co"># [2.0, 1.0, 0.66666666666666663, 0.5, 0.40000000000000002]</span>
+<span class="bu">list</span>(s1 <span class="op">&lt;</span> s2)  <span class="co"># [False, False, True, True, True]</span>
+
+<span class="co"># add a Series to itself (why not?)</span>
+<span class="bu">list</span>(s2 <span class="op">+</span> s2)  <span class="co"># [2, 4, 6, 8, 10]</span>
+
+<span class="co"># perform more advanced arithmetic!</span>
+s3 <span class="op">=</span> (s1 <span class="op">+</span> s2) <span class="op">/</span> (s1 <span class="op">+</span> s1)
+<span class="bu">list</span>(s3)  <span class="co"># [0.75, 1.0, 1.25, 1.5, 1.75]</span></code></pre></div>
+<p>And note that these operations will be <em>fast</em>, even for very large Series, allowing for effective data manipulations.</p>
+<p><code>pandas</code> Series also include a number of <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html"><em>methods</em></a> for inspecting and manipulating the data. Some useful examples (not comprehensive):</p>
+<table style="width:11%;">
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>index</code></td>
+<td>an <em>attribute</em>; the sequence of index labels (convert to a <em>list</em> to use)</td>
+</tr>
+<tr class="even">
+<td><code>head(n)</code></td>
+<td>returns a Series containing only the first <code>n</code> elements</td>
+</tr>
+<tr class="odd">
+<td><code>tail(n)</code></td>
+<td>returns a Series containing only the last <code>n</code> elements</td>
+</tr>
+<tr class="even">
+<td><code>any()</code></td>
+<td>returns whether ANY of the elements are <code>True</code> (or “truthy”)</td>
+</tr>
+<tr class="odd">
+<td><code>all()</code></td>
+<td>returns whether ALL of the elements are <code>True</code> (or “truthy”)</td>
+</tr>
+<tr class="even">
+<td><code>mean()</code></td>
+<td>returns the statistical mean of the elements in the Series</td>
+</tr>
+<tr class="odd">
+<td><code>std()</code></td>
+<td>returns the standard deviation of the elements in the Series</td>
+</tr>
+<tr class="even">
+<td><code>describe()</code></td>
+<td>returns a Series of <a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#descriptive-statistics">descriptive statistics</a></td>
+</tr>
+<tr class="odd">
+<td><code>idxmax()</code></td>
+<td>returns the index label of the element with the max value</td>
+</tr>
+</tbody>
+</table>
+<p>Series support many more methods as well: see the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">full documentation</a> for a complete list.</p>
+<p>One particularly useful method to mention is the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.apply.html#pandas.Series.apply"><code>apply()</code></a> method. This method is used to <em>apply</em> a particular <strong>callback function</strong> to each element in the series. This is a <em>mapping</em> operation, similar to what we’ve done with the <code>map()</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> square(n):  <span class="co"># a function that squares a number</span>
+    <span class="cf">return</span> n<span class="op">**</span><span class="dv">2</span>
+
+number_series <span class="op">=</span> pd.Series([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>])  <span class="co"># an initial series</span>
+
+square_series <span class="op">=</span> number_series.<span class="bu">apply</span>(square)
+<span class="bu">list</span>(square_series)  <span class="co"># [1, 4, 9, 16, 25]</span>
+
+<span class="co"># can also apply built-in functions</span>
+<span class="im">import</span> math
+sqrt_series <span class="op">=</span> number_series.<span class="bu">apply</span>(math.sqrt)
+<span class="bu">list</span>(sqrt_series)  <span class="co"># [1.0, 1.4142135623730951, 1.7320508075688772, 2.0, 2.2360679774997898]</span>
+
+<span class="co"># pass additional arguments as keyword args (or `args` for a single argument)</span>
+cubed_series <span class="op">=</span> number_series.<span class="bu">apply</span>(math.<span class="bu">pow</span>, args<span class="op">=</span>(<span class="dv">3</span>,)) <span class="co"># call math.exp(n, 3) on each</span>
+<span class="bu">list</span>(cubed_series)  <span class="co"># [1.0, 8.0, 27.0, 64.0, 125.0]</span></code></pre></div>
+</div>
+<div id="accessing-series" class="section level3">
+<h3><span class="header-section-number">8.3.2</span> Accessing Series</h3>
+<p>Just like lists and dictionaries, elements in a Series can be accessed using <strong>bracket notation</strong>, putting the index label inside the brackets:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">number_series <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>])
+age_series <span class="op">=</span> pd.Series({<span class="st">&#39;sarah&#39;</span>:<span class="dv">42</span>, <span class="st">&#39;amit&#39;</span>:<span class="dv">35</span>, <span class="st">&#39;zhang&#39;</span>:<span class="dv">13</span>})
+
+<span class="co"># get the 1th element from the number_series</span>
+number_series[<span class="dv">1</span>]  <span class="co"># 2</span>
+
+<span class="co"># get the &#39;sarah&#39; element from age_series</span>
+age_series[<span class="st">&#39;amit&#39;</span>]  <span class="co"># 35</span>
+
+<span class="co"># get the 0th element from age_series</span>
+<span class="co"># (Series are ordered, so can be accessed positionally)</span>
+age_series[<span class="dv">0</span>]  <span class="co"># 42</span></code></pre></div>
+<p>Note that the returned values are not technically basic <code>int</code> or <code>float</code> or <code>string</code> types, but are rather specific <code>numpy</code> objects that work almost identically to their normal type (but with some additional optimization).</p>
+<p>You can also use list-style <em>slices</em> using the colon operator (e.g., elements <strong><code>1:3</code></strong>).</p>
+<p>it is also possible to specify <strong><em>a sequence of indicies</em></strong> (i.e., a <em>list</em> or <em>range</em> or even a <em>Series</em> of indices) to access using bracket notation. This will produce a new Series object that contains only the elements that have those labels:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">age_series <span class="op">=</span> pd.Series({<span class="st">&#39;sarah&#39;</span>:<span class="dv">42</span>, <span class="st">&#39;amit&#39;</span>:<span class="dv">35</span>, <span class="st">&#39;zhang&#39;</span>:<span class="dv">13</span>})
+
+index_list <span class="op">=</span> [<span class="st">&#39;sarah&#39;</span>, <span class="st">&#39;zhang&#39;</span>]
+<span class="bu">print</span>( age_series[index_list] )
+    <span class="co"># sarah    42</span>
+    <span class="co"># zhang    13</span>
+    <span class="co"># dtype: int64</span>
+
+<span class="co"># using an anonymous variable for the index list (notice the brackets!)</span>
+<span class="bu">print</span>( age_series[[<span class="st">&#39;sarah&#39;</span>, <span class="st">&#39;zhang&#39;</span>]] )
+    <span class="co"># sarah    42</span>
+    <span class="co"># zhang    13</span>
+    <span class="co"># dtype: int64</span></code></pre></div>
+<p>This also means that you can use something like a <em>list comprehension</em> to (or even a Series operation!) to determine which elements to select from a Series!</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">letter_series <span class="op">=</span> pd.Series([<span class="st">&#39;a&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>,<span class="st">&#39;d&#39;</span>,<span class="st">&#39;e&#39;</span>,<span class="st">&#39;f&#39;</span>])
+even_numbers <span class="op">=</span> [num <span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">6</span>) <span class="cf">if</span> num<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]  <span class="co"># list of even numbers</span>
+
+<span class="co"># get letters with even numbered indices</span>
+letter_series[even_numbers]  <span class="co"># []</span>
+    <span class="co"># 0    a</span>
+    <span class="co"># 2    c</span>
+    <span class="co"># 4    e</span>
+    <span class="co"># dtype: object</span>
+
+<span class="co"># in one line (check the brackets!)</span>
+letter_series[[num <span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">6</span>) <span class="cf">if</span> num<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]]</code></pre></div>
+<p>Finally, using a <strong><em>sequence of booleans</em></strong> with bracket notatoin will produce a new Series containing the elements whose position <em>corresponds</em> with <code>True</code> values. This is called <strong>boolean indexing</strong>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">shoe_sizes <span class="op">=</span> pd.Series([<span class="dv">7</span>, <span class="fl">6.5</span>, <span class="dv">4</span>, <span class="dv">11</span>, <span class="dv">8</span>])  <span class="co"># a series of shoe sizes</span>
+index_filter <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>, <span class="va">False</span>, <span class="va">True</span>, <span class="va">True</span>]  <span class="co"># list of which elements to extract</span>
+
+<span class="co"># extract every element in an index that is True</span>
+shoe_sizes[index_filter]  <span class="co"># has values 7.0, 11.0, 8.0</span></code></pre></div>
+<ul>
+<li>In this example, since <code>index_filter</code> is <code>True</code> at index 0, 3, and 4, then <code>shoe_sizes[index_filter]</code> returns a Series with the elements from index numbers 0, 3, and 4.</li>
+</ul>
+<p>This is incredibly powerful because it allows us to easily perform <strong>filtering</strong> operations on a Series:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">shoe_sizes <span class="op">=</span> pd.Series([<span class="dv">7</span>, <span class="fl">6.5</span>, <span class="dv">4</span>, <span class="dv">11</span>, <span class="dv">8</span>])  <span class="co"># a series of shoe sizes</span>
+big_sizes <span class="op">=</span> shoe_sizes <span class="op">&gt;</span> <span class="fl">6.5</span>  <span class="co"># has values True, False, False, True, True</span>
+
+big_shoes <span class="op">=</span> shoe_sizes[big_sizes]  <span class="co"># has values 7, 11, 8</span>
+
+<span class="co"># as one line</span>
+big_shoes <span class="op">=</span> shoe_sizes[shoe_size <span class="op">&gt;</span> <span class="fl">6.5</span>]</code></pre></div>
+<ul>
+<li><p>You can think of the last statement as saying <em>shoe sizes <strong>where</strong> shoe size is greater than 6.5</em>.</p></li>
+<li><p>You can include <em>logical operators</em> (“and” and “or”) by using the operators <code>&amp;</code> for “and” and <code>|</code> for “or”. Be sure to wrap each relational expression in <code>()</code> to enforce order of operations.</p></li>
+</ul>
+<p>While it is perfectly possible to do similar filtering with a list comprehension, the boolean indexing expression can be very simple to read and runs quickly. (This is also the normal style of doing filtering in the <code>R</code> programming language).</p>
+</div>
+</div>
+<div id="data-frames" class="section level2">
+<h2><span class="header-section-number">8.4</span> Data Frames</h2>
+<p>The most common data structure used in <code>pandas</code> (more common than Series) is a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html"><strong>DataFrame</strong></a>. A DataFrame represents a <strong>table</strong>, where data is organized into rows and columns. You can think of a DataFrame as being like a Excel spreadsheet or a SQL table.</p>
+<ul>
+<li>We have previously represented tabular data using a <em>list of dictionaries</em>. However, this required us to be careful to make sure that all of the dictionaries shared keys, and did not offer easy ways to interact with the table in terms of its rows or columns. DataFrames give us that functionality!</li>
+</ul>
+<p>A DataFrame can also be understood as a <em>dictionary of Series</em>, where each Series represents a <strong>column</strong> of the table. The keys of this dictionary are the <em>index labels</em> of the columns, while the the index labels of the Series serve as the labels for the row.</p>
+<ul>
+<li>This is distinct from spreadsheets or SQL tables, which are often seen as a collection of <em>observations</em> (rows). Programmatically, DataFrames should primarily be considered as a collection of <em>features</em> (columns), which happen to be sequenced to correspond to observations.</li>
+</ul>
+<p>A DataFrame can be created using the <code>DataFrame()</code> function (a <em>constructor</em> for instances of the class). This function usually takes as an argument <em>dictionary</em> where the values are Series (or values that can be converted into a Series, such as a list or a dictionary):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">name_series <span class="op">=</span> pd.Series([<span class="st">&#39;Ada&#39;</span>,<span class="st">&#39;Bob&#39;</span>,<span class="st">&#39;Chris&#39;</span>,<span class="st">&#39;Diya&#39;</span>,<span class="st">&#39;Emma&#39;</span>])
+heights <span class="op">=</span> <span class="bu">range</span>(<span class="dv">58</span>,<span class="dv">63</span>)
+weights <span class="op">=</span> [<span class="dv">115</span>, <span class="dv">117</span>, <span class="dv">120</span>, <span class="dv">123</span>, <span class="dv">126</span>]
+
+df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;name&#39;</span>:name_series, <span class="st">&#39;height&#39;</span>:heights, <span class="st">&#39;weight&#39;</span>:weights})
+<span class="bu">print</span>(df)
+    <span class="co">#    height   name  weight</span>
+    <span class="co"># 0      58    Ada     115</span>
+    <span class="co"># 1      59    Bob     117</span>
+    <span class="co"># 2      60  Chris     120</span>
+    <span class="co"># 3      61   Diya     123</span>
+    <span class="co"># 4      62   Emma     126</span></code></pre></div>
+<ul>
+<li>Although DataFrames variables are often named <code>df</code> in <code>pandas</code> examples, this is <strong><em>not</em></strong> a good variable name. You should use much more descriptive names for your DataFrames (e.g., <code>person_size_table</code>) when used in actual programs.</li>
+<li>You can specify the order of columns in the table using the <code>columns</code> keyword argument, and the order of the rows using the <code>index</code> keyword argument.</li>
+</ul>
+<p>It is also possible to create a DataFrame directly from a spreadsheet—such as from <strong><code>.csv</code></strong> file (containing <strong>c</strong>omma <strong>s</strong>separated <strong>v</strong>alues) by using the <code>pandas.read_csv()</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">my_dataframe <span class="op">=</span> pd.read_csv(<span class="st">&#39;path/to/my/file.csv&#39;</span>)</code></pre></div>
+<p>See <a href="http://pandas.pydata.org/pandas-docs/stable/io.html">the IO Tools documentation</a> for details and other file-reading functions.</p>
+<div id="dataframe-operations-and-methods" class="section level3">
+<h3><span class="header-section-number">8.4.1</span> DataFrame Operations and Methods</h3>
+<p>Much like Series, DataFrames support a <strong>vectorized</strong> form of mathematical and relational operators: when the other operand is a <em>scalar</em>, then the operation is applied member-wise to each value in the DataFrame:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># data frame of test scores</span>
+test_scores <span class="op">=</span> pd.DataFrame({
+    <span class="st">&#39;math&#39;</span>:[<span class="dv">91</span>, <span class="dv">82</span>, <span class="dv">93</span>, <span class="dv">100</span>, <span class="dv">78</span>, <span class="dv">91</span>],
+    <span class="st">&#39;spanish&#39;</span>:[<span class="dv">88</span>, <span class="dv">79</span>, <span class="dv">77</span>, <span class="dv">99</span>, <span class="dv">88</span>, <span class="dv">93</span>]
+})
+
+curved_scores <span class="op">=</span> test_scores <span class="op">*</span> <span class="fl">1.02</span>  <span class="co"># curve scores up by 2%</span>
+<span class="bu">print</span>(curved_scores)
+    <span class="co">#      math  spanish</span>
+    <span class="co"># 0   92.82    89.76</span>
+    <span class="co"># 1   83.64    80.58</span>
+    <span class="co"># 2   94.86    78.54</span>
+    <span class="co"># 3  102.00   100.98</span>
+    <span class="co"># 4   79.56    89.76</span>
+    <span class="co"># 5   92.82    94.86</span>
+
+<span class="bu">print</span>(curved_scores <span class="op">&gt;</span> <span class="dv">90</span>)
+    <span class="co">#     math spanish</span>
+    <span class="co"># 0   True   False</span>
+    <span class="co"># 1  False   False</span>
+    <span class="co"># 2   True   False</span>
+    <span class="co"># 3   True    True</span>
+    <span class="co"># 4  False   False</span>
+    <span class="co"># 5   True    True</span></code></pre></div>
+<p>It is possible to have both operands be DataFrames. In thiis case the operation is applied member-wise, where values are matched if they have the same row and column label. Note that any value that doesn’t have a pair will instead produce the value <code>NaN</code> (Not a Number). This is not a normal way of working with DataFrames—it is much more common to access individual rows and columns and work with those (e.g., add make a new column that is the sum of two others); see below for details.</p>
+<p>Also like Series, DataFrames objects support a large number of methods, including:</p>
+<table style="width:11%;">
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>index</code></td>
+<td>an <em>attribute</em>; the sequence of <strong>row</strong> index labels (convert to a <em>list</em> to use)</td>
+</tr>
+<tr class="even">
+<td><code>columns</code></td>
+<td>an <em>attribute</em>; the sequence of <strong>column</strong> index labels (convert to a <em>list</em> to use)</td>
+</tr>
+<tr class="odd">
+<td><code>head(n)</code></td>
+<td>returns a DataFrame containing only the first <code>n</code> <em>rows</em></td>
+</tr>
+<tr class="even">
+<td><code>tail(n)</code></td>
+<td>returns a DataFrame containing only the last <code>n</code> <em>rows</em></td>
+</tr>
+<tr class="odd">
+<td><code>assign(...)</code></td>
+<td>returns a new DataFrame with an additional column; call as <code>df.assign(new_label=new_column)</code></td>
+</tr>
+<tr class="even">
+<td><code>drop(label, row_or_col)</code></td>
+<td>returns a new DataFrame with the given row or column removed</td>
+</tr>
+<tr class="odd">
+<td><code>mean()</code></td>
+<td>returns a Series of the statistical means of the values of each <strong>column</strong></td>
+</tr>
+<tr class="even">
+<td><code>all()</code></td>
+<td>returns a Series of whether ALL the elemnts in each <strong>column</strong> are <code>True</code> (or “truthy”)</td>
+</tr>
+<tr class="odd">
+<td><code>describe()</code></td>
+<td>returns a DataFrame whose columns are Series of descriptive statistics for each <strong>column</strong> in the original DataFrame</td>
+</tr>
+</tbody>
+</table>
+<p>You may notice that many of these methods (e.g., <code>head()</code>, <code>mean()</code>, <code>describe()</code>, <code>any()</code>) also exist for Series. In fact, most every method that Series support are supported by DataFrames as well. These methods are all applied <strong>per column</strong> (not per row)—that is, calling <code>mean()</code> on a DataFrame will calculate the <em>mean</em> of <strong>each column</strong> in that DataFrame:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">df <span class="op">=</span> pd.DataFrame({
+    <span class="st">&#39;name&#39;</span>:[<span class="st">&#39;Ada&#39;</span>,<span class="st">&#39;Bob&#39;</span>,<span class="st">&#39;Chris&#39;</span>,<span class="st">&#39;Diya&#39;</span>,<span class="st">&#39;Emma&#39;</span>],
+    <span class="st">&#39;height&#39;</span>:<span class="bu">range</span>(<span class="dv">58</span>,<span class="dv">63</span>),
+    <span class="st">&#39;weights&#39;</span>:[<span class="dv">115</span>, <span class="dv">117</span>, <span class="dv">120</span>, <span class="dv">123</span>, <span class="dv">126</span>]})
+df.mean()
+    <span class="co"># height      60.0</span>
+    <span class="co"># weights    120.2</span>
+    <span class="co"># dtype: float64</span></code></pre></div>
+<p>If the Series method would return a <em>scalar</em> (a single value, as with <code>mean()</code> or <code>any()</code>), then the DataFrame method returns a Series whose labels are the column labels, as above. If the Series method instead would return a Series (multiple values, as with <code>head()</code> or <code>describe()</code>), then the DataFrame method returns a new DataFrame whose columns are each of the resulting Series:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">df <span class="op">=</span> pd.DataFrame({
+    <span class="st">&#39;name&#39;</span>:[<span class="st">&#39;Ada&#39;</span>,<span class="st">&#39;Bob&#39;</span>,<span class="st">&#39;Chris&#39;</span>,<span class="st">&#39;Diya&#39;</span>,<span class="st">&#39;Emma&#39;</span>],
+    <span class="st">&#39;height&#39;</span>:<span class="bu">range</span>(<span class="dv">58</span>,<span class="dv">63</span>),
+    <span class="st">&#39;weights&#39;</span>:[<span class="dv">115</span>, <span class="dv">117</span>, <span class="dv">120</span>, <span class="dv">123</span>, <span class="dv">126</span>]})
+df.describe()
+    <span class="co">#         height     weights</span>
+    <span class="co"># count   5.000000    5.000000</span>
+    <span class="co"># mean   60.000000  120.200000</span>
+    <span class="co"># std     1.581139    4.438468</span>
+    <span class="co"># min    58.000000  115.000000</span>
+    <span class="co"># 25%    59.000000  117.000000</span>
+    <span class="co"># 50%    60.000000  120.000000</span>
+    <span class="co"># 75%    61.000000  123.000000</span>
+    <span class="co"># max    62.000000  126.000000</span></code></pre></div>
+<ul>
+<li><p>Notice that the <code>height</code> column is the result of calling <code>describe()</code> on the DataFrame’s <code>height</code> column Series!</p></li>
+<li><p>As a general rule: if you’re expecting one value per column, you’ll get a Series of those values; if you’re expecting multiple values per column, you’ll get a DataFrame of those values.</p></li>
+<li><p>This also means that you can sometimes “double-call” methods to reduce them further. For example, <code>df.any()</code> returns a Series of whether each column contains a <code>True</code> value; <code>df.all().all()</code> would check if <em>that</em> Series contains all <code>True</code> values (thus checking <em>all</em> columns have all <code>True</code> value, i.e., the entire table is all <code>True</code> values).</p></li>
+</ul>
+</div>
+<div id="accessing-dataframes" class="section level3">
+<h3><span class="header-section-number">8.4.2</span> Accessing DataFrames</h3>
+<p>DataFrames make it possible to quickly access individual or a subset of values, though these methods use a variety of syntax structures. For this explanation, refer to the following sample DataFrame initially described above:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># all examples in this section</span>
+df <span class="op">=</span> pd.DataFrame({
+    <span class="st">&#39;name&#39;</span>:[<span class="st">&#39;Ada&#39;</span>,<span class="st">&#39;Bob&#39;</span>,<span class="st">&#39;Chris&#39;</span>,<span class="st">&#39;Diya&#39;</span>,<span class="st">&#39;Emma&#39;</span>],
+    <span class="st">&#39;height&#39;</span>:<span class="bu">range</span>(<span class="dv">58</span>,<span class="dv">63</span>),
+    <span class="st">&#39;weight&#39;</span>:[<span class="dv">115</span>, <span class="dv">117</span>, <span class="dv">120</span>, <span class="dv">123</span>, <span class="dv">126</span>]
+})
+
+<span class="bu">print</span>(df)
+    <span class="co">#     height   name   weight</span>
+    <span class="co"># 0      58    Ada      115</span>
+    <span class="co"># 1      59    Bob      117</span>
+    <span class="co"># 2      60  Chris      120</span>
+    <span class="co"># 3      61   Diya      123</span>
+    <span class="co"># 4      62   Emma      126</span></code></pre></div>
+<p>Since DataFrames are most commonly viewed as a <em>dictionary of columns</em>, it is possible to access them as such using <strong>bracket notation</strong> (using the index label of the column):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>( df[<span class="st">&#39;height&#39;</span>] )  <span class="co"># get height column</span>
+    <span class="co"># 0    58</span>
+    <span class="co"># 1    59</span>
+    <span class="co"># 2    60</span>
+    <span class="co"># 3    61</span>
+    <span class="co"># 4    62</span>
+    <span class="co"># Name: height, dtype: int64</span></code></pre></div>
+<p>However, it is often more common to refer to individual columns using <strong>dot notation</strong>, treating each column as an <em>attribute</em> or <em>property</em> of the DataFrame object:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># same results as above</span>
+<span class="bu">print</span>( df.height )  <span class="co"># get height column</span></code></pre></div>
+<p>It is also possible to select <em>multiple</em> columns by using a <em>list</em> or sequence inside the <strong>bracket notation</strong> (similar to selecting multiple values from a Series). This will produce a new DataFrame (a “sub-table”)</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># count the brackets carefully!</span>
+<span class="bu">print</span>( df[[<span class="st">&#39;name&#39;</span>, <span class="st">&#39;height&#39;</span>]] )  <span class="co"># get name and height columns</span>
+
+<span class="co"># can also select multiple columns with a list of their positions</span>
+<span class="bu">print</span>( df[[<span class="dv">1</span>,<span class="dv">2</span>]] )  <span class="co"># get 1st (name) and 2nd (weight) columns</span></code></pre></div>
+<ul>
+<li><em>Watch out though</em>! Specifying a <strong>slice</strong> (using a colon <strong><code>:</code></strong>) will actually select by <em>row</em> position, not column position!</li>
+</ul>
+<p><code>python   print( df[0:2] ) # get ROWS 0 through 2 (not inclusive)       #    height name   weight       # 0      58  Ada      115       # 1      59  Bob      117</code></p>
+<p>I do not know wherefore this inconsistency, other than “convenience”.</p>
+<p>Because DataFrames support multiple indexes, it is possible to use <strong>boolean indexing</strong> (as with Series), allowing you to <em>filter</em> for rows based the values in their columns:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>( df[ df.height <span class="op">&gt;</span> <span class="dv">60</span> ] )
+    <span class="co">#    height  name  weight</span>
+    <span class="co"># 3      61  Diya     123</span>
+    <span class="co"># 4      62  Emma     126</span></code></pre></div>
+<ul>
+<li>Note that <code>df.height</code>is a Series (a column), so <code>df.height &gt; 60</code> produces a Series of boolean values (<code>True</code> and <code>False</code>). This Series is used to determine <em>which</em> rows to return from the DataFrame—each row that corresponds with a <code>True</code> index.</li>
+</ul>
+<p>Finally, DataFrames also provide two <em>attributes</em> (properties) used to “quick access” values: <strong><code>loc</code></strong>, which provides an “index” (lookup table) based on index labels, and <strong><code>iloc</code></strong>, which provides an “index” (lookup table) based on row and column positions. Each of these “indexes” can be thought of as a <em>dictionary</em> whose values are the individual elements in the DataFrame, and whose keys can therefore be used to access those values using <strong>bracket notation</strong>. The dictionaries support multiple types of keys (using label-based <code>loc</code> as an example):</p>
+<table style="width:17%;">
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>df.loc[row_label]</code></td>
+<td>An individual value</td>
+<td><code>df.loc['Ada']</code> (the row labeled <code>Ada</code>)</td>
+</tr>
+<tr class="even">
+<td><code>df.loc[row_label_list]</code></td>
+<td>A list of row labels</td>
+<td><code>df.loc[['Ada','Bob']]</code> (the rows labeled <code>Ada</code> and <code>Bob</code>)</td>
+</tr>
+<tr class="odd">
+<td><code>df.loc[row_label_slice]</code></td>
+<td>A <em>slice</em> of row labels</td>
+<td><code>df.loc['Bob':'Diya']</code> (the rows from <code>Bob</code> to <code>Diya</code>. Note that this is an <em>inclusive</em> slice!)</td>
+</tr>
+<tr class="even">
+<td><code>df.loc[row_label, col_label]</code></td>
+<td>A <em>tuple</em> of <code>(row, column)</code></td>
+<td><code>df.loc['Ada', 'height']</code> (the value at row <code>Ada</code>, column <code>height</code>)</td>
+</tr>
+<tr class="odd">
+<td><code>df.loc[row_label_seq, col_label_seq]</code></td>
+<td>A <em>tuple</em> of label lists or slices</td>
+<td><code>df.loc['Bob':'Diya', ['height','weight']</code> (the rows from <code>Bob</code> to <code>Diya</code> with the columns <code>height</code> and <code>weight</code>)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Note that the example <code>df</code> table doesn’t have row labels beyond <code>0</code> to <code>4</code></p></li>
+<li><p>Using a <em>tuple</em> makes it easy to access a particular value in the table, or a range of values (<em>selecting</em> rows and columns ).</p></li>
+<li><p>Note that we can also use the boundless slice <code>:</code> to refer to “all elements”. So for example:</p></li>
+</ul>
+<p><code>python   df.loc[:, 'height']  # get all rows, 'height' column</code></p>
+<p>This is a basic summary of how to create and access DataFrames; for more <a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#">detailed usage</a>, <a href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe">additional methods</a>, and specific <a href="http://pandas.pydata.org/pandas-docs/stable/cookbook.html">“recipes”</a>, see the <a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html">official <code>pandas</code> documentation</a>.</p>
+<!-- FOR FUTURE VERSIONS -->
+<!-- //piping -->
+<!-- //merge/join/GROUPING -->
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="functional-iteration.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/08-pandas.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

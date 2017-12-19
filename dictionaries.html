@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python Basics for Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Python Basics for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Python Basics for Data Science" />
+  
+  <meta name="twitter:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2017-12-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="lists-and-sequences.html">
+<link rel="next" href="functional-iteration.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Python Basics for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introductory Python materials for the INFO 370: Introduction to Data Science Course.</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources"><i class="fa fa-check"></i><b>1.1</b> Resources</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>1.2</b> Programming with Python</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>1.2.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>1.3</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#command-line"><i class="fa fa-check"></i><b>1.3.1</b> Command-Line</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>1.3.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#python-basics"><i class="fa fa-check"></i><b>1.4</b> Python Basics</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>1.5</b> Comments</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>1.6</b> Variables</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>1.6.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>1.7</b> Getting Help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2</b> Functions</a><ul>
+<li class="chapter" data-level="2.1" data-path="functions.html"><a href="functions.html#resources-1"><i class="fa fa-check"></i><b>2.1</b> Resources</a></li>
+<li class="chapter" data-level="2.2" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>2.2</b> What are Functions?</a></li>
+<li class="chapter" data-level="2.3" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>2.3</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>2.3.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>2.4</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>2.4.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>2.5</b> Writing Functions</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>2.5.1</b> Doc Strings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html"><i class="fa fa-check"></i><b>3</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#resources-2"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
+<li class="chapter" data-level="3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#booleans"><i class="fa fa-check"></i><b>3.2</b> Booleans</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#boolean-operators"><i class="fa fa-check"></i><b>3.2.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#conditional-statements"><i class="fa fa-check"></i><b>3.3</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#designing-conditions"><i class="fa fa-check"></i><b>3.3.1</b> Designing Conditions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#modules-vs.scripts"><i class="fa fa-check"></i><b>3.3.2</b> Modules vs. Scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>4</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-3"><i class="fa fa-check"></i><b>4.1</b> Resources</a></li>
+<li class="chapter" data-level="4.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>4.2</b> While Loops</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>4.2.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="4.2.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#conditionals-and-sentinels"><i class="fa fa-check"></i><b>4.2.2</b> Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>4.3</b> For Loops</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>4.3.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#working-with-files"><i class="fa fa-check"></i><b>4.4</b> Working with Files</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>4.4.1</b> Try/Except</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>5</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="5.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-4"><i class="fa fa-check"></i><b>5.1</b> Resources</a></li>
+<li class="chapter" data-level="5.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists"><i class="fa fa-check"></i><b>5.2</b> Lists</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>5.2.1</b> List Indices</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>5.3</b> List Operations and Methods</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>5.3.1</b> Lists and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>5.4</b> Nested Lists</a></li>
+<li class="chapter" data-level="5.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>5.5</b> Tuples</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>6</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.1" data-path="dictionaries.html"><a href="dictionaries.html#resources-5"><i class="fa fa-check"></i><b>6.1</b> Resources</a></li>
+<li class="chapter" data-level="6.2" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-1"><i class="fa fa-check"></i><b>6.2</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>6.2.1</b> Accessing a Dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>6.3</b> Dictionary Methods</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>6.3.1</b> Dictionaries and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>6.4</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="6.5" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>6.5</b> Which data structure do I use?</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functional-iteration.html"><a href="functional-iteration.html"><i class="fa fa-check"></i><b>7</b> Functional Iteration</a><ul>
+<li class="chapter" data-level="7.1" data-path="functional-iteration.html"><a href="functional-iteration.html#resources-6"><i class="fa fa-check"></i><b>7.1</b> Resources</a></li>
+<li class="chapter" data-level="7.2" data-path="functional-iteration.html"><a href="functional-iteration.html#functions-are-variables"><i class="fa fa-check"></i><b>7.2</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="functional-iteration.html"><a href="functional-iteration.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>7.2.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="functional-iteration.html"><a href="functional-iteration.html#functional-looping"><i class="fa fa-check"></i><b>7.3</b> Functional Looping</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="functional-iteration.html"><a href="functional-iteration.html#map"><i class="fa fa-check"></i><b>7.3.1</b> Map</a></li>
+<li class="chapter" data-level="7.3.2" data-path="functional-iteration.html"><a href="functional-iteration.html#filter"><i class="fa fa-check"></i><b>7.3.2</b> Filter</a></li>
+<li class="chapter" data-level="7.3.3" data-path="functional-iteration.html"><a href="functional-iteration.html#reduce"><i class="fa fa-check"></i><b>7.3.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="functional-iteration.html"><a href="functional-iteration.html#list-comprehensions"><i class="fa fa-check"></i><b>7.4</b> List Comprehensions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>8</b> Pandas</a><ul>
+<li class="chapter" data-level="8.1" data-path="pandas.html"><a href="pandas.html#resources-7"><i class="fa fa-check"></i><b>8.1</b> Resources</a></li>
+<li class="chapter" data-level="8.2" data-path="pandas.html"><a href="pandas.html#setup"><i class="fa fa-check"></i><b>8.2</b> Setup</a></li>
+<li class="chapter" data-level="8.3" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>8.3</b> Series</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>8.3.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="8.3.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>8.3.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="pandas.html"><a href="pandas.html#data-frames"><i class="fa fa-check"></i><b>8.4</b> Data Frames</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>8.4.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="8.4.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>8.4.2</b> Accessing DataFrames</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Python Basics for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dictionaries" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Dictionaries</h1>
+<p>This module covers the second fundamental data structure in Python: <strong>dictionaries</strong>, which represent a collection of <em>key-value pairs</em>. They are similar to lists, except that each element in the dictionary is also given a distinct “name” to refer to it by (instead of an index number). Dictionaries are Pythons primary version of <strong>maps</strong>, which is a common and extremely useful way of organizing data in a computer program—I would argue that maps are the <em>most useful</em> data structure in programming. This module will descibe how to create, access, and utilize dictionaries to organize and struture data.</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="introduction-to-python.html#resources">Resources</a></li>
+<li><a href="dictionaries.html#dictionaries">Dictionaries</a></li>
+<li><a href="dictionaries.html#accessing-a-dictionary">Accessing a Dictionary</a></li>
+<li><a href="dictionaries.html#dictionary-methods">Dictionary Methods</a></li>
+<li><a href="dictionaries.html#dictionaries-and-loops">Dictionaries and Loops</a></li>
+<li><a href="dictionaries.html#nesting-dictionaries">Nesting Dictionaries</a></li>
+<li><a href="dictionaries.html#which-data-structure-do-i-use">Which data structure do I use?</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<div id="resources-5" class="section level2">
+<h2><span class="header-section-number">6.1</span> Resources</h2>
+<ul>
+<li><a href="https://automatetheboringstuff.com/chapter5/">Dictionaries and Data Structures (Sweigart)</a></li>
+<li><a href="https://books.trinket.io/pfe/09-dictionaries.html">Dictionaries (Downey)</a></li>
+</ul>
+</div>
+<div id="dictionaries-1" class="section level2">
+<h2><span class="header-section-number">6.2</span> Dictionaries</h2>
+<p>A <strong>dictionary</strong> is a lot like a <em>list</em>, in that it is a (one-dimensional) sequence of values that are all stored in a single variable. However, rather than using <em>integers</em> as the index for each element, a dictionary allows you to use a wide variety of different data types (including <em>strings</em> and <em>tuples</em>) as the “index”. These “indices” are called <strong>keys</strong>, and each is used to refer to a specific <strong>value</strong> in the collection. Thus a dictionary is an sequence of <strong>key-value pairs</strong>: each element has a “key” that is used to <em>look up</em> (reference) the “value”.</p>
+<ul>
+<li><p>This is a lot like a real-world dictionary or encyclopedia, in which the words (keys) are used to look up the definitions (values). A phone book works te same way (the names are the keys, thephone numbers are the values),</p></li>
+<li><p>Dictionaries provide a <strong>mapping</strong> of keys to values: they specify a set of data (the keys), and how that data “transforms” into another set of data (the values).</p></li>
+</ul>
+<p>Dictionaries are written as literals inside <em>curly braces</em> (<strong><code>{}</code></strong>). Key-value pairs are written with a <em>colon</em> (<strong><code>:</code></strong>) between the key and the value, and each element (pair) in the dictionary is separated by a <em>comma</em> (<strong><code>,</code></strong>):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># a dictionary of ages</span>
+ages <span class="op">=</span> {<span class="st">&#39;sarah&#39;</span>:<span class="dv">42</span>, <span class="st">&#39;amit&#39;</span>:<span class="dv">35</span>, <span class="st">&#39;zhang&#39;</span>:<span class="dv">13</span>}
+
+<span class="co"># a dictionary of English words and their Spanish translation</span>
+english_to_spanish <span class="op">=</span> {<span class="st">&#39;one&#39;</span>:<span class="st">&#39;uno&#39;</span>, <span class="st">&#39;two&#39;</span>:<span class="st">&#39;dos&#39;</span>}
+
+<span class="co"># a dictionary of integers and their word representation</span>
+num_words <span class="op">=</span> {<span class="dv">1</span>:<span class="st">&#39;one&#39;</span>, <span class="dv">2</span>:<span class="st">&#39;two&#39;</span>, <span class="dv">3</span>:<span class="st">&#39;three&#39;</span>}
+
+<span class="co"># like lists, dictionary values can be of different types</span>
+<span class="co"># including lists and other dictionaries!</span>
+type_examples <span class="op">=</span> {<span class="st">&#39;integer&#39;</span>:<span class="dv">12</span>, <span class="st">&#39;string&#39;</span>:<span class="st">&#39;dog&#39;</span>, <span class="st">&#39;list&#39;</span>:[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]}
+
+<span class="co"># each dictionary key can also be a different type</span>
+type_names <span class="op">=</span> {<span class="st">&#39;hello&#39;</span>: <span class="st">&#39;a string&#39;</span>, <span class="dv">598</span>: <span class="st">&#39;an integer&#39;</span>, <span class="fl">3.14</span>: <span class="st">&#39;a float&#39;</span>, (<span class="dv">1</span>,<span class="dv">2</span>): <span class="st">&#39;a tuple!&#39;</span>}
+
+<span class="co"># dictionaries can be empty (with no elements)</span>
+empty <span class="op">=</span> {}</code></pre></div>
+<ul>
+<li>Dictionary variables are often named as plurals, but can also be named after the mapping they performed (e.g., <code>english_to_spanish</code>).</li>
+<li>Be careful not to name a dictionary <code>dict</code>, which is a reserved keyword (it’s a function used to create dictionaries).</li>
+</ul>
+<p>Dictionary <em>keys</em> can be of any <a href="https://en.wikipedia.org/wiki/Hash_function">hashable</a> type (meaning the computer can consistently convert it into a number). In practice, this means that that keys are most commonly <em>strings</em>, <em>numbers</em>, or <em>tuples</em>. Dictionary <em>values</em>, on the other hand, can be of any type that you want!</p>
+<p>Dictionary <em>keys</em> must be unique: because they are used to “look up” values, there has to be a single value associated with each key (this is called a [one-to-one mapping] in mathematics). But dictionary <em>values</em> can be duplicated: just like how two words may have the same definition in a real-world dictionary!</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">double_key <span class="op">=</span> {<span class="st">&#39;a&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">3</span>}
+<span class="bu">print</span>(double_key)  <span class="co"># {&#39;a&#39;: 1, &#39;b&#39;: 3}</span>
+
+double_val <span class="op">=</span> {<span class="st">&#39;a&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;c&#39;</span>: <span class="dv">1</span>}
+<span class="bu">print</span>(double_val)  <span class="co"># {&#39;a&#39;: 1, &#39;b&#39;: 1, &#39;c&#39;: 1}</span></code></pre></div>
+<p><em>Important note:</em> dictionaries are an <strong>unordered</strong> collection of key-value pairs! Because you reference a value by its <em>key</em> and not by its position (as you do in a list), the exact ordering of those elements doesn’t matter—the interpreter just goes immediately to the value associated with the key. This almost means that when you print out a dictionary, the order in which the elements are printed may not match the order in which you specified them in the literal (and in fact, may different between script executions or across computers!)</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">dict_a <span class="op">=</span> {<span class="st">&#39;a&#39;</span>:<span class="dv">1</span>, <span class="st">&#39;b;&#39;</span>:<span class="dv">2</span>}
+dict_b <span class="op">=</span> {<span class="st">&#39;b&#39;</span>:<span class="dv">2</span>, <span class="st">&#39;a:&#39;</span><span class="dv">1</span>}
+dict_a <span class="op">==</span> dict_b  <span class="co"># True</span></code></pre></div>
+<p>The above examples mostly use dictionaries as “lookup tables”: they provide a way of “translating” from some set of keys to some set of values. However, dictionaries are also extremely useful for grouping together related data—for example, information about a specific person:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">person <span class="op">=</span> {<span class="st">&#39;first_name&#39;</span>: <span class="st">&quot;Ada&quot;</span>, <span class="st">&#39;job&#39;</span>: <span class="st">&quot;Programmer&quot;</span>, <span class="st">&#39;salary&#39;</span>:<span class="dv">78000</span>, <span class="st">&#39;in_union&#39;</span>:<span class="va">True</span>}</code></pre></div>
+<p>Using a dictionary allows us to track the differnet values with named keys, rather than needing to remember whether the person’s name or title was the first element!</p>
+<p>Dictionaries can also be created from <em>lists</em> of keys and values. First use the built-in <code>zip()</code> function to create a non-list collection of tuples (each a key-value pair), and then use the built-in <code>dict()</code> function to create a dictonary out of that collection. Alternatively the built-in <code>enumerate()</code> function will create an collection with the index of each list element as its key.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">keys <span class="op">=</span> [<span class="st">&#39;key0&#39;</span>, <span class="st">&#39;key1&#39;</span>, <span class="st">&#39;key2&#39;</span>]
+values <span class="op">=</span> [<span class="st">&#39;val0&#39;</span>, <span class="st">&#39;val1&#39;</span>, <span class="st">&#39;val2&#39;</span>]
+<span class="bu">dict</span>(<span class="bu">zip</span>(keys, values))  <span class="co"># {&#39;key0&#39;: &#39;val0&#39;, &#39;key1&#39;: &#39;val1&#39;, &#39;key2&#39;: &#39;val2&#39;}</span>
+<span class="bu">dict</span>(<span class="bu">enumerate</span>(values))  <span class="co"># {0: &#39;val0&#39;, 1: &#39;val1&#39;, 2: &#39;val2&#39;}</span></code></pre></div>
+<div id="accessing-a-dictionary" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Accessing a Dictionary</h3>
+<p>Just as with lists, we retrieve a <strong><em>value</em></strong> from a dictionary using <strong>bracket notation</strong>, but we put the <strong><em>key</em></strong> inside the brackets instead of the positional index (since dictionaries are unordered!).</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># a dictionary of ages</span>
+ages <span class="op">=</span> {<span class="st">&#39;sarah&#39;</span>:<span class="dv">42</span>, <span class="st">&#39;amit&#39;</span>:<span class="dv">35</span>, <span class="st">&#39;zhang&#39;</span>:<span class="dv">13</span>}
+
+<span class="co"># get the value for the &#39;amit&#39; key</span>
+amit_age <span class="op">=</span> ages[<span class="st">&#39;amit&#39;</span>]
+<span class="bu">print</span>(amit_age)  <span class="co"># 35</span>
+
+<span class="co"># get the value for the &#39;zhang&#39; key</span>
+zhang_age <span class="op">=</span> ages[<span class="st">&#39;zhang&#39;</span>]
+<span class="bu">print</span>(zhang_age)  <span class="co"># 13</span>
+
+<span class="co"># accessing a key not in the dictionary will give an error</span>
+<span class="bu">print</span>(ages[<span class="st">&#39;anonymus&#39;</span>])  <span class="co"># KeyError!</span>
+
+<span class="co"># trying to look up by a VALUE will give an error (since it&#39;s not a key)</span>
+<span class="bu">print</span>(ages[<span class="dv">42</span>])  <span class="co"># KeyError!</span></code></pre></div>
+<ul>
+<li>To reiterate: you put the <em>key</em> inside the brackets in order to access the <em>value</em>. You cannot directly put in a value in order to determine its key (because it may have more than one!)</li>
+</ul>
+<p>It is worth noting that “looking up” a value by its key is a very “fast” operation (it doesn’t take the interpreter a lot of time or effort). But looking up the key for a value takes time: you need to check each and every key in the dictionary to see if it has the value you’re interested in!</p>
+<p>As with lists, you can put any <em>expression</em> (including variables) inside the brackets as long as it resolves to a valid key (whether that key is a string, integer, or tuple).</p>
+<p>As with lists, you can <strong>mutate</strong> (change) the dictionary by assigning values to the bracket-notation variable. This changes the <em>key-value pair</em> to have a different value, but the same key:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">person <span class="op">=</span> {<span class="st">&#39;name&#39;</span>: <span class="st">&quot;Ada&quot;</span>, <span class="st">&#39;job&#39;</span>: <span class="st">&quot;Programmer&quot;</span>, <span class="st">&#39;salary&#39;</span>:<span class="dv">78000</span>}
+
+<span class="co"># assign a new value to the &#39;job&#39; key</span>
+person[<span class="st">&#39;job&#39;</span>] <span class="op">=</span> <span class="st">&#39;Senior Programmer&#39;</span>
+<span class="bu">print</span>(person[<span class="st">&#39;job&#39;</span>])  <span class="co"># Senior Programmer</span>
+
+<span class="co"># assign value to itself</span>
+person[<span class="st">&#39;salary&#39;</span>] <span class="op">=</span> person[<span class="st">&#39;salary&#39;</span>] <span class="op">*</span> <span class="fl">1.15</span>  <span class="co"># a 15% raise!</span>
+
+<span class="co"># add a new key-value pair by assigning a value a key</span>
+<span class="co"># that is not yet in the dictionary</span>
+person[<span class="st">&#39;shoe_size&#39;</span>] <span class="op">=</span> <span class="dv">7</span>
+<span class="bu">print</span>(person)  <span class="co"># {&#39;name&#39;: &#39;Ada&#39;, &#39;job&#39;: &#39;Senior Programmer&#39;, &#39;salary&#39;: 89700.0, &#39;shoe_size&#39;: 7}</span></code></pre></div>
+<p>Note that adding new elements (key-value pairs) works differently than lists: with a list, you cannot assign a value to an index that is out of bounds: you need to use the <code>append()</code> method instead). With a dictionary, you <em>can</em> assign a value to a non-existent key. This <em>creates</em> the key, assigning it the given value.</p>
+<p>You can add a <em>new</em> key-value pair to a dictionary by assigning a value <em>to a key that is not yet in the dictionary</em>. This is distinct from lists (where you cannot assign out of bounds):</p>
+</div>
+</div>
+<div id="dictionary-methods" class="section level2">
+<h2><span class="header-section-number">6.3</span> Dictionary Methods</h2>
+<p>Dictionaries support a few different <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">operations and methods</a>, though not as many as lists. These include:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># A sample dictionary to demonstrate with</span>
+sample_dict <span class="op">=</span> {<span class="st">&#39;a&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;c&#39;</span>: <span class="dv">3</span>, <span class="st">&#39;d&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;e&#39;</span>: <span class="dv">5</span>}
+
+<span class="co"># The standard `in` operator checks for operands in the keys, not the values!</span>
+<span class="co">&#39;b&#39;</span> <span class="kw">in</span> sample_dict  <span class="co"># True, dict contains a key `&#39;b&#39;`</span>
+<span class="dv">2</span> <span class="kw">in</span> sample_dict  <span class="co"># False, dict does not contain a key `2`</span>
+
+<span class="co"># The get() method returns the value for the key, or a &quot;default&quot; value</span>
+<span class="co"># if the key is not in the dictionary</span>
+default <span class="op">=</span> <span class="op">-</span><span class="dv">598</span>  <span class="co"># a default value</span>
+sample_dict.get(<span class="st">&#39;c&#39;</span>, default)  <span class="co"># 3, key is in dict</span>
+sample_dict.get(<span class="st">&#39;f&#39;</span>, default)  <span class="co"># -598, key not in dict, so return default</span>
+
+<span class="co"># Remove a key-value pair</span>
+sample_dict.pop(<span class="st">&#39;d&#39;</span>)  <span class="co"># removes and returns the `d` key and its value</span>
+
+<span class="co"># Replace values from one dictionary with those from another</span>
+other_dict <span class="op">=</span> {<span class="st">&#39;a&#39;</span>:<span class="dv">10</span>, <span class="st">&#39;c&#39;</span>: <span class="dv">10</span>, <span class="st">&#39;n&#39;</span>:<span class="dv">10</span>}
+sample_dict.update(other_dict)  <span class="co"># assign values from other to sample</span>
+<span class="bu">print</span>(sample_dict)  <span class="co"># {&#39;a&#39;: 10, &#39;b&#39;: 2, &#39;c&#39;: 10, &#39;e&#39;: 5, &#39;n&#39;: 10}</span>
+
+sample_dict.update(a<span class="op">=</span><span class="dv">20</span>, c<span class="op">=</span><span class="dv">20</span>)  <span class="co"># update also supports named arguments</span>
+<span class="bu">print</span>(sample_dict)  <span class="co"># {&#39;a&#39;: 20, &#39;b&#39;: 2, &#39;c&#39;: 20, &#39;e&#39;: 5, &#39;n&#39;: 10}</span>
+
+<span class="co"># Remove all the elements</span>
+sample_dict.clear()</code></pre></div>
+<p>Dictionaries also include three methods that return list-like <em>sequences</em> of the dictionary’s elements:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">sample_dict <span class="op">=</span> {<span class="st">&#39;a&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;c&#39;</span>: <span class="dv">3</span>, <span class="st">&#39;d&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;e&#39;</span>: <span class="dv">5</span>}
+
+<span class="co"># get a &quot;list&quot; of the keys</span>
+sample_keys <span class="op">=</span> sample_dict.keys()
+<span class="bu">print</span>(<span class="bu">list</span>(sample_keys))  <span class="co"># [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;]</span>
+
+<span class="co"># get a &quot;list&quot; of the values</span>
+sample_vals <span class="op">=</span> sample_dict.values()
+<span class="bu">print</span>(<span class="bu">list</span>(sample_vals))  <span class="co"># [1, 2, 3, 4, 5]</span>
+
+<span class="co"># get a &quot;list&quot; of the key-value pairs</span>
+sample_items <span class="op">=</span> sample_dict.items()
+<span class="bu">print</span>(<span class="bu">list</span>(sample_items))  <span class="co"># [(&#39;a&#39;, 1), (&#39;b&#39;, 2), (&#39;c&#39;, 3), (&#39;d&#39;, 4), (&#39;e&#39;, 5)]</span></code></pre></div>
+<p>The <code>keys()</code>, <code>values()</code>, and <code>items()</code> sequences are not quite lists (they don’t have all of the list operantions and methods), but they do support the <code>in</code> operator and iteration with <code>for</code> loops (see below). And as demonstrated above, they can easily be converted <em>into</em> lists if needed.</p>
+<ul>
+<li>Note that the <code>items()</code> method produces a sequence of <em>tuples</em>—each key-value pair is represented as a tuple whose first element is the key and second is the value!</li>
+</ul>
+<div id="dictionaries-and-loops" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Dictionaries and Loops</h3>
+<p>Dictionaries are iterable collections (like lists, ranges, strings, files, etc), and so you can loop through them with a <strong>for loop</strong>. Note that the basic <code>for ... in ...</code> syntact iterates through the dictionary’s <em>keys</em> (not its values!) Thus it is much more common utilize one of the <code>keys()</code>, <code>values()</code>, or <code>items()</code> sequences.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">sample_dict <span class="op">=</span> {<span class="st">&#39;a&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;c&#39;</span>: <span class="dv">3</span>, <span class="st">&#39;d&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;e&#39;</span>: <span class="dv">5</span>}
+
+<span class="co"># loop through the keys (implicitly)</span>
+<span class="cf">for</span> key <span class="kw">in</span> sample_dict:
+    <span class="bu">print</span>(key, <span class="st">&quot;maps to&quot;</span>, sample_dict[key])  <span class="co"># e.g., &quot;&#39;a&#39; maps to 1&quot;</span>
+
+<span class="co"># loop through the keys (explicitly)</span>
+<span class="cf">for</span> key <span class="kw">in</span> sample_dict.keys():
+    <span class="bu">print</span>(key, <span class="st">&quot;maps to&quot;</span>, sample_dict[key])  <span class="co"># e.g., &quot;&#39;a&#39; maps to 1&quot;</span>
+
+<span class="co"># loop through the values. Cannot directly get the key from this</span>
+<span class="cf">for</span> value <span class="kw">in</span> sample_dict.values():
+    <span class="bu">print</span>(<span class="st">&quot;someone maps to&quot;</span>, value)  <span class="co"># e.g., &quot;someone maps to 1&quot;</span>
+
+<span class="co"># Loop through the items (each is a tuple)</span>
+<span class="cf">for</span> item <span class="kw">in</span> sample_dict.items():
+    <span class="bu">print</span>(item[<span class="dv">0</span>], <span class="st">&quot;maps to&quot;</span>, item[<span class="dv">1</span>])  <span class="co"># e.g., &quot;&#39;a&#39; maps to 1&quot;</span></code></pre></div>
+<p>It is <em>much</em> more common to use <strong>multiple assignment</strong> to give the <code>items()</code> tuple elements local variable names, allowing you to refer to those elements by name rather than by index:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Use this format instead!</span>
+<span class="cf">for</span> key, value <span class="kw">in</span> sample_dict.items():  <span class="co"># implicit  `key, value = item`</span>
+    <span class="bu">print</span>(key, <span class="st">&quot;maps to&quot;</span>, value)  <span class="co"># e.g., &quot;&#39;a&#39; maps to 1</span>
+
+<span class="co"># Better yet, name the local variables after their semantic meaning!</span>
+<span class="cf">for</span> letter, number <span class="kw">in</span> sample_dict.items():
+    <span class="bu">print</span>(letter, <span class="st">&quot;maps to&quot;</span>, number)  <span class="co"># e.g., &quot;&#39;a&#39; maps to 1</span></code></pre></div>
+<p>Finally, remember that dictionaries are <em>unordered</em>. This means that there is no consistency as to which element will be processed in what order: you might get <code>a</code> then <code>b</code> then <code>c</code>, but you might get <code>c</code> then <code>a</code> then <code>b</code>! If the order is important for looping, a common strategy is to iterate through a <em>sorted list of the keys</em> (produced with the built-in <a href="https://docs.python.org/3/library/functions.html#sorted"><code>sorted()</code></a> function):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Sort the keys</span>
+sorted_keys <span class="op">=</span> <span class="bu">sorted</span>(my_dict.keys())
+
+<span class="co"># Iterate through the sorted keys</span>
+<span class="cf">for</span> key <span class="kw">in</span> sorted_keys:
+    <span class="bu">print</span>(key, <span class="st">&quot;maps to&quot;</span>, my_dict[key])
+
+<span class="co"># Or all in one line!</span>
+<span class="cf">for</span> key <span class="kw">in</span> <span class="bu">sorted</span>(my_dict.keys()):
+    <span class="bu">print</span>(key, <span class="st">&quot;maps to&quot;</span>, my_dict[key])</code></pre></div>
+</div>
+</div>
+<div id="nesting-dictionaries" class="section level2">
+<h2><span class="header-section-number">6.4</span> Nesting Dictionaries</h2>
+<p>Although dictionary <em>keys</em> are limited to hashable types (e.g., strings, numbers, tuples), dictionary <em>values</em> can be of any type—and this includes lists and other dictionaries!</p>
+<p>Nested dictionaries are conceptually similar to nested lists, and are used in a similar manner:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># a dictionary representing a person (spacing is for readability)</span>
+person <span class="op">=</span> {
+  <span class="st">&#39;first_name&#39;</span>: <span class="st">&#39;Alice&#39;</span>,
+  <span class="st">&#39;last_name&#39;</span>: <span class="st">&#39;Smith&#39;</span>,
+  <span class="st">&#39;age&#39;</span>: <span class="dv">40</span>,
+  <span class="st">&#39;pets&#39;</span>: [<span class="st">&#39;rover&#39;</span>, <span class="st">&#39;fluffy&#39;</span>, <span class="st">&#39;mittens&#39;</span>],  <span class="co"># value is an array</span>
+  <span class="st">&#39;favorites&#39;</span>: {  <span class="co"># value is another dictionary</span>
+    <span class="st">&#39;music&#39;</span>: <span class="st">&#39;jazz&#39;</span>,
+    <span class="st">&#39;food&#39;</span>: <span class="st">&#39;pizza&#39;</span>,
+    <span class="st">&#39;numbers&#39;</span>: [<span class="dv">12</span>, <span class="dv">42</span>] <span class="co"># value is an array</span>
+  }
+}
+
+<span class="co"># can assign lists or dicts to a new key</span>
+person[<span class="st">&#39;luggage_combo&#39;</span>] <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]
+
+<span class="co"># person[&#39;favorite&#39;] is an (anonymous) dictionary, so can get that dict&#39;s &#39;food&#39;</span>
+favorite_food <span class="op">=</span> person[<span class="st">&#39;favorites&#39;</span>][<span class="st">&#39;food&#39;</span>]<span class="op">;</span>
+
+<span class="co"># Get to the (anonymous) &#39;favorites&#39; dictionary in person, and from that get</span>
+<span class="co"># the (anonymous) &#39;numbers&#39; list, and from that get the 0th element</span>
+first_fav_number <span class="op">=</span> person[<span class="st">&#39;favorite&#39;</span>][<span class="st">&#39;numbers&#39;</span>][<span class="dv">0</span>]<span class="op">;</span>  <span class="co"># 12</span>
+
+<span class="co"># Since person[&#39;favorite&#39;][&#39;numbers&#39;] is a list, we can add to it</span>
+person[<span class="st">&#39;favorite&#39;</span>][<span class="st">&#39;numbers&#39;</span>].append(<span class="dv">7</span>)<span class="op">;</span>  <span class="co"># add 7 to end of the list</span></code></pre></div>
+<p>The ability to nest dictionaries inside of dictionaries is incredibly powerful, and allows us to define arbitrarily complex information structurings (schemas). Indeed, most data in computer programs—as well as public information available on the web—is structured as a set of nested maps like this (though possibly with some level of abstraction).</p>
+<p>The other common format used with nested lists and dictionaries is to define a <strong>list of dictionaries</strong> where each dictionary has <em>the same keys</em> (but different values). For example:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># arbitrary list of people&#39;s names, heights, and weights</span>
+people <span class="op">=</span> [
+    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Ada&#39;</span>, <span class="st">&#39;height&#39;</span>: <span class="dv">58</span>, <span class="st">&#39;weight&#39;</span>: <span class="dv">115</span>},
+    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;height&#39;</span>: <span class="dv">59</span>, <span class="st">&#39;weight&#39;</span>: <span class="dv">117</span>},
+    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Chris&#39;</span>, <span class="st">&#39;height&#39;</span>: <span class="dv">60</span>, <span class="st">&#39;weight&#39;</span>: <span class="dv">120</span>},
+    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Diya&#39;</span>, <span class="st">&#39;height&#39;</span>: <span class="dv">61</span>, <span class="st">&#39;weight&#39;</span>: <span class="dv">123</span>},
+    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Emma&#39;</span>, <span class="st">&#39;height&#39;</span>: <span class="dv">62</span>, <span class="st">&#39;weight&#39;</span>: <span class="dv">126</span>}
+]</code></pre></div>
+<p>This structure can be seen as a list of <strong>records</strong> (the dictionaries), each of which have a number of different <strong>features</strong> (the key-value pairs). This list of feature records is in fact a common way of understanding a <strong>data table</strong> like you would create as an Excel spreadsheet:</p>
+<table>
+<thead>
+<tr class="header">
+<th>name</th>
+<th>height</th>
+<th>weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ada</td>
+<td>58</td>
+<td>115</td>
+</tr>
+<tr class="even">
+<td>Bob</td>
+<td>59</td>
+<td>117</td>
+</tr>
+<tr class="odd">
+<td>Chris</td>
+<td>60</td>
+<td>120</td>
+</tr>
+<tr class="even">
+<td>Diya</td>
+<td>61</td>
+<td>123</td>
+</tr>
+<tr class="odd">
+<td>Emma</td>
+<td>62</td>
+<td>126</td>
+</tr>
+</tbody>
+</table>
+<p>Each dictionary (record) acts as a “row” in the table, and each key (feature) acts as a “column”. As long as all of the dictionaries share the same keys, this list of dictionaries <em>is</em> a table!</p>
+<ul>
+<li>When working with large amounts of tabular data, like you might read from a <code>.csv</code> file, this is a good structure to use.</li>
+</ul>
+<p>In order to analyze this kind of data table, you most often will loop through the elements in the list (the rows in the table), doing some calculations based on <em>each</em> dictionary:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># How many people are taller than 60 inches?</span>
+taller_than_60 <span class="op">=</span> <span class="dv">0</span>
+<span class="cf">for</span> person <span class="kw">in</span> people:  <span class="co"># iterate through the list</span>
+    <span class="co"># person is a dictionary</span>
+    <span class="cf">if</span> person[<span class="st">&#39;height&#39;</span>] <span class="op">&gt;=</span> <span class="dv">60</span>:  <span class="co"># each dictionary has a &#39;height&#39; key</span>
+        taller_than_60 <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># increasement count</span>
+
+<span class="bu">print</span>(taller_than_60)  <span class="co"># 3</span></code></pre></div>
+<p>This is effective, but not particularly efficient (or simple). We will discuss more robust and powerful ways of working with this style of data table more in a later module.</p>
+</div>
+<div id="which-data-structure-do-i-use" class="section level2">
+<h2><span class="header-section-number">6.5</span> Which data structure do I use?</h2>
+<p>The last two modules have introduced multiple different <strong>data structures</strong> built into Python: <em>lists</em>, <em>tuples</em>, and <em>dictionaries</em>. They all represent collections of elements, though in somewhat different ways. So when do you each each type?</p>
+<ul>
+<li><p>Use <strong>lists</strong> for any <em>ordered</em> sequence of data (e.g., if you care about what comes first), or if you are collecting elements of the same general “type” (e.g., a lot of numbers, a lot of strings, etc.). If you’re not sure what else to use, a <em>list</em> is a great default data structure.</p></li>
+<li><p>Use <strong>tuples</strong> when you need to ensure that a list is <em>immutable</em> (canot be changed), such as if you want it to be a key to a dictionary or a parameter to a function. Tuples are also nice if you just want to store a <em>small</em> set of data (only a few items) that is not going to change. Finally, tuples may arguable provide an “easier” syntax than lists in certain situations, such as when using multiple assignment.</p></li>
+<li><p>Use <strong>dictionaries</strong> whenever you need to represent a <em>mapping</em> of data and want to link some set of keys to some set of values. If you want to be able to “name” each value in your collection, you can use a dictionary. If you want to work with key-value pairs, you need to use a dictionary (or some other <a href="https://docs.python.org/3/library/collections.html#namedtuple-factory-function-for-tuples-with-named-fields">dictionary-like data structure</a>)</p></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lists-and-sequences.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functional-iteration.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-dictionaries.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

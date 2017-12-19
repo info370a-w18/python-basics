@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python Basics for Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Python Basics for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Python Basics for Data Science" />
+  
+  <meta name="twitter:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2017-12-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="functions.html">
+<link rel="next" href="iteration-and-loops.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Python Basics for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introductory Python materials for the INFO 370: Introduction to Data Science Course.</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources"><i class="fa fa-check"></i><b>1.1</b> Resources</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>1.2</b> Programming with Python</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>1.2.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>1.3</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#command-line"><i class="fa fa-check"></i><b>1.3.1</b> Command-Line</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>1.3.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#python-basics"><i class="fa fa-check"></i><b>1.4</b> Python Basics</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>1.5</b> Comments</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>1.6</b> Variables</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>1.6.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>1.7</b> Getting Help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2</b> Functions</a><ul>
+<li class="chapter" data-level="2.1" data-path="functions.html"><a href="functions.html#resources-1"><i class="fa fa-check"></i><b>2.1</b> Resources</a></li>
+<li class="chapter" data-level="2.2" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>2.2</b> What are Functions?</a></li>
+<li class="chapter" data-level="2.3" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>2.3</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>2.3.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>2.4</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>2.4.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>2.5</b> Writing Functions</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>2.5.1</b> Doc Strings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html"><i class="fa fa-check"></i><b>3</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#resources-2"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
+<li class="chapter" data-level="3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#booleans"><i class="fa fa-check"></i><b>3.2</b> Booleans</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#boolean-operators"><i class="fa fa-check"></i><b>3.2.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#conditional-statements"><i class="fa fa-check"></i><b>3.3</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#designing-conditions"><i class="fa fa-check"></i><b>3.3.1</b> Designing Conditions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#modules-vs.scripts"><i class="fa fa-check"></i><b>3.3.2</b> Modules vs. Scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>4</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-3"><i class="fa fa-check"></i><b>4.1</b> Resources</a></li>
+<li class="chapter" data-level="4.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>4.2</b> While Loops</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>4.2.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="4.2.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#conditionals-and-sentinels"><i class="fa fa-check"></i><b>4.2.2</b> Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>4.3</b> For Loops</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>4.3.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#working-with-files"><i class="fa fa-check"></i><b>4.4</b> Working with Files</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>4.4.1</b> Try/Except</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>5</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="5.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-4"><i class="fa fa-check"></i><b>5.1</b> Resources</a></li>
+<li class="chapter" data-level="5.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists"><i class="fa fa-check"></i><b>5.2</b> Lists</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>5.2.1</b> List Indices</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>5.3</b> List Operations and Methods</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>5.3.1</b> Lists and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>5.4</b> Nested Lists</a></li>
+<li class="chapter" data-level="5.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>5.5</b> Tuples</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>6</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.1" data-path="dictionaries.html"><a href="dictionaries.html#resources-5"><i class="fa fa-check"></i><b>6.1</b> Resources</a></li>
+<li class="chapter" data-level="6.2" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-1"><i class="fa fa-check"></i><b>6.2</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>6.2.1</b> Accessing a Dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>6.3</b> Dictionary Methods</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>6.3.1</b> Dictionaries and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>6.4</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="6.5" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>6.5</b> Which data structure do I use?</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functional-iteration.html"><a href="functional-iteration.html"><i class="fa fa-check"></i><b>7</b> Functional Iteration</a><ul>
+<li class="chapter" data-level="7.1" data-path="functional-iteration.html"><a href="functional-iteration.html#resources-6"><i class="fa fa-check"></i><b>7.1</b> Resources</a></li>
+<li class="chapter" data-level="7.2" data-path="functional-iteration.html"><a href="functional-iteration.html#functions-are-variables"><i class="fa fa-check"></i><b>7.2</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="functional-iteration.html"><a href="functional-iteration.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>7.2.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="functional-iteration.html"><a href="functional-iteration.html#functional-looping"><i class="fa fa-check"></i><b>7.3</b> Functional Looping</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="functional-iteration.html"><a href="functional-iteration.html#map"><i class="fa fa-check"></i><b>7.3.1</b> Map</a></li>
+<li class="chapter" data-level="7.3.2" data-path="functional-iteration.html"><a href="functional-iteration.html#filter"><i class="fa fa-check"></i><b>7.3.2</b> Filter</a></li>
+<li class="chapter" data-level="7.3.3" data-path="functional-iteration.html"><a href="functional-iteration.html#reduce"><i class="fa fa-check"></i><b>7.3.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="functional-iteration.html"><a href="functional-iteration.html#list-comprehensions"><i class="fa fa-check"></i><b>7.4</b> List Comprehensions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>8</b> Pandas</a><ul>
+<li class="chapter" data-level="8.1" data-path="pandas.html"><a href="pandas.html#resources-7"><i class="fa fa-check"></i><b>8.1</b> Resources</a></li>
+<li class="chapter" data-level="8.2" data-path="pandas.html"><a href="pandas.html#setup"><i class="fa fa-check"></i><b>8.2</b> Setup</a></li>
+<li class="chapter" data-level="8.3" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>8.3</b> Series</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>8.3.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="8.3.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>8.3.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="pandas.html"><a href="pandas.html#data-frames"><i class="fa fa-check"></i><b>8.4</b> Data Frames</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>8.4.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="8.4.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>8.4.2</b> Accessing DataFrames</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Python Basics for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="logic-and-conditionals" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Logic and Conditionals</h1>
+<p>Programming involves writing instructions for a computer to execute. However, what allows computer programs to be most useful is when they are able to <em>decide which</em> instructions instructions to execute based on a particular situation. This is refered to as <a href="https://en.wikipedia.org/wiki/Branch_(computer_science)">code branching</a>, and is used to shape the <a href="https://en.wikipedia.org/wiki/Control_flow">flow of control</a> of the computer code. In this module, you will learn how to utilize <strong>conditional statements</strong> in order to include control flow in your Python scripts.</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="introduction-to-python.html#resources">Resources</a></li>
+<li><a href="logic-and-conditionals.html#booleans">Booleans</a></li>
+<li><a href="logic-and-conditionals.html#boolean-operators">Boolean Operators</a></li>
+<li><a href="logic-and-conditionals.html#conditional-statements">Conditional Statements</a></li>
+<li><a href="logic-and-conditionals.html#designing-conditions">Designing Conditions</a></li>
+<li><a href="#modules-vs-scripts">Modules vs. Scripts</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<div id="resources-2" class="section level2">
+<h2><span class="header-section-number">3.1</span> Resources</h2>
+<ul>
+<li><a href="https://books.trinket.io/pfe/03-conditional.html">Conditional Execution (Downey)</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/conditionals.html">Conditionals (Severance)</a></li>
+<li><a href="https://automatetheboringstuff.com/chapter2/">Flow Control (Sweigart)</a> (first half)</li>
+</ul>
+</div>
+<div id="booleans" class="section level2">
+<h2><span class="header-section-number">3.2</span> Booleans</h2>
+<p>In addition to the basic data types <code>int</code>, <code>float</code>, and <code>str</code>, Python supports a <em>logical</em> data type called a <strong>Boolean</strong> (class <code>bool</code>). A boolean represents “yes-or-no” data, and can be exactly one of two values: <code>True</code> or <code>False</code> (note the capitalization). Importantly, these <strong>are not</strong> the Strings <code>&quot;True&quot;</code> and <code>&quot;False&quot;</code>; boolean values are a different type!</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">type</span>(<span class="va">True</span>)    <span class="co"># &lt;class &#39;bool&#39;&gt;</span>
+<span class="bu">type</span>(<span class="st">&quot;True&quot;</span>)  <span class="co"># &lt;class &#39;str&#39;&gt;</span>
+<span class="bu">type</span>(true)    <span class="co"># NameError: name &#39;true&#39; is not defined</span>
+              <span class="co"># e.g., no variable called `true`!</span></code></pre></div>
+<ul>
+<li><em>Fun fact</em>: logical values are called “booleans” after mathematician and logician <a href="https://en.wikipedia.org/wiki/George_Boole">George Boole</a>, who invented many of the rules and uses of this construction (called <a href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean algebra</a>).</li>
+</ul>
+<p>Boolean values are most commonly the result of applying a <strong>relational operator</strong> (also called a <strong>comparison operator</strong>) to some other data type. Comparison operators are used to compare values and include: <code>&lt;</code> (less than), <code>&gt;</code> (greater than), <code>&lt;=</code> (less-than-or-equal, written as read), <code>&gt;=</code> (greater-than-or-equal, written as read), <code>==</code> (equal), and <code>!=</code> (not-equal).</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">3</span>
+y <span class="op">=</span> <span class="fl">3.15</span>
+
+<span class="co"># compare numbers</span>
+x <span class="op">&gt;</span> y  <span class="co"># returns logical value False (&quot;x is bigger than y&quot; is a False statement)</span>
+y <span class="op">!=</span> x  <span class="co"># returns logical value True (&quot;y is not-equal to x&quot; is a True statement)</span>
+
+<span class="co"># compare x to pi (built-in variable)</span>
+y <span class="op">==</span> math.pi  <span class="co"># returns logical value False</span>
+
+<span class="co"># compare strings (based on alphabetical ordering)</span>
+<span class="co">&quot;cat&quot;</span> <span class="op">&gt;</span> <span class="st">&quot;dog&quot;</span>  <span class="co"># returns False</span></code></pre></div>
+<ul>
+<li><strong>Important</strong> <code>==</code> (two equals signs) is a comparison operator, but <code>=</code> (one equals sign) is the assignment operator!</li>
+</ul>
+<p>Note that boolean variables should be named as <em>statements of truth</em>. Use words such as <code>is</code> in the variable name:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">is_early <span class="op">=</span> <span class="va">True</span>
+is_sleeping <span class="op">=</span> <span class="va">False</span>
+needs_coffee <span class="op">=</span> <span class="va">True</span></code></pre></div>
+<div id="boolean-operators" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Boolean Operators</h3>
+<p>In addition, boolean values support their own operators (called <strong>logical operators</strong> or <strong>boolean operators</strong>). These operators are applied to boolean values and produce boolean values, and allow you to make more complex <em>boolean expressions</em>:</p>
+<ul>
+<li><strong><code>and</code></strong> (conjunction) produces <code>True</code> if both of the operands are <code>True</code>, and <code>False</code> otherwise</li>
+<li><strong><code>or</code></strong> (disjunction) produces <code>True</code> if <em>either</em> of the operands are <code>True</code>, and <code>False</code> otherwise</li>
+<li><strong><code>not</code></strong> (negation) is a <a href="https://en.wikipedia.org/wiki/Unary_operation">unary operator</a> that produces <code>True</code> if the operand is <code>False</code>, and <code>False</code> otherwise</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="fl">3.1</span>
+y <span class="op">=</span> <span class="fl">3.2</span>
+
+<span class="co"># Assign bool values to variables</span>
+x_less_than_pi <span class="op">=</span> x <span class="op">&lt;</span> math.pi  <span class="co"># True</span>
+y_less_than_pi <span class="op">=</span> y <span class="op">&lt;</span> math.pi  <span class="co"># False</span>
+
+<span class="co"># boolean operators</span>
+x_less_than_pi <span class="kw">and</span> y_less_than_pi  <span class="co"># False</span>
+x_less_than_pi <span class="kw">or</span> y_less_than_pi  <span class="co"># True</span>
+
+<span class="co"># this works because Python is amazing</span>
+x <span class="op">&lt;</span> math.pi <span class="op">&lt;</span> y  <span class="co"># True</span>
+
+
+pet <span class="op">=</span> <span class="st">&quot;dog&quot;</span>
+
+<span class="co"># it is NOT the case that pet is &quot;cat&quot;</span>
+<span class="kw">not</span> pet <span class="op">==</span> <span class="st">&quot;cat&quot;</span>  <span class="co"># True</span>
+
+<span class="co"># pet is &quot;cat&quot; OR &quot;dog&quot;</span>
+pet <span class="op">==</span> <span class="st">&quot;cat&quot;</span> <span class="kw">or</span> pet <span class="op">==</span> <span class="st">&quot;dog&quot;</span>  <span class="co"># True</span>
+
+<span class="co"># this doesn&#39;t work (operators are applied left-to-right; check the types!)</span>
+<span class="co"># see &quot;short-circuiting&quot; below, as well as http://stackoverflow.com/a/19213583</span>
+pet <span class="op">==</span> <span class="st">&quot;cat&quot;</span> <span class="kw">or</span> <span class="st">&quot;dog&quot;</span>  <span class="co"># &quot;dog&quot;</span></code></pre></div>
+<p>Because boolean expressions produce <em>more</em> booleans, it is possible to combine these into complex logical expressions:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># given two booleans P and Q</span>
+P <span class="op">=</span> <span class="va">True</span>
+Q <span class="op">=</span> <span class="va">False</span>
+
+P <span class="kw">and</span> <span class="kw">not</span> Q  <span class="co"># True</span>
+<span class="kw">not</span> P <span class="kw">and</span> Q  <span class="co"># False</span>
+<span class="kw">not</span> (P <span class="kw">and</span> Q)  <span class="co"># True</span>
+(<span class="kw">not</span> P) <span class="kw">or</span> (<span class="kw">not</span> Q)  <span class="co"># True</span></code></pre></div>
+<p>The last two expressions in the above example are equivalent logical statements for <em>any</em> combination of values for <code>P</code> and <code>Q</code>, what is known as <a href="https://en.wikipedia.org/wiki/De_Morgan%27s_laws">De Morgan’s Laws</a>. Indeed, many logical statements can be written in multiple equivalent ways.</p>
+<p>Finally, note that when using an <code>and</code> operator, Python will <strong>short-circuit</strong> the second operand and never evaluate it if the first is found to be <code>False</code> (after all, if the first operand isn’t <code>True</code> there is no way for the entire <code>and</code> expression to be!)</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">2</span>
+y <span class="op">=</span> <span class="dv">0</span>
+x <span class="op">==</span> <span class="dv">2</span> <span class="kw">and</span> x<span class="op">/</span>y <span class="op">&gt;</span> <span class="dv">1</span>  <span class="co"># ZeroDivisionError: division by zero</span>
+x <span class="op">==</span> <span class="dv">3</span> <span class="kw">and</span> x<span class="op">/</span>y <span class="op">&gt;</span> <span class="dv">1</span>  <span class="co"># no error (short-circuited)</span>
+
+<span class="co"># Use a &quot;guardian expression&quot; (make sure y is not 0)</span>
+<span class="co"># to avoid any errors</span>
+y <span class="op">!=</span> <span class="dv">0</span> <span class="kw">and</span> x<span class="op">/</span>y <span class="op">&gt;</span> <span class="dv">1</span>  <span class="co"># no error (short-circuited)</span></code></pre></div>
+<ul>
+<li>The reason this works is because Python interpreter reads the expression <code>P and Q</code>, it produces <code>Q</code> if <code>P</code> is <code>True</code>, and <code>P</code> otherwise. This is because if <code>P</code> is <code>True</code>, then the overall truth of the expression is dependent entirely on <code>Q</code> (and thus that can just be returned). Similarly, if <code>P</code> is <code>False</code>, then the whole statement is false (equivalent to <code>P</code>!)</li>
+</ul>
+</div>
+</div>
+<div id="conditional-statements" class="section level2">
+<h2><span class="header-section-number">3.3</span> Conditional Statements</h2>
+<p>One of the primary uses of Boolean values (and the <em>boolean expressions</em> that produce them) is to control the flow of execution in a program (e.g., what lines of code get run in what order). While we can use <em>functions</em> are able to organization instructions, we can also have our program decide which set of instructions to execute based on a set of conditions. These deciisions are specified using <strong>conditional statements</strong>.</p>
+<p>In an abstract sense, an conditional statement is saying:</p>
+<pre><code>IF something is true
+  do some lines of code
+OTHERWISE
+  do some other lines of code</code></pre>
+<p>In Python, we write these conditional statements using the keywords <strong><code>if</code></strong> and <strong><code>else</code></strong> and the following syntax:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> condition:
+    <span class="co"># lines of code to run if condition is True</span>
+<span class="cf">else</span>:
+    <span class="co"># lines of code to run if condition is False</span></code></pre></div>
+<p>The <strong><code>condition</code></strong> can be any Boolean value (or any expression that evaluates to a boolean value). Both the <strong><code>if</code></strong> statement and <strong><code>else</code></strong> clause are followed by a colon <strong><code>:</code></strong> and a <strong>block</strong>, which is a set of <em>indented</em> statements to run (similar to the blocks used in functions). It is also possible to <em>omit</em> the <code>else</code> statement and its block if there are no instructions to run in the “otherwise” situation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">porridge_temp =<span class="st"> </span><span class="dv">115</span>  <span class="co"># temperature in degrees F</span>
+
+<span class="cf">if</span> porridge_temp <span class="op">&gt;</span><span class="st"> </span><span class="dv">120</span><span class="op">:</span>
+<span class="st">    </span><span class="kw">print</span>(<span class="st">&quot;This porridge is too hot!&quot;</span>)
+<span class="cf">else</span><span class="op">:</span>
+<span class="st">    </span><span class="kw">print</span>(<span class="st">&quot;This porridge is NOT too hot!&quot;</span>)
+
+too_cold =<span class="st"> </span>porridge_temp <span class="op">&lt;</span><span class="st"> </span><span class="dv">70</span>  <span class="co"># a boolean variable</span>
+<span class="cf">if</span> too_cold<span class="op">:</span>
+<span class="st">  </span><span class="kw">print</span>(<span class="st">&quot;This porridge is too cold!&quot;</span>)
+
+<span class="co"># This line is outside the block, so is not part of the conditional</span>
+<span class="co"># (it will always be executed)</span>
+<span class="kw">print</span>(<span class="st">&quot;Time for a nap!&quot;</span>)</code></pre></div>
+<p><strong>Blocks</strong> can themselves contain <em>nested</em> conditional statements, allowing for more complex decision making. Nested <code>if</code> statements are indented twice (8 spaces or 2 tabs). There is no limit to how many “levels” you can nest; just increase the indentation each time.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># nesting example</span>
+<span class="cf">if</span> outside_temperature <span class="op">&lt;</span> <span class="dv">60</span>:
+    <span class="bu">print</span>(<span class="st">&quot;Wear a jacket&quot;</span>)
+<span class="cf">else</span>:
+    <span class="cf">if</span> outside_temperature <span class="op">&gt;</span> <span class="dv">90</span>:
+        <span class="bu">print</span>(<span class="st">&quot;Wear sunscreen&quot;</span>)
+    <span class="cf">else</span>:
+        <span class="cf">if</span> outside_temperature <span class="op">==</span> <span class="dv">72</span>:
+            <span class="bu">print</span>(<span class="st">&quot;Perfect weather!&quot;</span>)
+        <span class="cf">else</span>:
+            <span class="bu">print</span>(<span class="st">&quot;Wear a t-shirt&quot;</span>)</code></pre></div>
+<p>Note that this form is nesting is also how we you can use conditionals inside of functions:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> flip(coin_is_heads):
+    <span class="cf">if</span> coin_is_heads:
+        <span class="bu">print</span>(<span class="st">&quot;Heads you win!&quot;</span>)
+    <span class="cf">else</span>:
+        <span class="bu">print</span>(<span class="st">&quot;Tails you lose&quot;</span>)</code></pre></div>
+<p>If you consider the above nesting example’s logic carefully, you’ll notice that many of the “branches” are <strong>mutually exclusive</strong>: that is, the code will choose only 1 of 4 different clothing suggestions to print. This can be written in a cleaner format by using an <strong><code>elif</code></strong> (“else if”) clause:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> outside_temperature <span class="op">&lt;</span> <span class="dv">60</span>:
+    <span class="bu">print</span>(<span class="st">&quot;Wear a jacket&quot;</span>)
+<span class="cf">elif</span> outside_temperature <span class="op">&gt;</span> <span class="dv">90</span>:
+    <span class="bu">print</span>(<span class="st">&quot;Wear sunscreen&quot;</span>)
+<span class="cf">elif</span> outside_temperature <span class="op">==</span> <span class="dv">72</span>:
+    <span class="bu">print</span>(<span class="st">&quot;Perfect weather!&quot;</span>)
+<span class="cf">else</span>:
+    <span class="bu">print</span>(<span class="st">&quot;Wear a t-shirt&quot;</span>)</code></pre></div>
+<p>In this situation, the Python interpreter will perform the following logic:</p>
+<ol style="list-style-type: decimal">
+<li>It first checks the <code>if</code> statement’s condition. If that is <code>True</code>, then that branch is executed and the rest of the clauses are skipped.</li>
+<li>It then checks each <code>elif</code> clause’s condition <em>in order</em>. If one of them is <code>True</code>, then that branch is executed and the rest of the clauses are skipped.</li>
+<li>If <em>none</em> of the <code>elif</code> clauses are <code>True</code>, then (and only then!) the <code>else</code> block is executed.</li>
+</ol>
+<p>This <em>ordering</em> is important, particularly if the conditions are not in fact mutually exclusive:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> porridge_temp <span class="op">&lt;</span> <span class="dv">120</span>:
+    <span class="bu">print</span>(<span class="st">&quot;This porridge is not too hot!&quot;</span>)
+<span class="cf">elif</span> porridge_temp <span class="op">&lt;</span> <span class="dv">70</span>:
+  <span class="co"># unreachable statement! the condition will never be both checked and True</span>
+    <span class="bu">print</span>(<span class="st">&quot;This porridge is too cold!&quot;</span>)
+
+<span class="co"># contrast with:</span>
+<span class="cf">if</span> porridge_temp <span class="op">&lt;</span> <span class="dv">120</span>:
+    <span class="bu">print</span>(<span class="st">&quot;This porridge is not too hot!&quot;</span>)
+<span class="cf">if</span> porridge_temp <span class="op">&lt;</span> <span class="dv">70</span>:  <span class="co"># a second if statement, unrelated to the first</span>
+    <span class="bu">print</span>(<span class="st">&quot;This porridge is too cold!&quot;</span>)
+<span class="co"># both print statements will execute for `porridge_temp = 50`</span></code></pre></div>
+<p>See also the resources listed at the top of the module for explanations with logical diagrams and flowcharts.</p>
+<div id="designing-conditions" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Designing Conditions</h3>
+<p>Relational operators all have logical opposites (e.g., <code>==</code> is the opposite of <code>!=</code>; <code>&lt;=</code> is the opposite of <code>&gt;</code>), and boolean expressions can include negation. This means that there are many different ways to write conditional statements that are <em>logically equivalent</em>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># these two statements are equivalent</span>
+<span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">3</span>:
+    <span class="bu">print</span>(<span class="st">&quot;big X!&quot;</span>)
+
+<span class="cf">if</span> <span class="dv">3</span> <span class="op">&lt;</span> x:
+    <span class="bu">print</span>(<span class="st">&quot;big X!&quot;</span>)</code></pre></div>
+<ul>
+<li>The second example is known as a <a href="https://en.wikipedia.org/wiki/Yoda_conditions">Yoda condition</a>; in Python you should use the former.</li>
+</ul>
+<p>Thus you should follow the below guidelines when writing conditionals. These produce more “idiomatic” code which is cleaner and easier to read, as well as less likely to cause errors.</p>
+<ul>
+<li>Avoid checks for mutually exclusive conditions with an <code>if</code> and <code>elif</code>. Use the <code>else</code> clause instead!</li>
+</ul>
+<p>```python # Do not do this! if temperature &lt; 50: print(“It is cold”) elif temperature &gt;= 50: # unnecessary condition print(“It is not cold”)</p>
+<p># Do this instead! if temperature &lt; 50: print(“It is cold”) else: print(“It is not cold”) ```</p>
+<ul>
+<li>Avoid creating redundant boolean expressions by comparing boolean values to <code>True</code>. Instead, use an effectively named variable.</li>
+</ul>
+<p>```python # Do not do this! if is_raining == True: # unnecessary comparison print(“It is raining!”)</p>
+<p># Do this instead! if is_raining: # condition is already a boolean! print(“It is raining!”) ```</p>
+<p>Note that this gets trickier when trying to check for <code>False</code> values. Consider the following equivalent conditions:</p>
+<p>```python # I believe this is the cleanest option, as it reads closet to English if not is_raining: print(“It is not raining!”)</p>
+<p># This is an acceptable equivalent, but prefer the first option if is_raining == False print(“It is not raining!”)</p>
+<p># Use one of the above options instead if is_raining != True print(“It is not raining!”)</p>
+<p># This can be confusing unless your logic is explicitly based around the # ABSENCE of some condition if is_not_raining: print(“It is not raining!”) ```</p>
+<p>Overall, try to develop the simplest, most straightforward conditions you can. This will make sure that you are able to think clearly about the program’s control flow, and help to clarify your own thinking about the program’s logic.</p>
+</div>
+<div id="modules-vs.scripts" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Modules vs. Scripts</h3>
+<p>As discussed in <a href="../../module5-python-basics">module5</a>, it is possible to define Python variables and functoins in <code>.py</code> files, which can be run as stand-alone scripts. However, these files can also be <a href="https://docs.python.org/3/tutorial/modules.html">imported as modules</a>, allowing you to access their variables and functions from another script. Thus all Python scripts have two “modes”: they can be used as executable scripts (run with the <code>python</code> command at the command-line), or they can be imported as modules (libraries of variables and functions, using the <code>import</code> keyword in the script).</p>
+<p>When the <code>.py</code> script is run as an executable <a href="https://docs.python.org/3/library/__main__.html">top-level script</a>, we often want to perform special instructions (e.g., call specific functions, <a href="https://docs.python.org/3/library/functions.html#input">prompt for user input</a>, etc). We can use a special <em>environmental</em> variable called <code>__name__</code> to determine whether this is the “main” script that is being run, and <code>if</code> so execute those instructions:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
+    <span class="co"># execute only if run as a script</span>
+    <span class="bu">print</span>(<span class="st">&quot;This is run as a script, not a module!&quot;</span>)</code></pre></div>
+<ul>
+<li>The <code>__</code> in the variable names and values are a special naming convention used to indicate <em>to the human</em> that these values are <strong>internal</strong> to the Python language and so have special meaning. They are otherwise normal variables names</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="iteration-and-loops.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-logic.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

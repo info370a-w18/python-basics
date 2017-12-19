@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python Basics for Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Python Basics for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Python Basics for Data Science" />
+  
+  <meta name="twitter:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2017-12-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="iteration-and-loops.html">
+<link rel="next" href="dictionaries.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Python Basics for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introductory Python materials for the INFO 370: Introduction to Data Science Course.</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources"><i class="fa fa-check"></i><b>1.1</b> Resources</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>1.2</b> Programming with Python</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>1.2.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>1.3</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#command-line"><i class="fa fa-check"></i><b>1.3.1</b> Command-Line</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>1.3.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#python-basics"><i class="fa fa-check"></i><b>1.4</b> Python Basics</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>1.5</b> Comments</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>1.6</b> Variables</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>1.6.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>1.7</b> Getting Help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2</b> Functions</a><ul>
+<li class="chapter" data-level="2.1" data-path="functions.html"><a href="functions.html#resources-1"><i class="fa fa-check"></i><b>2.1</b> Resources</a></li>
+<li class="chapter" data-level="2.2" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>2.2</b> What are Functions?</a></li>
+<li class="chapter" data-level="2.3" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>2.3</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>2.3.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>2.4</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>2.4.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>2.5</b> Writing Functions</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>2.5.1</b> Doc Strings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html"><i class="fa fa-check"></i><b>3</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#resources-2"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
+<li class="chapter" data-level="3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#booleans"><i class="fa fa-check"></i><b>3.2</b> Booleans</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#boolean-operators"><i class="fa fa-check"></i><b>3.2.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#conditional-statements"><i class="fa fa-check"></i><b>3.3</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#designing-conditions"><i class="fa fa-check"></i><b>3.3.1</b> Designing Conditions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#modules-vs.scripts"><i class="fa fa-check"></i><b>3.3.2</b> Modules vs. Scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>4</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-3"><i class="fa fa-check"></i><b>4.1</b> Resources</a></li>
+<li class="chapter" data-level="4.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>4.2</b> While Loops</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>4.2.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="4.2.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#conditionals-and-sentinels"><i class="fa fa-check"></i><b>4.2.2</b> Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>4.3</b> For Loops</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>4.3.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#working-with-files"><i class="fa fa-check"></i><b>4.4</b> Working with Files</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>4.4.1</b> Try/Except</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>5</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="5.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-4"><i class="fa fa-check"></i><b>5.1</b> Resources</a></li>
+<li class="chapter" data-level="5.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists"><i class="fa fa-check"></i><b>5.2</b> Lists</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>5.2.1</b> List Indices</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>5.3</b> List Operations and Methods</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>5.3.1</b> Lists and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>5.4</b> Nested Lists</a></li>
+<li class="chapter" data-level="5.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>5.5</b> Tuples</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>6</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.1" data-path="dictionaries.html"><a href="dictionaries.html#resources-5"><i class="fa fa-check"></i><b>6.1</b> Resources</a></li>
+<li class="chapter" data-level="6.2" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-1"><i class="fa fa-check"></i><b>6.2</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>6.2.1</b> Accessing a Dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>6.3</b> Dictionary Methods</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>6.3.1</b> Dictionaries and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>6.4</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="6.5" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>6.5</b> Which data structure do I use?</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functional-iteration.html"><a href="functional-iteration.html"><i class="fa fa-check"></i><b>7</b> Functional Iteration</a><ul>
+<li class="chapter" data-level="7.1" data-path="functional-iteration.html"><a href="functional-iteration.html#resources-6"><i class="fa fa-check"></i><b>7.1</b> Resources</a></li>
+<li class="chapter" data-level="7.2" data-path="functional-iteration.html"><a href="functional-iteration.html#functions-are-variables"><i class="fa fa-check"></i><b>7.2</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="functional-iteration.html"><a href="functional-iteration.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>7.2.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="functional-iteration.html"><a href="functional-iteration.html#functional-looping"><i class="fa fa-check"></i><b>7.3</b> Functional Looping</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="functional-iteration.html"><a href="functional-iteration.html#map"><i class="fa fa-check"></i><b>7.3.1</b> Map</a></li>
+<li class="chapter" data-level="7.3.2" data-path="functional-iteration.html"><a href="functional-iteration.html#filter"><i class="fa fa-check"></i><b>7.3.2</b> Filter</a></li>
+<li class="chapter" data-level="7.3.3" data-path="functional-iteration.html"><a href="functional-iteration.html#reduce"><i class="fa fa-check"></i><b>7.3.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="functional-iteration.html"><a href="functional-iteration.html#list-comprehensions"><i class="fa fa-check"></i><b>7.4</b> List Comprehensions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>8</b> Pandas</a><ul>
+<li class="chapter" data-level="8.1" data-path="pandas.html"><a href="pandas.html#resources-7"><i class="fa fa-check"></i><b>8.1</b> Resources</a></li>
+<li class="chapter" data-level="8.2" data-path="pandas.html"><a href="pandas.html#setup"><i class="fa fa-check"></i><b>8.2</b> Setup</a></li>
+<li class="chapter" data-level="8.3" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>8.3</b> Series</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>8.3.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="8.3.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>8.3.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="pandas.html"><a href="pandas.html#data-frames"><i class="fa fa-check"></i><b>8.4</b> Data Frames</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>8.4.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="8.4.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>8.4.2</b> Accessing DataFrames</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Python Basics for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lists-and-sequences" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Lists and Sequences</h1>
+<p>In this module, we will cover using <strong>lists</strong> in Python, which is a data type representing a <em>sequence</em> of data values (similar to how a <code>string</code> is a squence of letters, and a <code>range</code> is a sequence of numbers). A list is a fundamental data type in Python, and key to writing almost all practical programs. Lists are used to store and organize large sets of data (and computer programs usually deal with <em>lots</em> of data). This module cover how to create, access, and utilize lists to automate the processing of larger amounts of data.</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="introduction-to-python.html#resources">Resources</a></li>
+<li><a href="lists-and-sequences.html#lists">Lists</a></li>
+<li><a href="lists-and-sequences.html#list-indices">List Indices</a></li>
+<li><a href="lists-and-sequences.html#list-operations-and-methods">List Operations and Methods</a></li>
+<li><a href="lists-and-sequences.html#lists-and-loops">Lists and Loops</a></li>
+<li><a href="lists-and-sequences.html#nested-lists">Nested Lists</a></li>
+<li><a href="lists-and-sequences.html#tuples">Tuples</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<div id="resources-4" class="section level2">
+<h2><span class="header-section-number">5.1</span> Resources</h2>
+<ul>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/lists.html">Lists (Severance)</a></li>
+<li><a href="https://automatetheboringstuff.com/chapter4/">Lists (Sweigart)</a></li>
+<li><a href="https://books.trinket.io/pfe/10-tuples.html">Tuples (Downey)</a></li>
+<li><a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">Sequence Types (Python Docs)</a></li>
+</ul>
+</div>
+<div id="lists" class="section level2">
+<h2><span class="header-section-number">5.2</span> Lists</h2>
+<p>A list is a <strong>mutable</strong>, <strong>ordered</strong> sequence of values that are all stored in a single variable. For example, you can make a vector <code>names</code> that contains the strings “Sarah”, “Amit”, and “Zhang”, or a vector <code>one_to_hundred</code> that stores the numbers from 1 to 100. Each value in a list is refered to as an <strong>element</strong> of that list; thus our <code>names</code> list would have 3 elements: <code>&quot;Sarah&quot;</code>, <code>&quot;Amit&quot;</code>, and <code>&quot;Zhang&quot;</code>.</p>
+<p>Lists are written as literals inside <em>square brackets</em> (<strong><code>[]</code></strong>), with each element in the list separated by a <em>comma</em> (<strong><code>,</code></strong>):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># a list of names</span>
+names <span class="op">=</span> [<span class="st">&quot;Sarah&quot;</span>, <span class="st">&quot;Amit&quot;</span>, <span class="st">&quot;Zhang&quot;</span>]
+
+<span class="co"># a list of numbers (can contain &quot;duplicate&quot; values)</span>
+numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>]
+
+<span class="co"># lists can contain different types (including other lists!)</span>
+things <span class="op">=</span> [<span class="st">&quot;raindrops&quot;</span>, <span class="dv">2</span>, <span class="va">True</span>, [<span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">8</span>]]
+
+<span class="co"># lists can be empty (with no elements)</span>
+empty <span class="op">=</span> []</code></pre></div>
+<ul>
+<li>List variables should be named using <strong>plurals</strong> (name_s_, number_s_, etc.), because lists hold multiple values!</li>
+</ul>
+<p>Other sequences (such as strings or ranges) can be converted into lists by using the built-in <code>list()</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">list</span>(<span class="st">&quot;hello&quot;</span>)  <span class="co"># [&#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;]</span>
+<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">5</span>))  <span class="co"># [1, 2, 3, 4]</span></code></pre></div>
+<div id="list-indices" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> List Indices</h3>
+<p>We can refer to individual elements in a list by their <strong>index</strong>, which is the number of their position in the list. Lists are <em>zero-indexed</em>, which means that positions are counted starting at <code>0</code>. For example, in the list:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">vowels <span class="op">=</span> [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;i&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39;u&#39;</span>]</code></pre></div>
+<p>The <code>'a'</code> (the first element) is at <em>index</em> 0, <code>'e'</code> (the second element) is at index 2, and so on.</p>
+<ul>
+<li>This also means that the last element can be found at the index <code>length_of_list - 1</code>. This pattern is why values like <code>range(5)</code> <em>include</em> <code>0</code> but <em>exclude</em> the last <code>5</code>.</li>
+</ul>
+<p>You can retrieve an element from a list using <strong>bracket notation</strong>: you refer to the element at a particular index of a list by writing the name of the list, followed by square brackets (<strong><code>[]</code></strong>) that contain the index of interest:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">names =<span class="st"> </span>[<span class="st">&quot;Sarah&quot;</span>, <span class="st">&quot;Amit&quot;</span>, <span class="st">&quot;Zhang&quot;</span>]
+
+<span class="co"># access the element at index 0</span>
+name_first =<span class="st"> </span>names[<span class="dv">0</span>]
+<span class="kw">print</span>(name_first)  <span class="co"># Sarah</span>
+
+<span class="co"># access the element at index 2</span>
+name_third =<span class="st"> </span>names[<span class="dv">2</span>]
+<span class="kw">print</span>(name_third)  <span class="co"># Zhang</span>
+
+<span class="co"># accessing an index not in the list will give an error</span>
+name_fourth =<span class="st"> </span>names[<span class="dv">3</span>]  <span class="co"># IndexError!</span>
+
+<span class="co"># negative indices count backwards from the end</span>
+name_last =<span class="st"> </span>names[<span class="op">-</span><span class="dv">1</span>]  <span class="co"># Zhang</span>
+name_second_to_last =<span class="st"> </span>names[<span class="op">-</span><span class="dv">2</span>]  <span class="co">#Amit</span></code></pre></div>
+<p>The value inside the square brackets can any expression that resolves to an integer, including variables:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">names[<span class="dv">1</span><span class="op">+</span><span class="dv">1</span>]  <span class="co"># &quot;Amit&quot;</span>
+
+last_index <span class="op">=</span> <span class="bu">len</span>(names) <span class="op">-</span> <span class="dv">1</span>  <span class="co"># last index is length of list - 1</span>
+names[last_index]  <span class="co"># &quot;Zhang&quot;</span>
+
+<span class="co"># Don&#39;t forget to subtract one from the length!</span>
+names[<span class="bu">len</span>(names)]  <span class="co"># IndexError!</span>
+<span class="co"># Using an index of `-1` is a better solution</span></code></pre></div>
+<p>It is possible to select multiple, <em>consecutive</em> elements from a list by specifying a <strong>slice</strong>. A slice is written as the starting and ending indices separated by a colon (<strong><code>:</code></strong>); the starting index is included and the ending index is <em>excluded</em>. For example:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">letters <span class="op">=</span> [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;f&#39;</span>]
+
+<span class="co"># indices 1 through 3 (non-inclusive)</span>
+letters[<span class="dv">1</span>:<span class="dv">3</span>]  <span class="co"># [&#39;b&#39;, &#39;c&#39;]</span>
+
+<span class="co"># indices 3 to the end (inclusive)</span>
+letters[<span class="dv">3</span>:]  <span class="co"># [&#39;d&#39;, &#39;e&#39;, &#39;f&#39;]</span>
+
+<span class="co"># indices up to 3 (non-inclusive)</span>
+letters[:<span class="dv">3</span>]  <span class="co"># [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+
+<span class="co"># indices 2 to (2 from end) (non-inclusive)</span>
+letters[<span class="dv">2</span>:<span class="op">-</span><span class="dv">2</span>]  <span class="co"># [&#39;c&#39;, &#39;d&#39;], the `e` is excluded</span>
+
+<span class="co"># all the indices. This produces a new list with the same contents!</span>
+letters[:]</code></pre></div>
+<p>An indexed reference to a list element (e.g., <code>names[0]</code>) is effectively a <em>variable in its own right</em>: you can think of <code>names[0]</code>, <code>names[1]</code>, and <code>names[2]</code> as being equivalent to having variables <code>names_0</code>, <code>names_1</code>, <code>names_2</code> (each of which has its own value). Lists effectively provide a “shortcut” for having lots and lots of variables that are all related; instead we can “collect” those variables into a list!</p>
+<p>Because list references are variables, they can be used anywhere that a “normal” variable can be. In particular, this means that variables can be assigned to them, allowing the list to be <strong>mutated</strong> (changed):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># a list of school supplies</span>
+school_supplies <span class="op">=</span> [<span class="st">&quot;Backpack&quot;</span>, <span class="st">&quot;Laptop&quot;</span>, <span class="st">&quot;Pen&quot;</span>]
+
+<span class="co"># replace &quot;Pen&quot; with &quot;Pencil&quot;</span>
+school_supplies[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&quot;Pencil&quot;</span>
+
+<span class="bu">print</span>(school_supplies)  <span class="co"># [&#39;Backpack&#39;, &#39;Laptop&#39;, &#39;Pencil&#39;]</span>
+
+<span class="co"># You can only assign values to &quot;variables&quot; that exist in the list!</span>
+school_supplies[<span class="dv">3</span>] <span class="op">=</span> <span class="st">&quot;Paper&quot;</span>  <span class="co"># IndexError!</span></code></pre></div>
+<p>Just as with variables: if the list index (e.g., <code>my_list[index]</code>) is on the <em>left</em> side of an assignment, it means the <strong>variable</strong> (which “slot” in the list). If it is on the <em>right</em> side of an assignment, it means the <strong>value</strong> (which element is in that slot).</p>
+<p>Finally, note that <strong>strings</strong> are also <em>indexed sequences</em> of characters. Thus you can use <em>bracket notation</em> to refer to individual letters, and many string methods utilize the index in their arguments:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">message_str <span class="op">=</span> <span class="st">&quot;Hello world&quot;</span>
+message_str[<span class="dv">1</span>:<span class="dv">5</span>]  <span class="co"># &quot;ello&quot;</span>
+
+<span class="co"># find the index of the &#39;w&#39;</span>
+message_str.find(<span class="st">&#39;w&#39;</span>)  <span class="co"># 6</span></code></pre></div>
+</div>
+</div>
+<div id="list-operations-and-methods" class="section level2">
+<h2><span class="header-section-number">5.3</span> List Operations and Methods</h2>
+<p>Lists support a number of different <a href="https://docs.python.org/3/library/stdtypes.html#common-sequence-operations">operations</a> and <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">methods</a> (functions):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Addition (+) to combine lists</span>
+[<span class="st">&#39;a&#39;</span>,<span class="st">&#39;b&#39;</span>] <span class="op">+</span> [<span class="dv">1</span>,<span class="dv">2</span>]  <span class="co"># [&#39;a&#39;, &#39;b&#39;, 1, 2]</span>
+
+<span class="co"># Multiplication (*) performs multiple additions</span>
+[<span class="dv">1</span>,<span class="dv">2</span>] <span class="op">*</span> <span class="dv">3</span>  <span class="co"># [1, 2, 1, 2, 1, 2]</span>
+
+<span class="co"># A sample list</span>
+s <span class="op">=</span> [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>]
+
+<span class="co"># Add value to end of list</span>
+s.append(<span class="st">&#39;x&#39;</span>)  <span class="co"># add &#39;x&#39; at end</span>
+
+<span class="co"># Add value in middle of list</span>
+s.insert(<span class="dv">2</span>, <span class="st">&#39;y&#39;</span>)  <span class="co"># put &#39;y&#39; at index 2 (everyone else shifts over)</span>
+
+<span class="co"># Remove from end of list (&quot;pop off&quot;)</span>
+s.pop()  <span class="co"># removes and returns the last item (`x`)</span>
+
+<span class="co"># Remove from middle</span>
+s.pop(<span class="dv">2</span>)  <span class="co"># removes and returns item at index 2 (`y`)</span>
+
+<span class="co"># Remove specific value</span>
+s.remove(<span class="st">&#39;c&#39;</span>)  <span class="co"># remove the first &#39;c&#39; in the list; nothing returned</span>
+
+<span class="co"># Remove all elements</span>
+s.clear()</code></pre></div>
+<ul>
+<li>Note that list methods such as <code>append()</code> or <code>clear()</code> usually <strong>mutate</strong> the existing list value and then return <code>None</code>. In comparison, string methods (such as <code>lower()</code> or <code>replace()</code>) will return a <em>different</em> string value. This is because lists can be changed, but strings cannot (they are <em>immutable</em>).</li>
+</ul>
+<p>When comparing lists using a <em>relational operator</em> (e.g., <code>==</code> or <code>&gt;</code>), the operation is applied to the lists <strong>member-wise</strong>: each element in the first list operand is compared to the element <em>at the same index</em> in the second list operand. If the comparison is <code>True</code> for <em>each</em> pair of elements, then the expression is <code>True</code>. In practice, this means that (a) you can use <code>==</code> to compare the contents of lists, and (b) a list is “smaller” than another if it’s first item is smaller than the other’s.</p>
+<p>But be careful: just because two lists have the same contents (are <code>==</code>) does not mean that they are <em>the same list</em>! In particular, two lists can be <em>different objects</em> (values) but still have the same contents. In Python, you can test whether two values are actually <em>the same value</em> (as opposed to having the same content) using the <strong><code>is</code></strong> operator.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># With strings, literals are shared (because they cannot be mutated)</span>
+str_a <span class="op">=</span> <span class="st">&quot;banana&quot;</span>  <span class="co"># `a` labels string literal &quot;banana&quot;</span>
+str_b <span class="op">=</span> <span class="st">&quot;banana&quot;</span>  <span class="co"># `b` labels string literal &quot;banana&quot;</span>
+
+<span class="co"># Both variables label the same (literal) value</span>
+str_a <span class="kw">is</span> str_b  <span class="co"># True</span>
+
+<span class="co"># With lists, each list created is a different object!</span>
+list_a <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]  <span class="co"># `a` labels a new list [1,2,3]</span>
+list_b <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]  <span class="co"># `b` labels a new list [1,2,3]</span>
+
+a <span class="op">==</span> b  <span class="co"># True, have same values as contents</span>
+a <span class="kw">is</span> b  <span class="co"># False, are two different objects</span>
+
+list_c <span class="op">=</span> list_a  <span class="co"># `c` labels the value that `a` labels</span>
+a <span class="kw">is</span> c  <span class="co"># True, both are the same object</span>
+
+<span class="co"># Modify the list!</span>
+list_a[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span>
+<span class="bu">print</span>(list_b[<span class="dv">0</span>])  <span class="co"># 1 (a different list)</span>
+<span class="bu">print</span>(list_c[<span class="dv">0</span>])  <span class="co"># 10 (the same list)</span></code></pre></div>
+<p>Keeping track of whether a <em>new</em> list has been created is particularly important when using lists as <strong>arguments to functions</strong>. Function arguments are local variables that are <em>assigned</em> the passed value—if this value is a list, then the assigned variable will refer to the same list, and any modifications to the argument will affect the value outside of the function:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># A version of a function that modifies the list</span>
+<span class="kw">def</span> delete_first(a_list):
+    a_list.pop(<span class="dv">0</span>)  <span class="co"># modifies the given value</span>
+
+letters <span class="op">=</span> [<span class="st">&#39;a&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>]
+delete_first(letters)  <span class="co"># call function</span>
+<span class="bu">print</span>(letters)  <span class="co"># [&#39;b&#39;, &#39;c&#39;], variable is changed</span>
+
+<span class="co"># A version of a function that does not modify the list</span>
+<span class="kw">def</span> delete_first(a_list):
+    a_list <span class="op">=</span> a_list[<span class="dv">1</span>:]  <span class="co"># create new local variable (replacing old local var)</span>
+
+letters <span class="op">=</span> [<span class="st">&#39;a&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>]
+delete_first(letters)  <span class="co"># call function</span>
+<span class="bu">print</span>(letters) <span class="co">#=&gt; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], variable is not changed</span></code></pre></div>
+<div id="lists-and-loops" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Lists and Loops</h3>
+<p>As with other iterable sequences like strings and files, it is possible to iterate through the contents of a list by using a <em>for loop</em>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numbers <span class="op">=</span> [<span class="fl">3.98</span>, <span class="dv">8</span>, <span class="fl">10.8</span>, <span class="fl">3.27</span>, <span class="fl">5.21</span>]
+
+<span class="cf">for</span> element <span class="kw">in</span> numbers:  <span class="co"># `number` is a better local variable name</span>
+    <span class="bu">print</span>(element)
+
+<span class="co"># This will not let you modify the list, since the &quot;number&quot; variable is local</span>
+<span class="cf">for</span> number <span class="kw">in</span> numbers:
+  number <span class="op">=</span> <span class="bu">round</span>(number, <span class="dv">1</span>)
+
+<span class="bu">print</span>(numbers)  <span class="co"># [3.98, 8, 10.8, 3.27, 5.21], not rounded</span></code></pre></div>
+<p>In order to <em>modify</em> the list while iterating through it, you need a way to refer to the element you want to change. Since we refer to elements by their <em>index</em>, a better solution is to instead iteate through the <em>range of indices</em> rather than through the elements themselves:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numbers <span class="op">=</span> [<span class="fl">3.98</span>, <span class="dv">8</span>, <span class="fl">10.8</span>, <span class="fl">3.27</span>, <span class="fl">5.21</span>]
+
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(numbers)):  <span class="co"># `i` for &quot;index&quot;</span>
+    <span class="bu">print</span>(numbers[i])  <span class="co"># refer to elements by index</span>
+
+<span class="co"># Can now modify the list</span>
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(numbers)):
+  numbers[i] <span class="op">=</span> <span class="bu">round</span>(numbers[i], <span class="dv">1</span>)  <span class="co"># change value at index to rounded version</span>
+
+<span class="bu">print</span>(numbers)  <span class="co"># [4.0, 8, 10.8, 3.3, 5.2], rounded!</span></code></pre></div>
+<ul>
+<li>Note that this process of applying some change to each element in a list is known as a <strong>mapping</strong> (each value “maps” or goes to some transformed version of itself). We will discuss mapping more in a later module.</li>
+</ul>
+</div>
+</div>
+<div id="nested-lists" class="section level2">
+<h2><span class="header-section-number">5.4</span> Nested Lists</h2>
+<p>As noted at the start of the module, lists elements can be of <strong>any</strong> data type (and any <em>combination</em> of data types)—including other lists! These “lists of lists” are known as <strong>nested lists</strong> or <strong>2-dimensional lists</strong> (or <em>3d-list</em> for a “list of lists of lists”, etc). Nested lists are most commonly used to represent information such as <em>tables</em> or <em>matrices</em>.</p>
+<p>Nested lists work exactly like normal lists; the elements just happen to themselves be indexable (like strings!):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># a list of different dinners available at a fancy party</span>
+<span class="co"># this list has 4 elements, each of which is a list of 3 elements</span>
+<span class="co"># the indentation is just for human readability</span>
+dinner_options <span class="op">=</span> [
+    [<span class="st">&quot;chicken&quot;</span>, <span class="st">&quot;mashed potatoes&quot;</span>, <span class="st">&quot;mixed veggies&quot;</span>],
+    [<span class="st">&quot;steak&quot;</span>, <span class="st">&quot;seasoned potatoes&quot;</span>, <span class="st">&quot;asparagus&quot;</span>],
+    [<span class="st">&quot;fish&quot;</span>, <span class="st">&quot;seasoned rice&quot;</span>, <span class="st">&quot;green beans&quot;</span>],
+    [<span class="st">&quot;portobello steak&quot;</span>, <span class="st">&quot;seasoned rice&quot;</span>, <span class="st">&quot;green beans&quot;</span>]
+]
+
+<span class="bu">len</span>(dinner_options)   <span class="co"># 4</span>
+fish_option <span class="op">=</span> dinner_options[<span class="dv">2</span>]  <span class="co"># [&quot;fish&quot;, &quot;seasoned rice&quot;, &quot;green beans&quot;]</span>
+
+<span class="co"># because fish_option is a list, we can reference its elements by index</span>
+<span class="bu">print</span>(fish_option[<span class="dv">0</span>])  <span class="co"># &quot;fish&quot;</span></code></pre></div>
+<p>In this example <code>fish_option</code> is a variable that refers to a list, and thus its elements can be accessed by index using bracket notation. But as with any operator or function, it is also possible to use bracket notation on an <em>anonymous value</em> (e.g., a literal value that has not been assigned to a variable). That is, because <code>dinner_options[2]</code> is a list, we can use bracket notation refer to an element of that list without assigning it to a variable first:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Access the 2th element&#39;s 0th element</span>
+dinner_options[<span class="dv">2</span>][<span class="dv">0</span>]  <span class="co"># &quot;fish&quot;</span></code></pre></div>
+<p>This “pair of brackets” notation allows you to easily access elements within nested lists. This is particularly useful for 2d-lists that represent <em>tables</em> as a list of “rows” (often data records), each of which is a list of “column cells” (often data features):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># a simple table of values</span>
+table <span class="op">=</span> [ [<span class="st">&#39;aa&#39;</span>,<span class="st">&#39;ab&#39;</span>,<span class="st">&#39;ac&#39;</span>,<span class="st">&#39;ad&#39;</span>],
+          [<span class="st">&#39;ba&#39;</span>,<span class="st">&#39;bb&#39;</span>,<span class="st">&#39;bc&#39;</span>,<span class="st">&#39;bd&#39;</span>],
+          [<span class="st">&#39;ca&#39;</span>,<span class="st">&#39;cb&#39;</span>,<span class="st">&#39;cc&#39;</span>,<span class="st">&#39;cd&#39;</span>] ]
+
+row <span class="op">=</span> <span class="dv">1</span>  <span class="co"># cells starting with &#39;b&#39;</span>
+col <span class="op">=</span> <span class="dv">3</span>  <span class="co"># cells ending with &#39;d&#39;</span>
+table[row][col]  <span class="co"># &quot;bd&quot;, the cell at row/col</span></code></pre></div>
+<p>Note that we often use <em>nested for loops</em> to iterate through a <em>nested list</em>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(table)):  <span class="co"># go through each row (with index)</span>
+    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(table[i]))  <span class="co"># go through each col of that row (with index)</span>
+        <span class="bu">print</span>(table[i][j])  <span class="co"># access ith row, jth column</span></code></pre></div>
+<ul>
+<li>We use a <code>j</code> for the index of the nested loop, because the <code>i</code> for “index” was already taken! <code>row</code> and <code>col</code> are also excellent local variable names.</li>
+</ul>
+</div>
+<div id="tuples" class="section level2">
+<h2><span class="header-section-number">5.5</span> Tuples</h2>
+<p>While lists are <em>mutable</em> (changeable) sequences of data, <strong>tuples</strong> represent <strong><em>immutable</em></strong> sequences of data. These are useful if you want to enforce that a data value won’t be changed, such as for a function argument (or a dictionary key; see <a href="../../module10-dictionaries">module 10</a>). Indeed, many built-in Python functions utilize tuples.</p>
+<p><strong>Tuples</strong> are written as <em>comma-separated sequences</em> as values. They are often placed inside parentheses for clarity (to help indicate the start and end of the tuple values):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">letters_tuple <span class="op">=</span> (<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>)
+<span class="bu">print</span>(letters_tuple)  <span class="co"># (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)</span>
+
+<span class="co"># also a tuple (without parentheses)</span>
+numbers_tuple <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>
+<span class="bu">print</span>(numbers_tuple)  <span class="co"># (1, 2, 3)</span>
+
+<span class="co"># A tuple representing a person&#39;s name, age, and whether they are hungry</span>
+<span class="co"># Tuple values have _implied_ meanings, which should be explained in comments</span>
+hungry_person <span class="op">=</span> (<span class="st">&#39;Ada&#39;</span>, <span class="dv">28</span>, <span class="va">True</span>)
+
+<span class="co"># In English, tuples may be named based on the number of elements</span>
+triple <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)
+double <span class="op">=</span> (<span class="dv">4</span>,<span class="dv">5</span>)
+single <span class="op">=</span> (<span class="dv">6</span>,)  <span class="co"># extra comma indicates is a tuple, not just int `6`</span>
+empty <span class="op">=</span> ()  <span class="co"># an empty expression is a tuple!</span>
+<span class="bu">type</span>(())  <span class="co"># &lt;class &#39;tuple&#39;&gt; (type of empty expression)</span></code></pre></div>
+<ul>
+<li>It’s important to note that while we often write tuples in parentheses (and they are printed in parentheses), it is the <strong>commas</strong> that makes a sequence of literals into a tuple. The parentheses act just like like they do in mathematical expressions—they are only necessary to clarify ambiguity in the order-of-operations. You will find that some “idiomatic” expressions using tuples forgo the parentheses, making the syntax look more magical than it is!</li>
+</ul>
+<p>Elements in tuples can be accessed by <strong>index</strong> using <strong>bracket notation</strong>, just like the elements in lists. However, tuples <em>cannot be modified</em>, so you cannot assign a new value to an index in a tuple:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">letter_triple <span class="op">=</span> (<span class="st">&#39;a&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>)
+<span class="bu">print</span>(letter_triple[<span class="dv">0</span>])  <span class="co"># &#39;a&#39;</span>
+<span class="bu">print</span>(letter_triple[<span class="dv">1</span>:<span class="dv">3</span>])  <span class="co"># (&#39;b&#39;,&#39;c&#39;), a tuple</span>
+
+letter_triple[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;z&#39;</span>  <span class="co"># TypeError!</span></code></pre></div>
+<p>Tuples can be compared using <em>relational operators</em> just like lists, and have the “member-wise” comparison behavior described above. This makes it easy to order the immutable tuples just like you would order numbers or strings.</p>
+<p>Finally, tuples provide one additional useful feature. The Python interpreter uses tuples to perform <strong>multiple assignments</strong>, where you assign multiple values to multiple variables in a single statement. We have already been able to assign multiple, comma-separated values to a single <em>tuple</em> variable (a process called <strong>packing</strong>). But Python also supports having a single sequential value (e.g., a <em>tuple</em>) be assigned to multiple, comma-separate variables (a process called <strong>unpacking</strong>)!</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">triple <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>  <span class="co"># assign multiple values to single variable (packing)</span>
+<span class="bu">print</span>(triple)  <span class="co"># (1, 2, 3)</span>
+
+
+x, y, z <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)  <span class="co"># assign single tuple value to multiple variables (unpacking)</span>
+<span class="bu">print</span>(x)  <span class="co"># 1</span>
+<span class="bu">print</span>(y)  <span class="co"># 2</span>
+<span class="bu">print</span>(z)  <span class="co"># 3</span>
+
+<span class="co"># the VALUE in this statement is evaluated as a tuple, and then is assigned to</span>
+<span class="co"># multiple variables!</span>
+a, b, c <span class="op">=</span> x, y, z  <span class="co"># a=x; b=y; c=z</span>
+
+<span class="co"># the same process can be used to swap values!</span>
+a, b <span class="op">=</span> b, a</code></pre></div>
+<p>This is mostly a useful shortcut (<em>syntactical sugar</em>), but is also used by some idiomatic Python constructions.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="iteration-and-loops.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dictionaries.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-lists.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

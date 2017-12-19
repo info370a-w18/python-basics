@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python Basics for Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Python Basics for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Python Basics for Data Science" />
+  
+  <meta name="twitter:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2017-12-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="dictionaries.html">
+<link rel="next" href="pandas.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Python Basics for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introductory Python materials for the INFO 370: Introduction to Data Science Course.</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources"><i class="fa fa-check"></i><b>1.1</b> Resources</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>1.2</b> Programming with Python</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>1.2.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>1.3</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#command-line"><i class="fa fa-check"></i><b>1.3.1</b> Command-Line</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>1.3.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#python-basics"><i class="fa fa-check"></i><b>1.4</b> Python Basics</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>1.5</b> Comments</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>1.6</b> Variables</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>1.6.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>1.7</b> Getting Help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2</b> Functions</a><ul>
+<li class="chapter" data-level="2.1" data-path="functions.html"><a href="functions.html#resources-1"><i class="fa fa-check"></i><b>2.1</b> Resources</a></li>
+<li class="chapter" data-level="2.2" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>2.2</b> What are Functions?</a></li>
+<li class="chapter" data-level="2.3" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>2.3</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>2.3.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>2.4</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>2.4.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>2.5</b> Writing Functions</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>2.5.1</b> Doc Strings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html"><i class="fa fa-check"></i><b>3</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#resources-2"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
+<li class="chapter" data-level="3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#booleans"><i class="fa fa-check"></i><b>3.2</b> Booleans</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#boolean-operators"><i class="fa fa-check"></i><b>3.2.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#conditional-statements"><i class="fa fa-check"></i><b>3.3</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#designing-conditions"><i class="fa fa-check"></i><b>3.3.1</b> Designing Conditions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#modules-vs.scripts"><i class="fa fa-check"></i><b>3.3.2</b> Modules vs. Scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>4</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-3"><i class="fa fa-check"></i><b>4.1</b> Resources</a></li>
+<li class="chapter" data-level="4.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>4.2</b> While Loops</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>4.2.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="4.2.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#conditionals-and-sentinels"><i class="fa fa-check"></i><b>4.2.2</b> Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>4.3</b> For Loops</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>4.3.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#working-with-files"><i class="fa fa-check"></i><b>4.4</b> Working with Files</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>4.4.1</b> Try/Except</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>5</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="5.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-4"><i class="fa fa-check"></i><b>5.1</b> Resources</a></li>
+<li class="chapter" data-level="5.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists"><i class="fa fa-check"></i><b>5.2</b> Lists</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>5.2.1</b> List Indices</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>5.3</b> List Operations and Methods</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>5.3.1</b> Lists and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>5.4</b> Nested Lists</a></li>
+<li class="chapter" data-level="5.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>5.5</b> Tuples</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>6</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.1" data-path="dictionaries.html"><a href="dictionaries.html#resources-5"><i class="fa fa-check"></i><b>6.1</b> Resources</a></li>
+<li class="chapter" data-level="6.2" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-1"><i class="fa fa-check"></i><b>6.2</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>6.2.1</b> Accessing a Dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>6.3</b> Dictionary Methods</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>6.3.1</b> Dictionaries and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>6.4</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="6.5" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>6.5</b> Which data structure do I use?</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functional-iteration.html"><a href="functional-iteration.html"><i class="fa fa-check"></i><b>7</b> Functional Iteration</a><ul>
+<li class="chapter" data-level="7.1" data-path="functional-iteration.html"><a href="functional-iteration.html#resources-6"><i class="fa fa-check"></i><b>7.1</b> Resources</a></li>
+<li class="chapter" data-level="7.2" data-path="functional-iteration.html"><a href="functional-iteration.html#functions-are-variables"><i class="fa fa-check"></i><b>7.2</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="functional-iteration.html"><a href="functional-iteration.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>7.2.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="functional-iteration.html"><a href="functional-iteration.html#functional-looping"><i class="fa fa-check"></i><b>7.3</b> Functional Looping</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="functional-iteration.html"><a href="functional-iteration.html#map"><i class="fa fa-check"></i><b>7.3.1</b> Map</a></li>
+<li class="chapter" data-level="7.3.2" data-path="functional-iteration.html"><a href="functional-iteration.html#filter"><i class="fa fa-check"></i><b>7.3.2</b> Filter</a></li>
+<li class="chapter" data-level="7.3.3" data-path="functional-iteration.html"><a href="functional-iteration.html#reduce"><i class="fa fa-check"></i><b>7.3.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="functional-iteration.html"><a href="functional-iteration.html#list-comprehensions"><i class="fa fa-check"></i><b>7.4</b> List Comprehensions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>8</b> Pandas</a><ul>
+<li class="chapter" data-level="8.1" data-path="pandas.html"><a href="pandas.html#resources-7"><i class="fa fa-check"></i><b>8.1</b> Resources</a></li>
+<li class="chapter" data-level="8.2" data-path="pandas.html"><a href="pandas.html#setup"><i class="fa fa-check"></i><b>8.2</b> Setup</a></li>
+<li class="chapter" data-level="8.3" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>8.3</b> Series</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>8.3.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="8.3.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>8.3.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="pandas.html"><a href="pandas.html#data-frames"><i class="fa fa-check"></i><b>8.4</b> Data Frames</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>8.4.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="8.4.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>8.4.2</b> Accessing DataFrames</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Python Basics for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="functional-iteration" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Functional Iteration</h1>
+<p>This module introduces techniques from <strong>Functional Programming</strong>, which is a programming paradigm centered on <em>functions</em> rather than on <em>variables</em> and statements as we’ve been doing so far (known as <em>imperative programming</em>). Functional programming offers another way to think about giving “instructions” to a computer, which can make it easier to think about and implement some algorithms. While not completely functional language, Python does contain a number of “functional-programming-like” features that can be mixed with the imperative strategies we’re used to, allowing for more compact and readable code in some cases.</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="introduction-to-python.html#resources">Resources</a></li>
+<li><a href="functional-iteration.html#functions-are-variables">Functions ARE Variables</a></li>
+<li><a href="functional-iteration.html#lambdas-anonymous-functions">lambdas: Anonymous Functions</a></li>
+<li><a href="functional-iteration.html#functional-looping">Functional Looping</a></li>
+<li><a href="functional-iteration.html#map">Map</a></li>
+<li><a href="functional-iteration.html#filter">Filter</a></li>
+<li><a href="functional-iteration.html#reduce">Reduce</a></li>
+<li><a href="functional-iteration.html#list-comprehensions">List Comprehensions</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<div id="resources-6" class="section level2">
+<h2><span class="header-section-number">7.1</span> Resources</h2>
+<ul>
+<li><a href="https://www.ibm.com/developerworks/library/l-prog/">Functional Programming in Python (IBM)</a> (note: Python 2)</li>
+<li><a href="http://www.u.arizona.edu/~erdmann/mse350/topics/list_comprehensions.html">Map, Filter, Lambda, and List Comprehensions in Python</a> (note: Python 2)</li>
+<li><a href="http://www.oreilly.com/programming/free/files/functional-programming-python.pdf">Functional Programming in Python (O’Reilly)</a> (short eBook)</li>
+<li><a href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">List Comprehensions (Python Docs)</a></li>
+<li><a href="http://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/">List Comprehensions Explained Visually</a></li>
+<li><a href="https://docs.python.org/3/howto/functional.html">Functional Programming HOWTO</a> (advanced, not recommended)</li>
+</ul>
+</div>
+<div id="functions-are-variables" class="section level2">
+<h2><span class="header-section-number">7.2</span> Functions ARE Variables</h2>
+<p>Previously we’ve described functions as “named sequences of instructions”, or groupings of lines of code that are given a name. But in a functional programming paradigm, functions are <em>first-class objects</em>—that is, they are “things” (values) that can be organized and manipulated <em>just like variables</em>.</p>
+<p>In Python, <strong>functions ARE variables</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># create a function called `say_hello`</span>
+<span class="kw">def</span> say_hello(name):
+    <span class="bu">print</span>(<span class="st">&quot;Hello, &quot;</span><span class="op">+</span>name)
+
+<span class="co"># what kind of thing is `say_hello` ?</span>
+<span class="bu">type</span>(say_hello)  <span class="co"># &lt;class &#39;function&#39;&gt;</span></code></pre></div>
+<p>Just like <code>x = 3</code> defines a variable for a value of type <code>int</code>, or <code>msg = &quot;hello&quot;</code> defines a variable for a value of type <code>string</code>, the above <code>say_hello</code> function is actualy a variable for a <em>value</em> of type <code>function</code>!</p>
+<ul>
+<li>This is why it is accidentally possible to “overwrite” built-in functions by assigning values to variables like <code>sum</code>, <code>max</code>, or <code>dict</code>.</li>
+<li>Note that we refer to the function by its name <em>without</em> the parentheses!</li>
+</ul>
+<p>The fact that functions <strong>are</strong> variables is the core realization to make when programming in a functional style. You need to be able to think about functions as <strong>things</strong> (nouns), rather than as <strong>behaviors</strong> (objects). If you imagine that functions are “recipes”, then you need to think about them as <em>pages from the cookbook</em> (that can be bound together or handed to a friend), rather than just the sequence of actions that they tell you to perform.</p>
+<p>And because functions are just another type of variable, they can be used <strong>anywhere</strong> that a “regular” variable can be used. For example, functions are values, so they can be assigned to other variables!</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># create a function `say_hello`</span>
+<span class="kw">def</span> say_hello(name):
+    <span class="bu">print</span>(<span class="st">&quot;Hello, &quot;</span><span class="op">+</span>name)
+
+<span class="co"># assign the `say_hello` value to a new variable `greet`</span>
+greet <span class="op">=</span> say_hello
+
+<span class="co"># call the function assigned to the `greet` variable</span>
+greet(<span class="st">&quot;world&quot;</span>)  <span class="co"># prints &quot;Hello world&quot;</span></code></pre></div>
+<ul>
+<li>It helps to think of functions as just a special kind of list. Just as <em>lists</em> have a special syntax <code>[]</code> (bracket notation) that can be used to “get” a value from the list, <em>functions</em> have a special syntax <code>()</code> (parentheses) that can be used to “run” the function.</li>
+</ul>
+<p>Moreover, functions are values, so they can be <em>passed as parameters to other functions</em>!</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># create a function `say_hello`</span>
+<span class="kw">def</span> say_hello(name):
+    <span class="bu">print</span>(<span class="st">&quot;Hello, &quot;</span><span class="op">+</span>name)
+
+<span class="co"># a function that takes ANOTHER FUNCTION as an argument</span>
+<span class="co"># this function will call the argument function, passing it &quot;world&quot;</span>
+<span class="kw">def</span> do_with_world(func_to_call):
+  <span class="co"># call the given function with an argument of &quot;world&quot;</span>
+  func_to_call(<span class="st">&quot;world&quot;</span>)
+
+<span class="co"># call `do_with_world`, saying the &quot;thing to do&quot; is `say_hello`</span>
+do_with_world(say_hello)  <span class="co"># prints &quot;Hello world&quot;</span></code></pre></div>
+<p>In this case, the <code>do_with_world</code> function will <em>execute</em> whatever function it is given, passing in a value of <code>&quot;world&quot;</code>. (You can think of this as similar to having a function that accesses the <code>'world'</code> key of a given dictionary).</p>
+<ul>
+<li><strong>Important note</strong>: when we pass <code>say_hello</code> as an argument, we don’t put any parentheses after it! Putting the parentheses after the function name <em>executes</em> the function, causing it to perform the lines of code it defines. This will cause the expression containing the function to <em>resolve</em> to its returned value, rather than being the function value itself. It’s like passing in the baked cake rather than the recipe page.</li>
+</ul>
+<p>```python def greet(): # version with no args return “Hello”</p>
+<p># print out the function print(say_hello) # prints <function say_hello>, the function</p>
+<p># resolve the expression, then print that out print(say_hello()) # prints “Hello”, which is what <code>say_hello()</code> resolves to. ```</p>
+<p>A function that is passed into another is commonly referred to as a <strong>callback function</strong>: it is an argument that the other function will “call back to” and execute when needed.</p>
+<p>Functions can take more than one <em>callback function</em> as arguments, which can be a useful way of <em>composing</em> behaviors.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> do_at_once(first_callback, second_callback):
+    first_callback()  <span class="co"># execute the first function</span>
+    <span class="bu">print</span>(<span class="st">&quot;and&quot;</span>, end<span class="op">=</span><span class="st">&quot; &quot;</span>)
+    second_callback()  <span class="co"># execute the second function</span>
+    <span class="bu">print</span>(<span class="st">&quot;at the same time! &quot;</span>)
+
+<span class="kw">def</span> pat_head():
+    <span class="bu">print</span>(<span class="st">&quot;pat your head&quot;</span>, end<span class="op">=</span><span class="st">&quot; &quot;</span>)
+
+<span class="kw">def</span> rub_belly():
+    <span class="bu">print</span>(<span class="st">&quot;rub your belly&quot;</span>, end<span class="op">=</span><span class="st">&quot; &quot;</span>)
+
+<span class="co"># pass in the callbacks to &quot;do at once&quot;</span>
+do_at_once(pat_head, rub_belly)</code></pre></div>
+<p>This idea of <em>passing functions are arguments to other functions</em> is at the heart of functional programming, and is what gives it expressive power: we can define program behavior primarily in terms of the behaviors that are run, and less in terms of the data variables used.</p>
+<div id="lambdas-anonymous-functions" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> lambdas: Anonymous Functions</h3>
+<p>We have previously used <strong>anonymous variables</strong> in our programs, or values which are not assigned a variable name (so remain anonymous). These values were defined as <em>literals</em> or expressions and passed directly into functions, rather than assigning them to variables:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">my_list <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]  <span class="co"># a named variable (not anonymous)</span>
+<span class="bu">print</span>(my_list)  <span class="co"># pass in non-anonymous variable</span>
+<span class="bu">print</span>([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])  <span class="co"># pass in anonymous value</span></code></pre></div>
+<p>Because functions <strong>are</strong> variables, it is also possible to define <strong>anonymous functions</strong>: functions that are not given a name, but instead are passed directly into other functions. In Python, these anonymous functions are referred to as <strong>lambdas</strong> (named after <a href="https://en.wikipedia.org/wiki/Lambda_calculus">lambda calculus</a>, which is a way of defining algorithms in terms of functions).</p>
+<p>Lambdas are written using the following general syntax:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">lambda</span> arg1, arg2: expression_to_return</code></pre></div>
+<p>We indicate that we are defining a lambda function with the keyword <code>lambda</code> (rather than the keyword <code>def</code> used for named functions). This is followed by a list of arguments separated by commas (what normally goes inside the <code>()</code> parenthes in a named function definition), then a colon <code>:</code>, then the expression that will be <em>returned</em> by the anonymous function.</p>
+<p>For example, compare the following named and anonymous function definitions:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># named function to square a value</span>
+<span class="kw">def</span> square(x):
+    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span>
+
+<span class="co"># anonymous function to square a value (assigned to a variable)</span>
+<span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span>
+
+<span class="co"># named function to combine first and last name</span>
+<span class="kw">def</span> make_full_name(first, last):
+    <span class="cf">return</span> first <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> last
+
+<span class="co"># anonymous function to combine first and last name</span>
+<span class="kw">lambda</span> first, last: first <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> last</code></pre></div>
+<ul>
+<li>We’re basically replacing <code>def</code> and the function name with the word <code>lambda</code>, removing the parentheses around the arguments, and removing the <code>return</code> keyword!</li>
+</ul>
+<p>Just as other expressions can be assigned to variables lambda functions can be assigned to variables in order to give them a name. This is the equivalent of having defined them as named functions in the first place:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">square <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span>
+make_full_name <span class="op">=</span> <span class="kw">lambda</span> first, last: first <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> last</code></pre></div>
+<p>There is one major restriction on what kind of functions can be defined as anonymous lambdas: they must be functions that consist of <strong>only</strong> a single returned expression. That is, they need to be a function that contains exactly one line of code, which is a <code>return</code> statement (as in the above examples). This means that lambdas are <strong><em>short</em></strong> functions that usually perform very simple transformations to the arguments… exactly what we want to do with functional programming!</p>
+</div>
+</div>
+<div id="functional-looping" class="section level2">
+<h2><span class="header-section-number">7.3</span> Functional Looping</h2>
+<p>Why do we care about treating functions as variables, or defining anonymous lambda functions? Because doing so allows us to <em>replace loops with function calls</em> in some situations. For particular kinds of loops, this can make the code more <em>expressive</em> (more clearly indicative of what it is doing).</p>
+<div id="map" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Map</h3>
+<p>For example, consider the following loop:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> square(n): <span class="co"># a function that squares a number</span>
+    <span class="cf">return</span> n<span class="op">**</span><span class="dv">2</span>
+
+numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]  <span class="co"># an initial list</span>
+
+squares <span class="op">=</span> []  <span class="co"># the transformed list</span>
+<span class="cf">for</span> number <span class="kw">in</span> numbers:
+    transformed <span class="op">=</span> square(number)
+    squares.append(transformed)
+<span class="bu">print</span>(squares)  <span class="co"># [1, 4, 9, 16, 25]</span></code></pre></div>
+<p>This loop represents a <strong>mapping</strong> operation: it takes an original list (e.g., of numbers 1 to 5) and produces a <em>new</em> list with each of the original elements transformed in a certain way (e.g., squared). This is a common operation to apply: maybe you want to “transform” a list so that all the values are rounded or lowercase, or you want to <em>map</em> a list of words to a list of their lengths. It is possible to make these changes uses the same pattern as above: create an empty list, then loop through the original list and <code>append</code> the transformed values to the new list.</p>
+<p>However, Python also provides a <em>built-in function</em> called <strong><code>map()</code></strong> that directly peform this kind of mapping operation on a list without needing to use a loop:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> square(n):  <span class="co"># a function that squares a number</span>
+    <span class="cf">return</span> n<span class="op">**</span><span class="dv">2</span>
+
+numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]  <span class="co"># an initial list</span>
+
+squares <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(square, numbers))
+<span class="bu">print</span>(squares)  <span class="co"># [1, 4, 9, 16, 25]</span></code></pre></div>
+<p>The <code>map()</code> function takes a list a produces a <em>new</em> list with each of the elements transformed. The <code>map()</code> function takes in two arguments: the second is the list to transform, and the first is the <em>name of a callback function</em> that will do the transformation. This callback function must take in a <em>single</em> argument (an element to transform) and return a value (the transformed element).</p>
+<ul>
+<li>Note that in Python 3, the <code>map()</code> function returns an <em>iterator</em>, which is a list-like sequence similar to that returned by a dictionary’s <code>keys()</code> or <code>items()</code> methods. Thus in order to interact with it as a list, it needs to be converted using the <code>list()</code> function.</li>
+</ul>
+<p>The <code>map()</code> callback function (e.g., <code>square()</code> in the above example) can also be specified using an anonymous lambda, which allows for concisely written code (but often at the expense of readability—see <em>List Comprehensions</em> below for a more elegant, Pythonic solution).</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]  <span class="co"># an initial list</span>
+squares <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> n:n<span class="op">**</span><span class="dv">2</span>, numbers))</code></pre></div>
+</div>
+<div id="filter" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Filter</h3>
+<p>A second common operation is to <strong>filter</strong> a list of elements, removing elements that we don’t want (or more accurately: only keeping elements that we DO want). For example, consider the following loop:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> is_even(n):  <span class="co"># a function that determines if a number is even</span>
+    remainder <span class="op">=</span> n <span class="op">%</span> <span class="dv">2</span>  <span class="co"># get remainder when dividing by 2 (modulo operator)</span>
+    <span class="cf">return</span> remainder <span class="op">==</span> <span class="dv">0</span>  <span class="co"># True if no remainder, False otherwise</span>
+
+numbers <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">8</span>,<span class="dv">3</span>]  <span class="co"># an initial list</span>
+
+evens <span class="op">=</span> []  <span class="co"># the filtered list</span>
+<span class="cf">for</span> number <span class="kw">in</span> numbers:
+    <span class="cf">if</span> is_even(number):
+      evens.append(number)
+<span class="bu">print</span>(evens)  <span class="co"># [2, 8]</span></code></pre></div>
+<p>With this <strong>filtering</strong> loop, we are <em>keeping</em> the values for which the <code>is_even()</code> function returns true (the function determines “what to let in” not “what to keep out”), which we do by appending the “good” values to a new list.</p>
+<p>Similar to <code>map()</code>, Python provides a <em>built-in function</em> called <strong><code>filter()</code></strong> that will directly perform this filtering:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> is_even(n):  <span class="co"># a function that determines if a number is even</span>
+    <span class="cf">return</span> (n <span class="op">%</span> <span class="dv">2</span>) <span class="op">==</span> <span class="dv">0</span>  <span class="co"># True if no remainder, False otherwise</span>
+
+numbers <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">8</span>,<span class="dv">3</span>]  <span class="co"># an initial list</span>
+
+evens <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(is_even, numbers))
+<span class="bu">print</span>(evens)  <span class="co"># [2, 8]</span></code></pre></div>
+<p>The <code>filter()</code> function takes a list a produces a <em>new</em> list that contains only the elements that <em>do match</em> a specific criteria. The <code>filter()</code> function takes in two arguments: the second is the list to filter, and the first is the <em>name of a callback function</em> that will do the filtering. This callback function must take in a <em>single</em> argument (an element to consider) and return <code>True</code> if the element should be included in the filtered list (or <code>False</code> if it should not be included).</p>
+<p>Because <code>map()</code> and <code>filter()</code> both produce list-like sequences, it is possible to take the returned value from one function and pass it in as the argument to the next. For example:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]
+
+<span class="co"># get the squares of EVEN numbers only</span>
+filtered <span class="op">=</span> <span class="bu">filter</span>(is_even, numbers)  <span class="co"># filter the numbers</span>
+squares <span class="op">=</span> <span class="bu">map</span>(square, filtered)  <span class="co"># map the filtered values</span>
+<span class="bu">print</span>(<span class="bu">list</span>(squares))  <span class="co"># [4, 16, 36]</span>
+
+<span class="co"># or in one statement, passing results anonymously</span>
+squares <span class="op">=</span> <span class="bu">map</span>(square,
+          <span class="bu">filter</span>(is_even,
+          numbers))  <span class="co"># watch out for the parentheses!</span>
+<span class="bu">print</span>(<span class="bu">list</span>(squares))  <span class="co"># [4, 16, 36]</span></code></pre></div>
+<p>This structure can potentially make it easier to understand the code’s intent: it is “<code>square</code>ing the <code>is_even</code> <code>numbers</code>”!</p>
+</div>
+<div id="reduce" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> Reduce</h3>
+<p>The third important operation in functional programming (besides <em>mapping</em> and <em>filtering</em>) is <strong>reducing</strong> a list. Reducing a list means to <em>aggregate</em> that lists values togther, transforming the list into a single value. For example, the built-in <code>sum()</code> function is a <em>reducing</em> operation (and in fact, the most common one!): it reduces a list of numbers to a single summed value.</p>
+<ul>
+<li>You can think of <code>reduce()</code> as a <em>generalization</em> of the <code>sum()</code> function—but rather than just adding (<code>+</code>) the values together, <code>reduce()</code> allows you to specify what operation to perform when aggregating (e.g., <a href="https://en.wikipedia.org/wiki/Factorial">multiplication</a>).</li>
+</ul>
+<p>Because the <code>reduce()</code> function can be complex to interpret, it was actually <em>removed</em> from the set of “core” built-in functions in Python 3 and relegated to the <code>functools</code> module. Thus we need to import the function in order to use it:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> functools <span class="im">import</span> <span class="bu">reduce</span></code></pre></div>
+<p>To understand how a <em>reduce</em> operation works, consider the following basic loop:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> multiply(x, y): <span class="co"># a function that multiplies two numbers</span>
+    <span class="cf">return</span> x<span class="op">*</span>y
+
+numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]  <span class="co"># an initial list</span>
+
+running_total <span class="op">=</span> <span class="dv">1</span>  <span class="co"># an accumulated aggregate</span>
+<span class="cf">for</span> number <span class="kw">in</span> numbers:
+    running_total <span class="op">=</span> multiply(running_total, number)
+<span class="bu">print</span>(running_total)  <span class="co"># 120  (1*2*3*4*5)</span></code></pre></div>
+<p>This loop <strong>reduces</strong> the list into an “accumulated” product (factorial) of all the numbers in the list. Inside the loop, the <code>multiply()</code> function is called and passed the “current total” and the “new value” to be combined into the aggregate (<em>in that order</em>). The resulting total is then reassigned as the “current total” for the next iteration.</p>
+<p>The <strong><code>reduce()</code></strong> function does exactly this work: it takes as arguments a <em>callback</em> function used to combine the current running total with the new value, and a list of values to combine. Whereas the <code>map()</code> and <code>filter()</code> callback functions each took 1 argument, the <code>reduce()</code> callback function requires <strong>2</strong> arguments: the first will be the “running total”, and the second will be the “new value” to mix into the aggregate. (While this ordering doesn’t influence the factorial example, it is relevant for other operations):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> multiply(x, y): <span class="co"># a function that multiplies two numbers</span>
+    <span class="cf">return</span> x<span class="op">*</span>y
+
+numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]  <span class="co"># an initial list</span>
+
+product <span class="op">=</span> <span class="bu">reduce</span>(multiply, numbers)
+<span class="bu">print</span>(product)  <span class="co"># 120</span></code></pre></div>
+<ul>
+<li>The <code>reduce()</code> function aggregates into a single value, so the result doesn’t need to be converted from an <em>iterator</em> to a list!</li>
+</ul>
+<p>To summarize, the <code>map()</code>, <code>filter()</code>, and <code>reduce()</code> operations work as follows:</p>
+<div class="figure">
+<img src="imgs/07-img/map-filter-reduce-in-emoji-python.png" alt="Map, filter, reduce explained with emoji" />
+<p class="caption">Map, filter, reduce explained with emoji</p>
+</div>
+<p>All together, the <strong>map</strong>, <strong>filter</strong>, and <strong>reduce</strong> operations form the basic for a functional consideration of a program. Indeed, these kinds of operations are very common when discussing data manipulations: for example, the famous <a href="https://en.wikipedia.org/wiki/MapReduce">MapReduce</a> model involves “mapping” each element through a complex function (on a different computer no less!), and then “reducing” the results into a single answer.</p>
+</div>
+</div>
+<div id="list-comprehensions" class="section level2">
+<h2><span class="header-section-number">7.4</span> List Comprehensions</h2>
+<p>While <code>map()</code> and <code>filter()</code> are effective ways of producing new lists from old, they can be somewhat hard to read (particularly when using anonymous lambda functions, which we often would want to do for simple transformations). Instead, a more idomatic and “Pythonic” approach (preferred by language developer Guideo van Rossum) is to use <strong>List Comprehensions</strong>. A <em>list comprehesion</em> is a special syntax for doing mapping and/or filtering operations on list using the <code>for</code> and <code>if</code> keywords you are familiar with.</p>
+<p>A basic list comprehension has the following syntax:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">new_list <span class="op">=</span> [output_expression <span class="cf">for</span> loop_variable <span class="kw">in</span> sequence]</code></pre></div>
+<p>For example, a list comprehsion to <strong>map</strong> from a list of numbers to their squares would be:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]  <span class="co"># original list</span>
+squares <span class="op">=</span> [n<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> n <span class="kw">in</span> numbers]
+<span class="bu">print</span>(squares)  <span class="co"># [1, 4, 9, 16, 25]</span></code></pre></div>
+<p>List comprehensions are written inside square brackets <strong><code>[]</code></strong> and use the same <code>for ... in ...</code> syntax used in for loops. However, the <em>expession</em> that you would normally <code>append()</code> to the output list when mapping (or that is returned from an anonymous lambda function) is written <em>before</em> the <code>for</code>. This causes the above comprehension to be read as <em>“a list consisting of <code>n**2</code> (n squares) for each <code>n</code> in <code>numbers</code>”</em>—it’s almost English!</p>
+<p>You can contrast a list comprehension with the same mapping operation done via a loop or via a <code>map()</code> and a lambda:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># with a loop</span>
+squares <span class="op">=</span> []
+<span class="cf">for</span> n <span class="kw">in</span> numbers:
+    squares.append(n<span class="op">**</span><span class="dv">2</span>)  <span class="co"># append expression</span>
+
+<span class="co"># with a lambda</span>
+squares <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> n: n<span class="op">**</span><span class="dv">2</span>, numbers))  <span class="co"># map with lambda</span>
+
+<span class="co"># with a list comprehesion</span>
+squares <span class="op">=</span> [n<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> n <span class="kw">in</span> numbers]  <span class="co"># map with list comprehension</span></code></pre></div>
+<p>Notice that all 3 versions specify a <em>transformation expression</em> (<code>n**2</code>) on a input variable (<code>n</code>). They just use different syntax (punctuation and ordering) to specify the transformation that should occur.</p>
+<p>List comprehensions can also be used to <strong>filter</strong> values (even as they are being mapped). This is done by specifying an <code>if</code> filtering condition after the sequence:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">new_list <span class="op">=</span> [output_expression <span class="cf">for</span> loop_variable <span class="kw">in</span> sequence <span class="cf">if</span> condition]</code></pre></div>
+<p>Or as a specific example (remember: we filter for elements to <em>keep</em>!):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numbers <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">8</span>,<span class="dv">3</span>]
+evens <span class="op">=</span> [n <span class="cf">for</span> n <span class="kw">in</span> numbers <span class="cf">if</span> n<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]
+<span class="bu">print</span>(evens)  <span class="co"># [2, 8]</span></code></pre></div>
+<p>This can be read as <em>“a list consisting of <code>n</code> for each <code>n</code> in <code>numbers</code>, but only <code>if</code> <code>n%2 == 0</code>”</em>. It is equivalent to using the <code>for</code> loop:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">evens <span class="op">=</span> []
+<span class="cf">for</span> n <span class="kw">in</span> numbers
+    <span class="cf">if</span> n<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:  <span class="co"># check the filter condition</span>
+        evens.append(n)  <span class="co"># append the expression</span></code></pre></div>
+<p>Finally, it is possible to include <em>multiple, nested</em> <code>for</code> and <code>if</code> statements in a list comprehension. Each successive <code>for ... in ...</code> or <code>if</code> expression is included inside the square brackets after the output expression: This allows you to effectively convert nested control structures into a comprehension:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">entrees <span class="op">=</span> [<span class="st">&quot;chicken&quot;</span>,<span class="st">&quot;fish&quot;</span>,<span class="st">&quot;veggies&quot;</span>]
+sides <span class="op">=</span> [<span class="st">&quot;potatoes&quot;</span>, <span class="st">&quot;veggies&quot;</span>]
+
+<span class="co"># get all &quot;meals&quot; if the entree and side are not the same</span>
+meals <span class="op">=</span> [ entree<span class="op">+</span><span class="st">&quot; &amp; &quot;</span><span class="op">+</span>side <span class="cf">for</span> entree <span class="kw">in</span> entrees <span class="cf">for</span> side <span class="kw">in</span> sides <span class="cf">if</span> entree <span class="op">!=</span> side]
+<span class="bu">print</span>(meals)  <span class="co"># [&#39;chicken &amp; potatoes&#39;, &#39;chicken &amp; veggies&#39;, &#39;fish &amp; potatoes&#39;,</span>
+              <span class="co">#  &#39;fish &amp; veggies&#39;, &#39;veggies &amp; potatoes&#39;]</span>
+              <span class="co"># note: no &quot;veggies and veggies&quot; !</span></code></pre></div>
+<p>This is equivalent to the nested loops:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">meals <span class="op">=</span> []
+<span class="cf">for</span> entree <span class="kw">in</span> entrees:
+    <span class="cf">for</span> side <span class="kw">in</span> sides:
+        <span class="cf">if</span> entree <span class="op">!=</span> side:
+            meals.append(entree<span class="op">+</span><span class="st">&quot; &amp; &quot;</span><span class="op">+</span>side)</code></pre></div>
+<p>(This <em>almost</em> acts like a <strong>reduce</strong> operation, reducing two lists into a single one… but it doesn’t exactly convert).</p>
+<p>Overall, list comprehensions are considered a <em>better, more Pythonic</em> approach to functional programming. However, <code>map()</code> <code>filter()</code> and <code>reduce()</code> functions are a more generalized approach that can be found in multiple different languages and contexts, including other data-processing languages such as R, Julia, and JavaScript. Thus it is good to be at least familiar with both approaches!</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dictionaries.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pandas.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/07-functional-iteration.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

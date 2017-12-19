@@ -1,0 +1,29 @@
+--- 
+title: "Python Basics for Data Science"
+author: "Joel Ross"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman."
+---
+
+# Introductory Python materials for the INFO 370: Introduction to Data Science Course. {-}
+
+_Compiled by Michael Freeman_
+
+
+![Creative Commons License](imgs/index/by-nc-sa.png)
+
+This book is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

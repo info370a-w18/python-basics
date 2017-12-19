@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python Basics for Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Python Basics for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Python Basics for Data Science" />
+  
+  <meta name="twitter:description" content="Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2017-12-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="functions.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Python Basics for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introductory Python materials for the INFO 370: Introduction to Data Science Course.</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources"><i class="fa fa-check"></i><b>1.1</b> Resources</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>1.2</b> Programming with Python</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>1.2.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>1.3</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#command-line"><i class="fa fa-check"></i><b>1.3.1</b> Command-Line</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>1.3.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#python-basics"><i class="fa fa-check"></i><b>1.4</b> Python Basics</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>1.5</b> Comments</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>1.6</b> Variables</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>1.6.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>1.7</b> Getting Help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2</b> Functions</a><ul>
+<li class="chapter" data-level="2.1" data-path="functions.html"><a href="functions.html#resources-1"><i class="fa fa-check"></i><b>2.1</b> Resources</a></li>
+<li class="chapter" data-level="2.2" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>2.2</b> What are Functions?</a></li>
+<li class="chapter" data-level="2.3" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>2.3</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>2.3.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>2.4</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>2.4.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>2.5</b> Writing Functions</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>2.5.1</b> Doc Strings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html"><i class="fa fa-check"></i><b>3</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#resources-2"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
+<li class="chapter" data-level="3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#booleans"><i class="fa fa-check"></i><b>3.2</b> Booleans</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#boolean-operators"><i class="fa fa-check"></i><b>3.2.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#conditional-statements"><i class="fa fa-check"></i><b>3.3</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#designing-conditions"><i class="fa fa-check"></i><b>3.3.1</b> Designing Conditions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="logic-and-conditionals.html"><a href="logic-and-conditionals.html#modules-vs.scripts"><i class="fa fa-check"></i><b>3.3.2</b> Modules vs. Scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>4</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-3"><i class="fa fa-check"></i><b>4.1</b> Resources</a></li>
+<li class="chapter" data-level="4.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>4.2</b> While Loops</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>4.2.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="4.2.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#conditionals-and-sentinels"><i class="fa fa-check"></i><b>4.2.2</b> Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>4.3</b> For Loops</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>4.3.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#working-with-files"><i class="fa fa-check"></i><b>4.4</b> Working with Files</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>4.4.1</b> Try/Except</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>5</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="5.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-4"><i class="fa fa-check"></i><b>5.1</b> Resources</a></li>
+<li class="chapter" data-level="5.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists"><i class="fa fa-check"></i><b>5.2</b> Lists</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>5.2.1</b> List Indices</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>5.3</b> List Operations and Methods</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>5.3.1</b> Lists and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>5.4</b> Nested Lists</a></li>
+<li class="chapter" data-level="5.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>5.5</b> Tuples</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>6</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.1" data-path="dictionaries.html"><a href="dictionaries.html#resources-5"><i class="fa fa-check"></i><b>6.1</b> Resources</a></li>
+<li class="chapter" data-level="6.2" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-1"><i class="fa fa-check"></i><b>6.2</b> Dictionaries</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>6.2.1</b> Accessing a Dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>6.3</b> Dictionary Methods</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>6.3.1</b> Dictionaries and Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>6.4</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="6.5" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>6.5</b> Which data structure do I use?</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functional-iteration.html"><a href="functional-iteration.html"><i class="fa fa-check"></i><b>7</b> Functional Iteration</a><ul>
+<li class="chapter" data-level="7.1" data-path="functional-iteration.html"><a href="functional-iteration.html#resources-6"><i class="fa fa-check"></i><b>7.1</b> Resources</a></li>
+<li class="chapter" data-level="7.2" data-path="functional-iteration.html"><a href="functional-iteration.html#functions-are-variables"><i class="fa fa-check"></i><b>7.2</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="functional-iteration.html"><a href="functional-iteration.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>7.2.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="functional-iteration.html"><a href="functional-iteration.html#functional-looping"><i class="fa fa-check"></i><b>7.3</b> Functional Looping</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="functional-iteration.html"><a href="functional-iteration.html#map"><i class="fa fa-check"></i><b>7.3.1</b> Map</a></li>
+<li class="chapter" data-level="7.3.2" data-path="functional-iteration.html"><a href="functional-iteration.html#filter"><i class="fa fa-check"></i><b>7.3.2</b> Filter</a></li>
+<li class="chapter" data-level="7.3.3" data-path="functional-iteration.html"><a href="functional-iteration.html#reduce"><i class="fa fa-check"></i><b>7.3.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="functional-iteration.html"><a href="functional-iteration.html#list-comprehensions"><i class="fa fa-check"></i><b>7.4</b> List Comprehensions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>8</b> Pandas</a><ul>
+<li class="chapter" data-level="8.1" data-path="pandas.html"><a href="pandas.html#resources-7"><i class="fa fa-check"></i><b>8.1</b> Resources</a></li>
+<li class="chapter" data-level="8.2" data-path="pandas.html"><a href="pandas.html#setup"><i class="fa fa-check"></i><b>8.2</b> Setup</a></li>
+<li class="chapter" data-level="8.3" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>8.3</b> Series</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>8.3.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="8.3.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>8.3.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="pandas.html"><a href="pandas.html#data-frames"><i class="fa fa-check"></i><b>8.4</b> Data Frames</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>8.4.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="8.4.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>8.4.2</b> Accessing DataFrames</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Python Basics for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-python" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction to Python</h1>
+<p>Python is an extremely powerful open-source <em>programming language</em>. It is considered a “high-level”, “general purpose” language in that offers strong abstractions on computer instructions (and in fact often reads like badly-punctuated English), and can be used effectively for a wide variety of purposes. Python is one of the most popular programming languages in the world, and very approachable for beginners and experts alike. Python will be the primary programming language for this course.</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="introduction-to-python.html#resources">Resources</a></li>
+<li><a href="introduction-to-python.html#programming-with-python">Programming with Python</a></li>
+<li><a href="introduction-to-python.html#versions">Versions</a></li>
+<li><a href="introduction-to-python.html#running-python-scripts">Running Python Scripts</a></li>
+<li><a href="introduction-to-python.html#command-line">Command-Line</a></li>
+<li><a href="introduction-to-python.html#jupyter-notebooks">Jupyter Notebooks</a></li>
+<li><a href="introduction-to-python.html#python-basics">Python Basics</a></li>
+<li><a href="introduction-to-python.html#comments">Comments</a></li>
+<li><a href="introduction-to-python.html#variables">Variables</a></li>
+<li><a href="introduction-to-python.html#data-types">Data Types</a></li>
+<li><a href="introduction-to-python.html#getting-help">Getting Help</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<div id="resources" class="section level2">
+<h2><span class="header-section-number">1.1</span> Resources</h2>
+<p>Python is an incredibly popular programming language and is especially accessible to new programmers. As such, there are <strong>a lot</strong> of resources available for learning how to program in Python. While these modules will cover most of the details you need, I’ve included a number of other effective resources below in case you need further help. <em>Note that you’ll need to reference Python 3 materials</em>.</p>
+<ul>
+<li><a href="http://greenteapress.com/wp/think-python-2e/">Think Python (Downey)</a>: a free, friendly introductory textbook for learning Python. You should definitely read <a href="http://greenteapress.com/thinkpython2/html/thinkpython2002.html"><strong>Chapter 1</strong></a>, which is a great overview of programming in general.</li>
+<li><a href="http://www.pythonlearn.com/book.php">Python for Everybody (Severance)</a>: a remixed version of the above book, with a focus on Information Sciences. See in particular the <a href="https://books.trinket.io/pfe/index.html">interactive version</a>. Chapter 1 of this book is also a very good read.</li>
+<li><a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python (Sweigart)</a>: another good free textbook</li>
+<li><a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">Python for Non-Programmers Index</a>: an extensive list of resources and materials for learning to program with Python. The textbooks and interactive courses are all good options.</li>
+<li><a href="https://docs.python.org/3/">Official Python Documentation</a></li>
+<li><a href="https://google.github.io/styleguide/pyguide.html">Google’s Python Style Guide</a></li>
+</ul>
+<p>Specific resources for the material in this module:</p>
+<ul>
+<li><a href="https://automatetheboringstuff.com/chapter1/">Python Basics (Sweigart)</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/variables_expressions_statements.html">Variables, expressions, statements (Downey)</a></li>
+<li><a href="http://jupyter-notebook.readthedocs.io/en/latest/notebook.html">Jupyter Notebook Documentation</a></li>
+<li><a href="https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.MFPIJdI">Jupyter Notebook Tutorial (Data Camp)</a></li>
+</ul>
+</div>
+<div id="programming-with-python" class="section level2">
+<h2><span class="header-section-number">1.2</span> Programming with Python</h2>
+<p>Python is a <strong>high-level, general-purpose programming language</strong> that can be used to declare complex instructions for computers (e.g., for working with information and data). It is an <strong>open-source</strong> programming language, which means that it is free and continually improved upon by the Python community.</p>
+<ul>
+<li><em>Fun Fact:</em> Python is named after British comedy troupe “Monty Python”, because it seemed like a good idea at the time.</li>
+</ul>
+<p>So far in this course you’ve leveraged formal language to give instructions to your computers, such as by writing syntactically-precise instructions at the command-line. Programming in Python will work in a similar manner: you will write instructions using Python’s special language and syntax, which the computer will <strong>interpret</strong> as instructions for how to work with data.</p>
+<p>Indeed, Python is an <strong>interpreted language</strong>, in that the computer (specifically the <em>Python Interpreter</em>) translates the high-level language into machine language <em>on the fly at runtime</em>. The interpreter will read an execute one line of code at a time, executing that line before it even begins to consider the next. This is in contrast with <em>compiled languages</em> (like C or Java) that has the computer do the translation in one pass, and then only execute the program after the whole thing is converted to machine language.</p>
+<ul>
+<li>This means that Python is technically a little slower to execute commands than C or Java because it needs to both translate and execute at once, but not enough that we’ll notice.</li>
+</ul>
+<p>While it’s possible to execute Python instructions one at a time, it’s much more common to write down all of the instruction in a single <strong>script</strong> so that the computer can execute them all at once. Python scripts are saved as files with the <strong><code>.py</code></strong> extension, You can author Python scripts in any text editor (such as VS Code), but we’ll also write and run Python code in an interactive web application called Jupyter.</p>
+<div id="versions" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Versions</h3>
+<p>Python was first published by Dutch programmer <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido Van Rossum</a> in 1991. Although the language is open-source (and so can be <a href="https://vimeo.com/1093745">contributed to</a> by anyone), Van Rossum still retains a lot of influence over where the language goes, and is known as Python’s “Benevolent Dictator for Life”.</p>
+<p>Version 2.0 of Python was released in 2000, and version 3.0 was released in 2008. However, unlike with many other programming languages that release new versions, Python 2 and Python 3 are <strong>not</strong> compatible with one another: Python 2 code usually won’t execute with Python 3 interpreter, and Python 3 code usually won’t execute with a Python 2 interpreter.</p>
+<p>Python 3 involved a major restructuring which included a number of “breaking” changes to core parts of the language. The most noticeable of these are that all text strings support <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> (non-English characters), <code>print</code> is a function not a statement, and integers don’t use floor devision (these concepts are discussed in more detail below).</p>
+<p>In short, Python 3 is considered the “current” version, and Python 2 is considered the “legacy” version. However Python 2 is still considered “supported” (in terms of bug fixes, etc), and some external libraries have not yet been updated to Python 3. Thus in practice there are two incompatible versions of Python that are used in the world. See <a href="https://wiki.python.org/moin/Python2orPython3">Python2orPython3</a> for more details.</p>
+<ul>
+<li>In this course, we will be using <strong>Python 3</strong>, particularly as it fixes some issues that often trip up beginners, and is supported by all major libraries in a more effective way.</li>
+</ul>
+</div>
+</div>
+<div id="running-python-scripts" class="section level2">
+<h2><span class="header-section-number">1.3</span> Running Python Scripts</h2>
+<p>Python scripts (programs) are just a sequence of instructions, and there are a couple of different ways in which we can tell the computer to execute these instructions.</p>
+<div id="command-line" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Command-Line</h3>
+<p>It is possible to issue Python instructions (run lines of code; called <strong>statements</strong>) one-by-one at the command-line by starting an <strong>interactive Python session</strong> within your terminal. This will allow you to type Python code directly into the terminal, and your computer will interpret and execute each line of code (if you just typed Python syntax directly into the terminal, your computer wouldn’t understand it).</p>
+<p>With Python installed, you can start an interactive Python session on a by running the <strong><code>python</code></strong> program (simply type the <code>python</code> command if you’ve installed it on the <code>PATH</code> via Anaconda).</p>
+<ul>
+<li><p>On Windows using the Git Bash shell, you may need to utilize <a href="https://github.com/rprichard/winpty">winpty</a> to connect the Bash shell to the Python output: see <a href="http://stackoverflow.com/questions/32597209/python-not-working-in-the-command-line-of-git-bash">here</a> for an example). On my machine, using <code>winpty python</code> works well.</p></li>
+<li><p>Note that if you haven’t installed Python via Anaconda, or have multiple versions installed, you may need to use the <code>python3</code> command to run a Python 3 session.</p></li>
+</ul>
+<p>This command will start the session, providing some information about the version of Python being run:</p>
+<div class="figure">
+<img src="imgs/01-img/python-interactive-session.png" alt="Interactive Python session" />
+<p class="caption">Interactive Python session</p>
+</div>
+<p>Once you’ve started running an interactive Python session, you can begin entering one line of code at a time at the prompt (<code>&gt;&gt;&gt;</code>). This is a nice way to experiment with the Python language or to quickly run and test some code.</p>
+<ul>
+<li>You can exit this session by typing the <code>quit()</code> command, or hitting <code>ctrl-z</code> (followed by Enter on Windows).</li>
+</ul>
+<p>It is more common though to run entire scripts (<code>.py</code> files) from the command-line by using the <code>python</code> command and specifying the script file you wish to execute:</p>
+<div class="figure">
+<img src="imgs/01-img/python-terminal.png" alt="Run Python script from terminal" />
+<p class="caption">Run Python script from terminal</p>
+</div>
+<p>This will cause each line in the script to be run one at a time. This is the “normal” way of running Python programs: you write Python scripts using an editor such as VS Code, and then execute those scripts on the command-line to see them in action.</p>
+</div>
+<div id="jupyter-notebooks" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Jupyter Notebooks</h3>
+<p>Another popular and effective way of writing and running Python code is to utilize a <a href="http://jupyter.org/">Jupyter Notebook</a>. A Jupyter Notebook is a <strong>web appplications</strong> (that runs in your web browser) and provides an interactive platform for running Python code: you are able to write and execute Python code write in the browser, similar to an interactive session (but with the ability to write multiple lines of code).</p>
+<ul>
+<li>Jupter is a portmanteau of “Julia”, “Python” and “R”, which are the programming languages the application was designed to support. Each notebook runs on an individual <strong>kernel</strong> or language interpreter; you’ll want to be sure you’re running a Python 3 kernel for this course.</li>
+</ul>
+<p>Code is authored in individual “notebooks”, which are collections of <em>cells</em> (blocks of code or text). Cells can also include Markdown content, allowing notebooks to act as interactive documents with embedded, runnable code.</p>
+<p>The Jupyter program is part of the Anaconda package, and so should be installed along with Python. You can start Jupyter from the command-line with:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">jupyter</span> notebook</code></pre></div>
+<p>This will open up your web browser with an interface to create or open a notebook relative to the folder you started Jupyter from:</p>
+<div class="figure">
+<img src="imgs/01-img/new-notebook.gif" alt="Opening notebook animation, from the official documentation" />
+<p class="caption">Opening notebook animation, from the official documentation</p>
+</div>
+<p>You can also open a particular notebook (which are saved as files with the <code>.ipynb</code> extension) by passing the notebook name as an argument:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">jupyter</span> notebook my-notebook.ipynb</code></pre></div>
+<ul>
+<li>To stop running the Jupyter notebook server, hit <code>ctrl-c</code> in the terminal and follow the prompts.</li>
+</ul>
+<p>Jupyter notebooks are made up of a series of <em>cells</em>, each representing a set of code or text. Cells by default are used for Python code, but can also be set to use Markdown by selecting from the dropdown menu.</p>
+<p>You can type code directly into the cells, just as if you were typing into a text editor. In order to execute the code in a cell, press <strong><code>shift-enter</code></strong> or select <code>Cell &gt; Run Cell</code> from the menu. Any output from the cell will appear immediately below it. You can add new cells by hitting the “plus” button on the toolbar.</p>
+<ul>
+<li>**Pro-<a href="tip:**" class="uri">tip:**</a> There are lots of keyboard shortcuts available for working with cells. Click the keyboard icon on the toolbar to see a list of shortcuts.</li>
+</ul>
+</div>
+</div>
+<div id="python-basics" class="section level2">
+<h2><span class="header-section-number">1.4</span> Python Basics</h2>
+<!-- For this module's details about basic Python syntax and variables, see the [accompanying Jupyter notebook](module.ipynb). The contents of the notebook can be read on Github, but you can also **`clone`** this module to your local machine (see [module 4](../../../module4-git-basics) in order to run the example code blocks yourself.
+- Practicing with examples and experimenting with different objects is an ideal way to learn programming concepts! -->
+</div>
+<div id="comments" class="section level2">
+<h2><span class="header-section-number">1.5</span> Comments</h2>
+<p>Before discussing how to program with Python, we need to talk about a piece of syntax that lets you comment your code. In programming, <strong>comments</strong> are bits of text that are <em>not interpreted as computer instructions</em>—they aren’t code, they’re just notes about the code! Since computer code can be opaque and difficult to understand, we use comments to help write down the meaning and <em>purpose</em> of our code. While a computer is able to understand the code, comments are there to help <em>people</em> understand. This is particularly imporant when someone else will be looking at your work—whether that person is a collaborator, or is simply a future version of you (e.g., when you need to come back and fix something and so need to remember what you were even thinking). Comments should be clear, concise, and helpful—they should provide information that is not “obvious” from the code itself.</p>
+<p>In Python, we mark text as a comment by putting it after the pound/hashtag symbol (<strong><code>#</code></strong>). Everything from the <code>#</code> until the end of the line is a comment. We put descriptive comments <em>immediately above</em> the code it describes, but you can also put very short notes at the end of the line of code (preferably following two spaces):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Set how many bottles of beer are on the wall</span>
+bottles <span class="op">=</span> <span class="dv">99</span> <span class="op">-</span> <span class="dv">1</span>  <span class="co"># 98</span></code></pre></div>
+<p>(You may recognize this <code>#</code> syntax and commenting behavior from the command-line and git modules. That’s because the same syntax is used in a Bash shell!)</p>
+</div>
+<div id="variables" class="section level2">
+<h2><span class="header-section-number">1.6</span> Variables</h2>
+<p>Since computer programs involve working with lots of <em>information</em>, we need a way to store and refer to this information. We do this with <strong>variables</strong>. Variables are labels for information; in Python, you can think of them as “nametags” for data. After giving data a variable nametag, you can then refer to that data by its name.</p>
+<p>Variable names can contain any combination of letters, numbers, or underscores (<code>_</code>). Variables names must begin with a letter. Note that like everything in programming, variable names are case sensitive. It is best practice to make variable names descriptive and information about what data they contain. <code>a</code> is not a good variable name. <code>cups_of_coffee</code> is a good variable name. To comply with <a href="https://google.github.io/styleguide/pyguide.html#Naming">Google’s Style Guidelines</a> variables should be <strong>all lower-case letters, separated by underscores (<code>_</code>)</strong>.</p>
+<p>We call putting information in a variable <strong>assigning</strong> that value to the variable. We do this using the <em>assignment operator</em> <strong><code>=</code></strong>. For example:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Stores the number 7 into a variable called shoe.size</span>
+shoe_size <span class="op">=</span> <span class="dv">7</span></code></pre></div>
+<ul>
+<li><em>Notice:</em> the variable name goes on the left, the value goes on the right!</li>
+</ul>
+<p>You can see what value (data) is inside a variable by either typing that variable name as a line of code, or by using R’s built-in <code>print()</code> function (more on functions later):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(shoe_size)
+<span class="co">## 7</span></code></pre></div>
+<p>You can also use <strong>mathematical operators</strong> (e.g., <code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>) when assigning values to variables. For example, you could create a variable that is the sum of two numbers as follows:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">3</span> <span class="op">+</span> <span class="dv">4</span></code></pre></div>
+<ul>
+<li>A combination of variables, values, operators, or functions that the interpreter needs to <em>evaluate</em> is called an <strong>expression</strong>.</li>
+</ul>
+<p>Once a value (like a number) is assigned a variable—it is <em>in</em> a variable—you can use that variable in place of any other value. So all of the following are valid:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">2</span>  <span class="co"># store 2 in x</span>
+y <span class="op">=</span> <span class="dv">9</span>  <span class="co"># store 9 in y</span>
+z <span class="op">=</span> x <span class="op">+</span> y  <span class="co"># store sum of x and y in z</span>
+<span class="bu">print</span>(z)  <span class="co"># 11</span>
+z <span class="op">=</span> z <span class="op">+</span> <span class="dv">1</span>  <span class="co"># take z, add 1, and store result back in z</span>
+<span class="bu">print</span>(z)  <span class="co"># 12</span></code></pre></div>
+<p><strong>Important</strong> despite using an equal sign (<code>=</code>), variable assignments <em>do not</em> specify equalities! Assigning one variable to another does not cause them to be “linked”; changing one variable will leave the other unchanged:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">3</span>
+y <span class="op">=</span> <span class="dv">4</span>
+x <span class="op">=</span> y  <span class="co"># assign the value of y (4) to x</span>
+<span class="bu">print</span>(x)  <span class="co"># 4</span>
+y <span class="op">=</span> <span class="dv">5</span>
+<span class="bu">print</span>(x)  <span class="co"># 4;</span></code></pre></div>
+<p>Changing the value named <code>y</code> does not change the value named <code>y</code>, even if the value from <code>y</code> was put into the <code>x</code> variable at some point.</p>
+<ul>
+<li><em>Tip</em>: when reading or writing code, try to think “x is assigned 3” or “x gets the value 3”, rather than “x equals 3”.</li>
+</ul>
+<div id="data-types" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Data Types</h3>
+<p>In the example above, we stored <strong>numeric</strong> values in variables. Python is a <strong>dynamically typed language</strong>, which means that we <em>do not</em> need to explicitly state what type of information will be stored in each variable we create. The Python interpreter is intelligent enough to understand that if we have code <code>x = 7</code>, then <code>x</code> will contain a numeric value (and so we can do math upon it!)</p>
+<p>You can “look up” the type of a particular value by using the <code>type()</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">type</span>(<span class="dv">7</span>)  <span class="co"># integer</span>
+<span class="co">## &lt;class &#39;int&#39;&gt;</span>
+
+<span class="bu">type</span>(<span class="st">&quot;Hello&quot;</span>)  <span class="co"># string</span>
+<span class="co">## &lt;class &#39;str&#39;&gt;</span></code></pre></div>
+<ul>
+<li>Type is also referred to as <code>class</code> (i.e., “classification”). <strong>Classes</strong> are ways of structuring information and behavior in computer programs; we will discuss them in more detail later.</li>
+</ul>
+<p>There are a number of “basic types” for data in Python. The two most common are:</p>
+<ul>
+<li><a href="https://docs.python.org/3/library/stdtypes.html#typesnumeric"><strong>Numeric Types</strong></a>: Python has two data types used to represent numbers: <code>int</code> (integer) for <em>whole numbers</em> like <code>7</code> and <code>float</code> for decimals like <code>3.14</code>.</li>
+</ul>
+<p>We can use <strong>mathematical operators</strong> on numeric data (such as <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, etc.). There are also numerous functions that work on numeric data (such as for calculating sums or averages). You can mix and match ints and floats in mathematical expressions; the result will be a float if either of the operators are floats. Division (<code>/</code>) always produces a float; use the “integer division operator” <code>//</code> to force the result to be a whole number (rounded down).</p>
+<ul>
+<li><a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str"><strong>Strings</strong></a>: Python uses the <code>str</code> (string) type to store textual data. <code>str</code> values contain <em>strings</em> of characters, which are the things you type with a keyboard (including digits, spaces, punctuation, and even line breaks). You specify that some characters are a string by surrounding them in either single quotes (<strong><code>'</code></strong>) or double quotes (<strong><code>&quot;</code></strong>).</li>
+</ul>
+<p><code>python   # Create a string variable `famous_poet` with the value &quot;Bill Shakespeare&quot;   famous_poet = &quot;Bill Shakespeare&quot;</code></p>
+<p>Note that string literals (the text in quotes) are <em>values</em> just like numeric literals (numbers), so can be assigned to variables!</p>
+<ul>
+<li><p>Using “triple-quotes” will allow you to specify a multi-line string:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">message <span class="op">=</span> <span class="st">&quot;&quot;&quot;Dear Professor,</span>
+<span class="st">             My dog ate my homework.</span>
+<span class="st">             Thank you,</span>
+<span class="st">                A. Student</span>
+<span class="st">          &quot;&quot;&quot;</span></code></pre></div></li>
+</ul>
+<p>Strings support the <code>+</code> operator, which performs <strong>concatenation</strong> (combining two strings together). For example:</p>
+<p><code>python   # concatenate 3 strings. The middle string is a space character   full_name = &quot;Bill&quot; + &quot; &quot; + &quot;Shakespeare&quot;</code></p>
+<p>The operands must both be strings. Also note that concatenating strings doesn’t add any additional characters such as spaces between words; you need to handle such punctuation yourself!</p>
+<p>There are many built-in functions for working with strings, and in fact strings support a <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">variety of functions</a> you can call <em>on</em> them. See <a href="../../../module6-functions">module 6</a> for details.</p>
+<p>Note that there are many other data types as well; more will be introduced throughout the remaining modules.</p>
+<p>_Helpful <a href="tip:_" class="uri">tip:_</a> because variables can any type of data, it is often useful to name variables based on their data type. This helps keep the purpose of code clear in your mind, and makes it easier to read and understand what is happening:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">password_num <span class="op">=</span> <span class="dv">12345</span>  <span class="co"># variable name indicates a number, so can do math on it</span>
+password_str <span class="op">=</span> <span class="st">&quot;12345&quot;</span>  <span class="co"># variable name indicates a string, so can print it</span></code></pre></div>
+<p>It is possible to convert from one type to another by using a <strong>type converter function</strong>, which is usually named after the type you wish to convert <em>to</em>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">int</span>(<span class="fl">3.14</span>)   <span class="co"># 3</span>
+<span class="bu">int</span>(<span class="fl">5.98</span>)   <span class="co"># 5 (takes the floor value)</span>
+<span class="bu">float</span>(<span class="dv">6</span>)    <span class="co"># 6.0</span>
+<span class="bu">str</span>(<span class="dv">2</span>)      <span class="co"># &quot;2&quot;</span>
+<span class="bu">int</span>(<span class="st">&quot;2&quot;</span>)    <span class="co"># 2</span>
+<span class="bu">int</span>(<span class="st">&quot;two&quot;</span>)  <span class="co"># ValueError!</span></code></pre></div>
+<p>This is particularly useful when you wish to include a number in a string:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">favorite_number <span class="op">=</span> <span class="dv">12</span>
+message <span class="op">=</span> <span class="st">&quot;My favorite number is &quot;</span><span class="op">+</span><span class="bu">str</span>(favorite_number)
+<span class="bu">print</span>(message)  <span class="co"># My favorite number is 12</span></code></pre></div>
+<p>For practice creating and working with variables (as well as with Jupyter noteookes), see <a href="exercise-1" class="uri">exercise-1</a>.</p>
+</div>
+</div>
+<div id="getting-help" class="section level2">
+<h2><span class="header-section-number">1.7</span> Getting Help</h2>
+<p>As with any programming language, when working in Python you will inevitably run into problems, confusing situations, or just general questions. Here are a few ways to start getting help.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Read the error messages</strong>: If there is an issue with the way you have written or executed your code, Python will often print out an error message. Do you best to decipher the message (read it carefully, and think about what is meant by each word in the message), or you can put it directly into Google to get more information. You’ll soon get the hang of interpreting these messages (and how to resolve common ones) if you don’t panic when one appears. <em>Remember: making mistakes is normal!</em></p></li>
+<li><p><strong>Google</strong>: When you’re trying to figure out how to do something, it should be no surprise that Google is often the best resource. Try searching for queries like <code>&quot;how to &lt;DO THING&gt; in Python&quot;</code>. More frequently than not, your question will lead you to a Q/A forum called StackOverflow (see below), which is a great place to find potential answers.</p></li>
+<li><p><strong>StackOverflow</strong>: StackOverflow is an amazing Q/A forum for asking/answering programming questions. Most basic questions have already been asked/answered here. However, don’t hesitate to post your own questions to StackOverflow. Be sure to hone in on the specific question you’re trying to answer, and provide error messages and sample code as appropriate. I often find that, by the time I can articulate the question enough to post it, I’ve figured out my problem anyway.</p>
+<ul>
+<li>There is a classical method of debugging called <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">rubber duck debugging</a>, which involves simply trying to explain your code/problem to an inanimate object (talking to pets works too). You’ll usually be able to fix the problem if you just step back and think about how you would explain it to someone else!</li>
+</ul></li>
+<li><p><strong>Documentation</strong>: Python’s <a href="https://docs.python.org/3/">documentation</a> is pretty good: very thorough and usually contains helpful examples. The only problem is that it can be too detailed for our purposes, and can sometimes be hard to navigate (where to find information is not immediately obvious in some situations). Searching the documentation is a good way to narrow down what you’re looking for.</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-python-intro.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
