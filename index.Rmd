@@ -12,7 +12,9 @@ github-repo: rstudio/bookdown-demo
 description: "Introductory Python materials for the INFO 370: Introduction to Data Science Course. Compiled by Michael Freeman."
 ---
 
-# Introductory Python materials for the INFO 370: Introduction to Data Science Course. {-}
+# About the book {-}
+
+These materials introduce the Python programming language for Data Science. Compiled for the INFO 370: Introduction to Data Science Course.
 
 _Compiled by Michael Freeman_
 
